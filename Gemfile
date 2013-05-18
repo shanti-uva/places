@@ -53,7 +53,7 @@ gem 'mms_integration',            '2.0.5',        :git => 'git://github.com/thl/
 gem 'places_engine',              '3.0.2',        :git => 'git://github.com/thl/places_engine.git',              :tag => 'v3.0.2' #:path => '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.0.1',        :git => 'git://github.com/thl/proxy_engine.git',               :tag => 'v2.0.1' #:path => '../../thl/engines/proxy_engine'
 gem 'universal_navigation',       '2.0.3',        :git => 'git://github.com/thl/universal_navigation.git',       :tag => 'v2.0.3' #:path => '../../thl/engines/universal_navigation'
-gem 'shanti_integration',         '2.0.5',        :git => 'git://github.com/shanti-uva/shanti_integration.git',  :tag => 'v2.0.5' #:path => '../engines/shanti_integration'
+gem 'shanti_integration',         '2.0.6',        :git => 'git://github.com/shanti-uva/shanti_integration.git',  :tag => 'v2.0.6' #:path => '../engines/shanti_integration'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
