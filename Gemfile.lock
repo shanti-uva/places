@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 3aa3fb2927842ca27562318b51d37ca5dacfc9bc
-  tag: v2.0.6
+  revision: b5443c7b6dc8a6d6c0378d677648873c0359c3ce
+  tag: v2.0.7
   specs:
-    shanti_integration (2.0.6)
+    shanti_integration (2.0.7)
       rails (~> 3.2.8)
 
 GIT
@@ -116,10 +116,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 3cb2b9a1219170f09974d372284ebfd129b01f2d
-  tag: v3.0.2
+  revision: cb9747a8998782184970fd8bad84f5cbd0d16bbf
+  tag: v3.0.3
   specs:
-    places_engine (3.0.2)
+    places_engine (3.0.3)
       rails (~> 3.2.11)
 
 GIT
@@ -312,14 +312,14 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.0.2)!
+  places_engine (= 3.0.3)!
   proxy_engine (= 2.0.1)!
   rack-openid
   rails (= 3.2.13)
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.0.6)!
+  shanti_integration (= 2.0.7)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   system_timer
