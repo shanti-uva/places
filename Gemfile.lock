@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: b5443c7b6dc8a6d6c0378d677648873c0359c3ce
-  tag: v2.0.7
+  revision: 222df5b75167824d72a4244552d57a9ac4869590
+  tag: v2.0.8
   specs:
-    shanti_integration (2.0.7)
+    shanti_integration (2.0.8)
       rails (~> 3.2.8)
 
 GIT
@@ -319,7 +319,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.0.7)!
+  shanti_integration (= 2.0.8)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   system_timer
