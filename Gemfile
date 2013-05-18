@@ -46,7 +46,7 @@ gem 'authenticated_system',       '2.1.0',        :git => 'git://github.com/thl/
 gem 'complex_dates',              '2.0.2',        :git => 'git://github.com/thl/complex_dates.git',              :tag => 'v2.0.2' #:path => '../engines/complex_dates'
 gem 'complex_scripts',            '2.0.6',        :git => 'git://github.com/thl/complex_scripts.git',            :tag => 'v2.0.6' #:path => '../../thl/engines/complex_scripts'
 gem 'cultural_network',           '0.9.2',        :git => 'git://github.com/thl/cultural_network.git',           :tag => 'v0.9.2' #:path => '../../thl/engines/cultural_network'
-gem 'interface_utils',            '2.0.1',        :git => 'git://github.com/thl/interface_utils.git',            :tag => 'v2.0.1' #:path => '../../thl/engines/interface_utils'
+gem 'interface_utils',            '2.0.2',        :git => 'git://github.com/thl/interface_utils.git',            :tag => 'v2.0.2' #:path => '../../thl/engines/interface_utils'
 gem 'dictionary_integration',     '2.0.2',        :git => 'git://github.com/thl/dictionary_integration.git',     :tag => 'v2.0.2' #:path => '../../thl/engines/dictionary_integration'
 gem 'kmaps_integration',          '2.0.8',        :git => 'git://github.com/thl/kmaps_integration.git',          :tag => 'v2.0.8' #:path => '../../thl/engines/kmaps_integration'
 gem 'mms_integration',            '2.0.5',        :git => 'git://github.com/thl/mms_integration.git',            :tag => 'v2.0.5' #:path => '../../thl/engines/mms_integration'
