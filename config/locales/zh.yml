@@ -1,7 +1,7 @@
-# Place localization file for English. Add more files in this directory for other locales.
+# Place localization file for Chines. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+zh:
     app:
         short: 'SHANTI Place Dictionary'
         this: 'SHANTI Place Dictionary for Science, Humanity and Arts'
