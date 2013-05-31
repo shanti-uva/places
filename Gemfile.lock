@@ -27,19 +27,27 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: d515b2c57de8d57ef8e6defb5d2dafe758f8a168
-  tag: v1.0.2
+  revision: 7151eceebcda600e6fba7344a2e9ed23ee6434aa
+  tag: v1.0.4
   specs:
-    kmaps_engine (1.0.2)
+    kmaps_engine (1.0.4)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 0a3db4e70a99365441f482fd58eb68ecd12ed795
-  tag: v2.1.0
+  revision: 16729f20ad27f2bd3dfe687eeda33b62ff1a4ac1
+  tag: v2.1.2
   specs:
-    shanti_integration (2.1.0)
+    shanti_integration (2.1.2)
       rails (~> 3.2.8)
+
+GIT
+  remote: git://github.com/shanti-uva/subjects_integration.git
+  revision: df594f0899579457332ec5e36f6dbb12eb226004
+  tag: v0.0.2
+  specs:
+    subjects_integration (0.0.2)
+      rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
@@ -115,6 +123,14 @@ GIT
       rails (~> 3.2.11)
 
 GIT
+  remote: git://github.com/thl/places_integration.git
+  revision: 60583eebf555063cfa30c1395378fd3276f2ae9a
+  tag: v2.0.5
+  specs:
+    places_integration (2.0.5)
+      rails (~> 3.2.8)
+
+GIT
   remote: git://github.com/thl/proxy_engine.git
   revision: 0ce77bc3b327701a140a738431bd2cc1f40cf6d2
   tag: v2.0.1
@@ -132,10 +148,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: cd24d068e85cdde4c16a846914840f11ac5f2a44
-  tag: v2.0.6
+  revision: 6db797357c2a1f7d924e9ff5b84deb18efe72619
+  tag: v2.0.7
   specs:
-    universal_navigation (2.0.6)
+    universal_navigation (2.0.7)
       rails (~> 3.2.8)
 
 GEM
@@ -301,7 +317,7 @@ DEPENDENCIES
   interface_utils (= 2.0.4)!
   jquery-rails
   json
-  kmaps_engine (= 1.0.2)!
+  kmaps_engine (= 1.0.4)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -312,19 +328,21 @@ DEPENDENCIES
   passiverecord (= 0.2)!
   pg
   places_engine (= 3.1.1)!
+  places_integration (= 2.0.5)!
   proxy_engine (= 2.0.1)!
   rack-openid
   rails (= 3.2.13)
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.1.0)!
+  shanti_integration (= 2.1.2)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
+  subjects_integration (= 0.0.2)!
   system_timer
   therubyracer (= 0.10.2)
   tinymce-rails (= 3.5.6)
   topical_map_integration (= 3.0.2)!
   uglifier (>= 1.0.3)
-  universal_navigation (= 2.0.6)!
+  universal_navigation (= 2.0.7)!
   will_paginate (~> 3.0)
