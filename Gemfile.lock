@@ -27,18 +27,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 761a736f7e9a282c07c47db4933517425d28a5f6
-  tag: v1.0.0
+  revision: d515b2c57de8d57ef8e6defb5d2dafe758f8a168
+  tag: v1.0.2
   specs:
-    kmaps_engine (1.0.0)
+    kmaps_engine (1.0.2)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: c81cfe5b130ec228dbb8801a46340de59e1041a9
-  tag: v2.0.9
+  revision: 0a3db4e70a99365441f482fd58eb68ecd12ed795
+  tag: v2.1.0
   specs:
-    shanti_integration (2.0.9)
+    shanti_integration (2.1.0)
       rails (~> 3.2.8)
 
 GIT
@@ -92,10 +92,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: 1880ef35da900202bebf96dee496c1e3391a4c65
-  tag: v2.0.2
+  revision: 3822a6412f519ef0d4e853db87d0f43bf7d8152d
+  tag: v2.0.4
   specs:
-    interface_utils (2.0.2)
+    interface_utils (2.0.4)
       rails (~> 3.2.11)
 
 GIT
@@ -108,10 +108,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 6d6f2e295e946596e209dd41ea86abadd39005fb
-  tag: v3.1.0
+  revision: 0384054ce3c4ba6fbeb3a35fcaec09dd08714ddb
+  tag: v3.1.1
   specs:
-    places_engine (3.1.0)
+    places_engine (3.1.1)
       rails (~> 3.2.11)
 
 GIT
@@ -124,18 +124,18 @@ GIT
 
 GIT
   remote: git://github.com/thl/topical_map_integration.git
-  revision: 47524931a42a700da2e5af76e7d3388c88cc10d0
-  tag: v3.0.0
+  revision: 9dfc53014f1375db46fe2cf1fbef60f291947e44
+  tag: v3.0.2
   specs:
-    topical_map_integration (3.0.0)
+    topical_map_integration (3.0.2)
       rails (~> 3.2.9)
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 46278c0fce258e8b7061180b3d85910d13a2bc61
-  tag: v2.0.5
+  revision: cd24d068e85cdde4c16a846914840f11ac5f2a44
+  tag: v2.0.6
   specs:
-    universal_navigation (2.0.5)
+    universal_navigation (2.0.6)
       rails (~> 3.2.8)
 
 GEM
@@ -298,10 +298,10 @@ DEPENDENCIES
   exception_notification
   georuby
   hpricot (>= 0.8.6)
-  interface_utils (= 2.0.2)!
+  interface_utils (= 2.0.4)!
   jquery-rails
   json
-  kmaps_engine (= 1.0.0)!
+  kmaps_engine (= 1.0.2)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -311,20 +311,20 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.1.0)!
+  places_engine (= 3.1.1)!
   proxy_engine (= 2.0.1)!
   rack-openid
   rails (= 3.2.13)
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.0.9)!
+  shanti_integration (= 2.1.0)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   system_timer
   therubyracer (= 0.10.2)
   tinymce-rails (= 3.5.6)
-  topical_map_integration (= 3.0.0)!
+  topical_map_integration (= 3.0.2)!
   uglifier (>= 1.0.3)
-  universal_navigation (= 2.0.5)!
+  universal_navigation (= 2.0.6)!
   will_paginate (~> 3.0)
