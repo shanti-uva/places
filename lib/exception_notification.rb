@@ -1,4 +1,4 @@
 ExceptionNotification::Application.config.middleware.use ExceptionNotifier,
-    :email_prefix => "[#{APP_NAME} Error] ",
-    :sender_address => "#{APP_NAME} Application Error <do-not-respond@#{APP_DOMAIN}>",
+    :email_prefix => "[#{ts 'app.short'} Error] ",
+    :sender_address => "#{ts 'app.short'} Application Error <do-not-respond@#{APP_DOMAIN}>",
     :exception_recipients => %w(logs@gaugeus.com tombenner.logs@gmail.com)
