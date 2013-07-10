@@ -27,42 +27,42 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: e4309a57ed24d2f025f47fd5002e0199ab7dc5f9
-  tag: v1.1.2
+  revision: fe04449b5e7a514de6773b89944577c456efad20
+  tag: v1.1.7
   specs:
-    kmaps_engine (1.1.2)
+    kmaps_engine (1.1.7)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 16729f20ad27f2bd3dfe687eeda33b62ff1a4ac1
-  tag: v2.1.2
+  revision: 5f1fb6ad3f3c6416bec5b2678db0823ed6e56c5b
+  tag: v2.1.3
   specs:
-    shanti_integration (2.1.2)
+    shanti_integration (2.1.3)
       rails (~> 3.2.8)
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: df594f0899579457332ec5e36f6dbb12eb226004
-  tag: v0.0.2
+  revision: 307a08e0e5e0710b9a2413e8d67af33569550756
+  tag: v0.0.3
   specs:
-    subjects_integration (0.0.2)
+    subjects_integration (0.0.3)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
-  revision: a8d01dca2a40dfb32b85758871b5076303d932a4
-  tag: v2.0.5
+  revision: 5583301b2dda55a3fdc30e7721c3f860e39cd06f
+  tag: v2.0.6
   specs:
-    active_resource_extensions (2.0.5)
+    active_resource_extensions (2.0.6)
       rails (~> 3.2.8)
 
 GIT
   remote: git://github.com/thl/acts_as_family_tree.git
-  revision: d8dbbc96ad045c0990f7f0cab9d60411330accd9
-  tag: v1.0.2
+  revision: ddbe60858a9814b2c3b3ab25a72ffb9e41a45641
+  tag: v1.0.3
   specs:
-    acts_as_family_tree (1.0.2)
+    acts_as_family_tree (1.0.3)
       rails (~> 3.2.11)
 
 GIT
@@ -116,10 +116,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 0384054ce3c4ba6fbeb3a35fcaec09dd08714ddb
-  tag: v3.1.1
+  revision: 99c12ef4e1041ff7c8c527a1be0cfcb19bcb4ead
+  tag: v3.1.2
   specs:
-    places_engine (3.1.1)
+    places_engine (3.1.2)
       rails (~> 3.2.11)
 
 GIT
@@ -139,19 +139,11 @@ GIT
       rails (~> 3.2.9)
 
 GIT
-  remote: git://github.com/thl/topical_map_integration.git
-  revision: 9dfc53014f1375db46fe2cf1fbef60f291947e44
-  tag: v3.0.2
-  specs:
-    topical_map_integration (3.0.2)
-      rails (~> 3.2.9)
-
-GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 6db797357c2a1f7d924e9ff5b84deb18efe72619
-  tag: v2.0.7
+  revision: 79a5b0f2e98dbc4fdb5c4f467e312596231670e4
+  tag: v2.0.8
   specs:
-    universal_navigation (2.0.7)
+    universal_navigation (2.0.8)
       rails (~> 3.2.8)
 
 GEM
@@ -302,8 +294,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_resource_extensions (= 2.0.5)!
-  acts_as_family_tree (= 1.0.2)!
+  active_resource_extensions (= 2.0.6)!
+  acts_as_family_tree (= 1.0.3)!
   annotate
   authenticated_system (= 2.1.1)!
   coffee-rails (~> 3.2.1)
@@ -317,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.1.2)!
+  kmaps_engine (= 1.1.7)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -327,7 +319,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.1.1)!
+  places_engine (= 3.1.2)!
   places_integration (= 2.0.5)!
   proxy_engine (= 2.0.1)!
   rack-openid
@@ -335,14 +327,13 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.1.2)!
+  shanti_integration (= 2.1.3)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
-  subjects_integration (= 0.0.2)!
+  subjects_integration (= 0.0.3)!
   system_timer
   therubyracer (= 0.10.2)
   tinymce-rails (= 3.5.6)
-  topical_map_integration (= 3.0.2)!
   uglifier (>= 1.0.3)
-  universal_navigation (= 2.0.7)!
+  universal_navigation (= 2.0.8)!
   will_paginate (~> 3.0)
