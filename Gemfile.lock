@@ -27,26 +27,26 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: fe04449b5e7a514de6773b89944577c456efad20
-  tag: v1.1.7
+  revision: 8ce2805ad9d6061aa8b59c53288a7f2ee0d603c7
+  tag: v1.1.9
   specs:
-    kmaps_engine (1.1.7)
+    kmaps_engine (1.1.9)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 5f1fb6ad3f3c6416bec5b2678db0823ed6e56c5b
-  tag: v2.1.3
+  revision: 5cf92d7c7c9fbbde56e74fce55b4bb0a37f8790f
+  tag: v2.1.4
   specs:
-    shanti_integration (2.1.3)
+    shanti_integration (2.1.4)
       rails (~> 3.2.8)
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: 307a08e0e5e0710b9a2413e8d67af33569550756
-  tag: v0.0.3
+  revision: 51091c6043ee1e05278123839cb1db8ff604a2fc
+  tag: v0.0.4
   specs:
-    subjects_integration (0.0.3)
+    subjects_integration (0.0.4)
       rails (~> 3.2.13)
 
 GIT
@@ -116,10 +116,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 99c12ef4e1041ff7c8c527a1be0cfcb19bcb4ead
-  tag: v3.1.2
+  revision: ea81447e3f4d16e7719797c35335a68a8f69a79b
+  tag: v3.1.3
   specs:
-    places_engine (3.1.2)
+    places_engine (3.1.3)
       rails (~> 3.2.11)
 
 GIT
@@ -309,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.1.7)!
+  kmaps_engine (= 1.1.9)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -319,7 +319,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.1.2)!
+  places_engine (= 3.1.3)!
   places_integration (= 2.0.5)!
   proxy_engine (= 2.0.1)!
   rack-openid
@@ -327,10 +327,10 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.1.3)!
+  shanti_integration (= 2.1.4)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
-  subjects_integration (= 0.0.3)!
+  subjects_integration (= 0.0.4)!
   system_timer
   therubyracer (= 0.10.2)
   tinymce-rails (= 3.5.6)
