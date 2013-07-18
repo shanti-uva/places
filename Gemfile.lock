@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 8ce2805ad9d6061aa8b59c53288a7f2ee0d603c7
-  tag: v1.1.9
+  revision: 75d5fa8f82a03eb6e38121c9f87f9a09ba089a4d
+  tag: v1.2.0
   specs:
-    kmaps_engine (1.1.9)
+    kmaps_engine (1.2.0)
       rails (~> 3.2.13)
 
 GIT
@@ -51,10 +51,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
-  revision: 5583301b2dda55a3fdc30e7721c3f860e39cd06f
-  tag: v2.0.6
+  revision: 92ed56da9c07119f60fba4ecc59e52f8a4c796fe
+  tag: v2.0.7
   specs:
-    active_resource_extensions (2.0.6)
+    active_resource_extensions (2.0.7)
       rails (~> 3.2.8)
 
 GIT
@@ -116,10 +116,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: b2d9a6d8dec280af9492e35ccf64a24272150583
-  tag: v3.1.4
+  revision: 2deabbe8bcc76c04890678b01bb36c12d075f30d
+  tag: v3.1.5
   specs:
-    places_engine (3.1.4)
+    places_engine (3.1.5)
       rails (~> 3.2.11)
 
 GIT
@@ -140,10 +140,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 79a5b0f2e98dbc4fdb5c4f467e312596231670e4
-  tag: v2.0.8
+  revision: 1f75bdf3731e98f32f06ad6198cc4c92be2e9cac
+  tag: v2.0.9
   specs:
-    universal_navigation (2.0.8)
+    universal_navigation (2.0.9)
       rails (~> 3.2.8)
 
 GEM
@@ -294,7 +294,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_resource_extensions (= 2.0.6)!
+  active_resource_extensions (= 2.0.7)!
   acts_as_family_tree (= 1.0.3)!
   annotate
   authenticated_system (= 2.1.1)!
@@ -309,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.1.9)!
+  kmaps_engine (= 1.2.0)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -319,7 +319,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.1.4)!
+  places_engine (= 3.1.5)!
   places_integration (= 2.0.5)!
   proxy_engine (= 2.0.1)!
   rack-openid
@@ -335,5 +335,5 @@ DEPENDENCIES
   therubyracer (= 0.10.2)
   tinymce-rails (= 3.5.6)
   uglifier (>= 1.0.3)
-  universal_navigation (= 2.0.8)!
+  universal_navigation (= 2.0.9)!
   will_paginate (~> 3.0)
