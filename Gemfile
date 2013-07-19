@@ -16,7 +16,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'libv8', '3.3.10.2'
-  gem 'therubyracer', '0.10.2'
+  gem 'therubyracer', :platforms => :ruby
+  #gem 'therubyracer', '0.10.2'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -51,7 +52,7 @@ gem 'interface_utils',            '2.0.5',        :git => 'git://github.com/thl/
 gem 'kmaps_engine',               '1.2.0',        :git => 'git://github.com/shanti-uva/kmaps_engine.git',         :tag => 'v1.2.0' #:path => '../engines/kmaps_engine'
 gem 'mms_integration',            '2.0.5',        :git => 'git://github.com/thl/mms_integration.git',             :tag => 'v2.0.5' #:path => '../../thl/engines/mms_integration'
 gem 'places_integration',         '2.0.5',        :git => 'git://github.com/thl/places_integration.git',          :tag => 'v2.0.5' #:path => '../../thl/engines/places_integration'
-gem 'places_engine',              '3.1.5',        :git => 'git://github.com/thl/places_engine.git',               :tag => 'v3.1.5' #:path => '../engines/kmaps_engine'
+gem 'places_engine',              '3.1.6',        :git => 'git://github.com/thl/places_engine.git',               :tag => 'v3.1.6' #:path => '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.0.1',        :git => 'git://github.com/thl/proxy_engine.git',                :tag => 'v2.0.1' #:path => '../../thl/engines/proxy_engine'
 gem 'shanti_integration',         '2.1.4',        :git => 'git://github.com/shanti-uva/shanti_integration.git',   :tag => 'v2.1.4' #:path => '../engines/shanti_integration'
 gem 'subjects_integration',       '0.0.4',        :git => 'git://github.com/shanti-uva/subjects_integration.git', :tag => 'v0.0.4' #:path => '../engines/subjects_integration'
