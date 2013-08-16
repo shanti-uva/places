@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709224662) do
+ActiveRecord::Schema.define(:version => 20130815184610) do
 
   create_table "Birth_rate", :id => false, :force => true do |t|
     t.integer "gid",                       :null => false
@@ -426,6 +426,28 @@ ActiveRecord::Schema.define(:version => 20130709224662) do
     t.float    "illit_male"
     t.float    "illit_fem"
     t.geometry "geometry",   :limit => nil, :srid => 4326
+  end
+
+  create_table "importation_tasks", :force => true do |t|
+    t.string   "task_code",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "imported_spreadsheets", :force => true do |t|
+    t.string   "filename",    :null => false
+    t.integer  "task_id",     :null => false
+    t.datetime "imported_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "imports", :force => true do |t|
+    t.integer  "spreadsheet_id", :null => false
+    t.integer  "item_id",        :null => false
+    t.string   "item_type",      :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "info_sources", :force => true do |t|
