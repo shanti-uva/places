@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815184610) do
+ActiveRecord::Schema.define(:version => 20130819194653) do
 
   create_table "Birth_rate", :id => false, :force => true do |t|
     t.integer "gid",                       :null => false
@@ -309,6 +309,13 @@ ActiveRecord::Schema.define(:version => 20130815184610) do
     t.polygon "the_geom",  :limit => nil,                 :srid => 4326
   end
 
+  create_table "external_pictures", :force => true do |t|
+    t.string   "url",        :null => false
+    t.text     "caption"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "feature_geo_codes", :force => true do |t|
     t.integer  "feature_id"
     t.integer  "geo_code_type_id"
@@ -426,6 +433,15 @@ ActiveRecord::Schema.define(:version => 20130815184610) do
     t.float    "illit_male"
     t.float    "illit_fem"
     t.geometry "geometry",   :limit => nil, :srid => 4326
+  end
+
+  create_table "illustrations", :force => true do |t|
+    t.integer  "feature_id",                     :null => false
+    t.integer  "picture_id",                     :null => false
+    t.string   "picture_type",                   :null => false
+    t.boolean  "is_primary",   :default => true, :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "importation_tasks", :force => true do |t|
