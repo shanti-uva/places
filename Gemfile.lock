@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 2505a465e34082f84ef2f037e6adda13c086a836
-  tag: v1.2.3
+  revision: 10a5843ee392b3e950169902b2ca658550529f31
+  tag: v1.2.4
   specs:
-    kmaps_engine (1.2.3)
+    kmaps_engine (1.2.4)
       rails (~> 3.2.13)
 
 GIT
@@ -108,10 +108,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 85f73a725d74cfc631538eb65619d4e1f131eed8
-  tag: v2.0.8
+  revision: 813c3c924645289107993986845c73c72c36977a
+  tag: v2.0.9
   specs:
-    mms_integration (2.0.8)
+    mms_integration (2.0.9)
       rails (~> 3.2.8)
 
 GIT
@@ -309,11 +309,11 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.2.3)!
+  kmaps_engine (= 1.2.4)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
-  mms_integration (= 2.0.8)!
+  mms_integration (= 2.0.9)!
   mongrel
   newrelic_rpm
   open_id_authentication
