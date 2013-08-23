@@ -26,14 +26,6 @@ GIT
       activerecord (>= 2.2.2, < 3.3)
 
 GIT
-  remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 10a5843ee392b3e950169902b2ca658550529f31
-  tag: v1.2.4
-  specs:
-    kmaps_engine (1.2.4)
-      rails (~> 3.2.13)
-
-GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
   revision: 5cf92d7c7c9fbbde56e74fce55b4bb0a37f8790f
   tag: v2.1.4
@@ -107,22 +99,6 @@ GIT
       rails (~> 3.2.11)
 
 GIT
-  remote: git://github.com/thl/mms_integration.git
-  revision: 813c3c924645289107993986845c73c72c36977a
-  tag: v2.0.9
-  specs:
-    mms_integration (2.0.9)
-      rails (~> 3.2.8)
-
-GIT
-  remote: git://github.com/thl/places_engine.git
-  revision: 06dc35c887e38ecf7e75687acc1e9d9f76d67dcf
-  tag: v3.2.0
-  specs:
-    places_engine (3.2.0)
-      rails (~> 3.2.11)
-
-GIT
   remote: git://github.com/thl/places_integration.git
   revision: 60583eebf555063cfa30c1395378fd3276f2ae9a
   tag: v2.0.5
@@ -145,6 +121,24 @@ GIT
   specs:
     universal_navigation (2.0.9)
       rails (~> 3.2.8)
+
+PATH
+  remote: ../../thl/engines/mms_integration
+  specs:
+    mms_integration (2.0.9)
+      rails (~> 3.2.8)
+
+PATH
+  remote: ../../thl/engines/places_engine
+  specs:
+    places_engine (3.2.0)
+      rails (~> 3.2.11)
+
+PATH
+  remote: ../engines/kmaps_engine
+  specs:
+    kmaps_engine (1.2.4)
+      rails (~> 3.2.13)
 
 GEM
   remote: https://rubygems.org/
