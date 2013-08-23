@@ -26,6 +26,14 @@ GIT
       activerecord (>= 2.2.2, < 3.3)
 
 GIT
+  remote: git://github.com/shanti-uva/kmaps_engine.git
+  revision: df3c655bc71da2673ce0dfa760814f417ee7e088
+  tag: v1.2.5
+  specs:
+    kmaps_engine (1.2.5)
+      rails (~> 3.2.13)
+
+GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
   revision: 5cf92d7c7c9fbbde56e74fce55b4bb0a37f8790f
   tag: v2.1.4
@@ -99,6 +107,22 @@ GIT
       rails (~> 3.2.11)
 
 GIT
+  remote: git://github.com/thl/mms_integration.git
+  revision: fe408654fad7be8fb7f373dd397a78d30ace55cb
+  tag: v2.1.0
+  specs:
+    mms_integration (2.1.0)
+      rails (~> 3.2.8)
+
+GIT
+  remote: git://github.com/thl/places_engine.git
+  revision: 09d6750126de3ae107a53f1e8efb2d71515fd840
+  tag: v3.2.1
+  specs:
+    places_engine (3.2.1)
+      rails (~> 3.2.11)
+
+GIT
   remote: git://github.com/thl/places_integration.git
   revision: 60583eebf555063cfa30c1395378fd3276f2ae9a
   tag: v2.0.5
@@ -121,24 +145,6 @@ GIT
   specs:
     universal_navigation (2.0.9)
       rails (~> 3.2.8)
-
-PATH
-  remote: ../../thl/engines/mms_integration
-  specs:
-    mms_integration (2.0.9)
-      rails (~> 3.2.8)
-
-PATH
-  remote: ../../thl/engines/places_engine
-  specs:
-    places_engine (3.2.0)
-      rails (~> 3.2.11)
-
-PATH
-  remote: ../engines/kmaps_engine
-  specs:
-    kmaps_engine (1.2.4)
-      rails (~> 3.2.13)
 
 GEM
   remote: https://rubygems.org/
@@ -303,17 +309,17 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.2.4)!
+  kmaps_engine (= 1.2.5)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
-  mms_integration (= 2.0.9)!
+  mms_integration (= 2.1.0)!
   mongrel
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.2.0)!
+  places_engine (= 3.2.1)!
   places_integration (= 2.0.5)!
   proxy_engine (= 2.0.2)!
   rack-openid
