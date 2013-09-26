@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130819194653) do
+ActiveRecord::Schema.define(:version => 20130926064842) do
 
   create_table "Birth_rate", :id => false, :force => true do |t|
     t.integer "gid",                       :null => false
@@ -196,6 +196,15 @@ ActiveRecord::Schema.define(:version => 20130819194653) do
     t.datetime "updated_at"
     t.integer  "feature_relation_type_id"
     t.boolean  "feature_is_parent"
+  end
+
+  create_table "captions", :force => true do |t|
+    t.integer  "language_id",                :null => false
+    t.string   "content",     :limit => 150, :null => false
+    t.integer  "author_id",                  :null => false
+    t.integer  "feature_id",                 :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "category_features", :force => true do |t|
@@ -655,6 +664,15 @@ ActiveRecord::Schema.define(:version => 20130819194653) do
 
   add_index "simple_props", ["code"], :name => "simple_props_code_idx"
   add_index "simple_props", ["type"], :name => "simple_props_type_idx"
+
+  create_table "summaries", :force => true do |t|
+    t.integer  "language_id", :null => false
+    t.text     "content",     :null => false
+    t.integer  "author_id",   :null => false
+    t.integer  "feature_id",  :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "symbol_type", :id => false, :force => true do |t|
     t.integer "object_type"
