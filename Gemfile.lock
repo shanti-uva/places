@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: e0d61c0793ead16b39dd868b19051c4a33aac0ea
-  tag: v1.4.6
+  revision: 3c951d8d760e7126a572f6cdac4e3d3eda7eafc8
+  tag: v1.4.7
   specs:
-    kmaps_engine (1.4.6)
+    kmaps_engine (1.4.7)
       rails (~> 3.2.13)
 
 GIT
@@ -67,10 +67,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/authenticated_system.git
-  revision: 84807aae0e32975490c165748f5e9f1c415e572c
-  tag: v2.1.2
+  revision: 2b8651e650e0c357014e01bd8b4478d51aaea27d
+  tag: v2.1.3
   specs:
-    authenticated_system (2.1.2)
+    authenticated_system (2.1.3)
       rails (~> 3.2.8)
 
 GIT
@@ -297,7 +297,7 @@ DEPENDENCIES
   active_resource_extensions (= 2.0.7)!
   acts_as_family_tree (= 1.0.3)!
   annotate
-  authenticated_system (= 2.1.2)!
+  authenticated_system (= 2.1.3)!
   coffee-rails (~> 3.2.1)
   complex_dates (= 2.0.5)!
   complex_scripts (= 2.0.7)!
@@ -309,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.4.6)!
+  kmaps_engine (= 1.4.7)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
