@@ -27,18 +27,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: fb8c528f57e01c7b7b03c46e09cf2d79aa991801
-  tag: v1.4.9
+  revision: cba138236c06dd2761a908e195788a0b77ff4c4b
+  tag: v1.5.0
   specs:
-    kmaps_engine (1.4.9)
+    kmaps_engine (1.5.0)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 02ba98c1f6f606cd7c441d23dad8b2a6edbcc255
-  tag: v2.1.6
+  revision: c55bf6965fab393dc4e3f91f8199bded961f93a2
+  tag: v2.1.7
   specs:
-    shanti_integration (2.1.6)
+    shanti_integration (2.1.7)
       rails (~> 3.2.8)
 
 GIT
@@ -108,18 +108,18 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 982ed4dad592288ce51a1b2a39c153bf39b3cb90
-  tag: v2.1.2
+  revision: 4d6eab4e381e07556bbf87ac4be6534a463991ea
+  tag: v2.1.3
   specs:
-    mms_integration (2.1.2)
+    mms_integration (2.1.3)
       rails (~> 3.2.8)
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 98695d3fbdf9b7ebf59843357de515c5afdb4ccd
-  tag: v3.3.2
+  revision: 08afee475835de5b4e339b2d0925c5e96316323c
+  tag: v3.3.3
   specs:
-    places_engine (3.3.2)
+    places_engine (3.3.3)
       rails (~> 3.2.11)
 
 GIT
@@ -309,17 +309,17 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.4.9)!
+  kmaps_engine (= 1.5.0)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
-  mms_integration (= 2.1.2)!
+  mms_integration (= 2.1.3)!
   mongrel
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.3.2)!
+  places_engine (= 3.3.3)!
   places_integration (= 2.0.5)!
   proxy_engine (= 2.0.2)!
   rack-openid
@@ -327,7 +327,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.1.6)!
+  shanti_integration (= 2.1.7)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   subjects_integration (= 0.0.6)!
