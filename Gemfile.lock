@@ -27,18 +27,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: e02b52de0c49912ed4ecec33e0c8c62dae573764
-  tag: v1.5.7
+  revision: 3cbb3e94febbc5c46486d73e229601996738a137
+  tag: v1.5.8
   specs:
-    kmaps_engine (1.5.7)
+    kmaps_engine (1.5.8)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: c55bf6965fab393dc4e3f91f8199bded961f93a2
-  tag: v2.1.7
+  revision: bede1c99a5f6c34dd5ba327f3366a6f808539783
+  tag: v2.1.8
   specs:
-    shanti_integration (2.1.7)
+    shanti_integration (2.1.8)
       rails (~> 3.2.8)
 
 GIT
@@ -309,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.5)!
   jquery-rails
   json
-  kmaps_engine (= 1.5.7)!
+  kmaps_engine (= 1.5.8)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
@@ -327,7 +327,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   ruby-debug
   sass-rails (~> 3.2.3)
-  shanti_integration (= 2.1.7)!
+  shanti_integration (= 2.1.8)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   subjects_integration (= 0.0.6)!
