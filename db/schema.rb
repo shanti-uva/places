@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014181443) do
+ActiveRecord::Schema.define(:version => 20131023052437) do
 
   create_table "Birth_rate", :id => false, :force => true do |t|
     t.integer "gid",                       :null => false
@@ -199,12 +199,12 @@ ActiveRecord::Schema.define(:version => 20131014181443) do
   end
 
   create_table "captions", :force => true do |t|
-    t.integer  "language_id",                :null => false
-    t.string   "content",     :limit => 150, :null => false
-    t.integer  "author_id",                  :null => false
-    t.integer  "feature_id",                 :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "language_id", :null => false
+    t.text     "content",     :null => false
+    t.integer  "author_id",   :null => false
+    t.integer  "feature_id",  :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "category_features", :force => true do |t|
