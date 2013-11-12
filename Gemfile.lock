@@ -116,10 +116,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 03c4b226a32fe1a881121e8e2aeeee4ac7584848
-  tag: v3.4.3
+  revision: 67e7ec5563e91ca65a92b5c7897b413bd119a2ce
+  tag: v3.4.4
   specs:
-    places_engine (3.4.3)
+    places_engine (3.4.4)
       rails (~> 3.2.11)
 
 GIT
@@ -319,7 +319,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.4.3)!
+  places_engine (= 3.4.4)!
   places_integration (= 2.0.6)!
   proxy_engine (= 2.0.2)!
   rack-openid
