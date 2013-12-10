@@ -7,8 +7,8 @@ if !defined? APP_URI
   when InterfaceUtils::Server::PRODUCTION
     APP_URI = "places.#{InterfaceUtils::Server.get_domain}"
   when InterfaceUtils::Server::LOCAL
-    APP_URI = 'http://localhost/shanti/places/'
+    APP_URI = 'localhost/shanti/places'
   else
-    APP_URI = "http://places.#{InterfaceUtils::Server.get_domain}/"
+    APP_URI = "places.#{InterfaceUtils::Server.get_domain}"
   end
 end
