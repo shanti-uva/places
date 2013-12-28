@@ -28,7 +28,7 @@ gem 'georuby'
 gem 'jquery-rails'
 gem 'tinymce-rails', '3.5.6' # compatible with ruby 1.8.7
 gem 'memcache-client'
-gem 'newrelic_rpm' # '3.5.8.72'
+# gem 'newrelic_rpm' # '3.5.8.72'
 gem 'exception_notification'
 gem 'open_id_authentication'
 gem 'dynamic_form'
