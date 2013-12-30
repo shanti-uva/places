@@ -13,6 +13,7 @@ tmp/
 *.csv
 *.txt
 config/database.yml
+config/newrelic.yml
 config/environments/quandu_*.rb
 config/environments/bleak_house.rb
 doc/plugins/*
