@@ -27,10 +27,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 86efdd1001cc59ef7fb640fcc48bbc6f19b72731
-  tag: v1.7.3
+  revision: 6855110cb7bdd3f93765e8cd2e1a98240b7960f7
+  tag: v1.7.4
   specs:
-    kmaps_engine (1.7.3)
+    kmaps_engine (1.7.4)
       rails (~> 3.2.13)
 
 GIT
@@ -75,10 +75,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 8aba88807c6b6984d8da6fe176780c7027275994
-  tag: v2.0.5
+  revision: e34be3b4af6006b6f063d3ad46bcc04e943218e8
+  tag: v2.0.6
   specs:
-    complex_dates (2.0.5)
+    complex_dates (2.0.6)
       rails (~> 3.2.11)
 
 GIT
@@ -299,7 +299,7 @@ DEPENDENCIES
   annotate
   authenticated_system (= 2.1.5)!
   coffee-rails (~> 3.2.1)
-  complex_dates (= 2.0.5)!
+  complex_dates (= 2.0.6)!
   complex_scripts (= 2.1.0)!
   dictionary_integration (= 2.0.2)!
   dynamic_form
@@ -309,7 +309,7 @@ DEPENDENCIES
   interface_utils (= 2.0.6)!
   jquery-rails
   json
-  kmaps_engine (= 1.7.3)!
+  kmaps_engine (= 1.7.4)!
   libv8 (= 3.3.10.2)
   makandra_resource_controller
   memcache-client
