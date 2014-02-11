@@ -54,7 +54,7 @@ gem 'kmaps_engine',               '1.9.3',        :git => 'git://github.com/shan
 gem 'places_integration',         '2.0.6',        :git => 'git://github.com/thl/places_integration.git',          :tag => 'v2.0.6' #:path => '../../thl/engines/places_integration'
 gem 'places_engine',              '3.6.1',        :git => 'git://github.com/thl/places_engine.git',               :tag => 'v3.6.1' #:path => '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.0.2',        :git => 'git://github.com/thl/proxy_engine.git',                :tag => 'v2.0.2' #:path => '../../thl/engines/proxy_engine'
-gem 'shanti_integration',         '2.2.2',        :git => 'git://github.com/shanti-uva/shanti_integration.git',   :tag => 'v2.2.2' #:path => '../engines/shanti_integration'
+gem 'shanti_integration',         '2.2.3',        :git => 'git://github.com/shanti-uva/shanti_integration.git',   :tag => 'v2.2.3' #:path => '../engines/shanti_integration'
 gem 'subjects_integration',       '0.0.7',        :git => 'git://github.com/shanti-uva/subjects_integration.git', :tag => 'v0.0.7' #:path => '../engines/subjects_integration'
 gem 'universal_navigation',       '2.0.9',        :git => 'git://github.com/thl/universal_navigation.git',        :tag => 'v2.0.9' #:path => '../../thl/engines/universal_navigation'
 
