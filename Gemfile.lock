@@ -19,10 +19,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: f46752c1f4e795f69acd07225e9d2693c4c94722
-  tag: v2.0.0
+  revision: 4836c9377d51c0f7a7c101da252c123ff803045a
+  tag: v2.0.1
   specs:
-    kmaps_engine (2.0.0)
+    kmaps_engine (2.0.1)
       rails (~> 3.2.13)
 
 GIT
@@ -268,7 +268,7 @@ GEM
       ref
     thor (0.18.1)
     tilt (1.4.1)
-    tinymce-rails (4.0.16)
+    tinymce-rails (3.5.9)
       railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot
@@ -298,7 +298,7 @@ DEPENDENCIES
   hpricot
   interface_utils (= 2.1.0)!
   jquery-rails
-  kmaps_engine (= 2.0.0)!
+  kmaps_engine (= 2.0.1)!
   libv8
   makandra_resource_controller
   memcache-client
@@ -319,7 +319,7 @@ DEPENDENCIES
   spawn (= 1.0.1)!
   subjects_integration (= 0.1.0)!
   therubyracer
-  tinymce-rails
+  tinymce-rails (= 3.5.9)
   uglifier
   universal_navigation (= 2.1.0)!
   will_paginate
