@@ -19,10 +19,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 4836c9377d51c0f7a7c101da252c123ff803045a
-  tag: v2.0.1
+  revision: d2838e4b79f9ea54ce7f07bb9a460a4583258f62
+  tag: v2.0.2
   specs:
-    kmaps_engine (2.0.1)
+    kmaps_engine (2.0.2)
       rails (~> 3.2.13)
 
 GIT
@@ -67,10 +67,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/authenticated_system.git
-  revision: 95bce5b5301a6b570a12252f05c4adbc89a460d0
-  tag: v2.2.0
+  revision: 781d8b54ea9a77e99d7ef8bf401d3edd8829407f
+  tag: v2.2.1
   specs:
-    authenticated_system (2.2.0)
+    authenticated_system (2.2.1)
       rails (~> 3.2.8)
 
 GIT
@@ -83,10 +83,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_scripts.git
-  revision: 6e9f1233d7edd102e6799e6417e05e60d4ad2f87
-  tag: v2.2.0
+  revision: 8143149f9ff13cd9b3e743bb6d2a08885ac97f7a
+  tag: v2.2.1
   specs:
-    complex_scripts (2.2.0)
+    complex_scripts (2.2.1)
       passiverecord (= 0.2)
       rails (~> 3.2.8)
 
@@ -100,10 +100,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: e934e4669c7d53cb7f3bc80b148845619bd4155a
-  tag: v2.1.0
+  revision: ef18ff71bdf57b08ce359c1b7c6255c86575bacc
+  tag: v2.1.1
   specs:
-    interface_utils (2.1.0)
+    interface_utils (2.1.1)
       rails (~> 3.2.11)
 
 GIT
@@ -286,19 +286,19 @@ DEPENDENCIES
   active_resource_extensions (= 2.1.0)!
   acts_as_family_tree (= 1.1.0)!
   annotate
-  authenticated_system (= 2.2.0)!
+  authenticated_system (= 2.2.1)!
   coffee-rails
   complex_dates (= 2.1.0)!
-  complex_scripts (= 2.2.0)!
+  complex_scripts (= 2.2.1)!
   debugger
   dictionary_integration (= 2.1.0)!
   dynamic_form
   exception_notification
   georuby
   hpricot
-  interface_utils (= 2.1.0)!
+  interface_utils (= 2.1.1)!
   jquery-rails
-  kmaps_engine (= 2.0.1)!
+  kmaps_engine (= 2.0.2)!
   libv8
   makandra_resource_controller
   memcache-client
