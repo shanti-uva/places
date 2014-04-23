@@ -19,18 +19,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 0c9a3db8c9c31b85cd8cde04a2a745eb47aebfea
-  tag: v2.1.0
+  revision: 524a623ff139effb9da25b385ed2862e06fef98a
+  tag: v2.1.1
   specs:
-    kmaps_engine (2.1.0)
+    kmaps_engine (2.1.1)
       rails (~> 3.2.13)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: b493381ab2ce056acaf3b78ae35f6935dfb771d2
-  tag: v2.3.0
+  revision: dff0d830b568af8a137dde02f510a886b1b3a2cd
+  tag: v2.3.1
   specs:
-    shanti_integration (2.3.0)
+    shanti_integration (2.3.1)
       rails (~> 3.2.8)
 
 GIT
@@ -91,19 +91,11 @@ GIT
       rails (~> 3.2.8)
 
 GIT
-  remote: git://github.com/thl/dictionary_integration.git
-  revision: 36e31e2b8bed8d327486f20020855f72c898b1dc
-  tag: v2.1.0
-  specs:
-    dictionary_integration (2.1.0)
-      rails (~> 3.2.9)
-
-GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: fcd188e442c8c72f5f931396be5c8bcaa7341d73
-  tag: v2.1.2
+  revision: fa4d30fa04e7120cce1c117eb54797aa7f0b3992
+  tag: v2.1.3
   specs:
-    interface_utils (2.1.2)
+    interface_utils (2.1.3)
       rails (~> 3.2.11)
 
 GIT
@@ -116,10 +108,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: ff9115d03e4e15db12a1795e19bc8625f487ba87
-  tag: v3.7.2
+  revision: 92ac8982dac73f73bf65337d003e58e028dd330d
+  tag: v3.7.3
   specs:
-    places_engine (3.7.2)
+    places_engine (3.7.3)
       rails (~> 3.2.11)
 
 GIT
@@ -291,14 +283,13 @@ DEPENDENCIES
   complex_dates (= 2.1.0)!
   complex_scripts (= 2.2.2)!
   debugger
-  dictionary_integration (= 2.1.0)!
   dynamic_form
   exception_notification
   georuby
   hpricot
-  interface_utils (= 2.1.2)!
+  interface_utils (= 2.1.3)!
   jquery-rails
-  kmaps_engine (= 2.1.0)!
+  kmaps_engine (= 2.1.1)!
   libv8
   makandra_resource_controller
   memcache-client
@@ -307,14 +298,14 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.7.2)!
+  places_engine (= 3.7.3)!
   places_integration (= 2.1.0)!
   proxy_engine (= 2.1.0)!
   rack-openid
   rails (= 3.2.13)
   restful-authentication (= 2.0.0.beta1)!
   sass-rails
-  shanti_integration (= 2.3.0)!
+  shanti_integration (= 2.3.1)!
   spatial_adapter (= 1.3.1)!
   spawn (= 1.0.1)!
   subjects_integration (= 0.1.0)!
