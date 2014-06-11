@@ -19,10 +19,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 255a87eab255c85f133abfef53cab51d8fc7a0da
-  tag: v2.2.1
+  revision: 42b391d884063c87d111002ecefb356b741aafca
+  tag: v2.2.2
   specs:
-    kmaps_engine (2.2.1)
+    kmaps_engine (2.2.2)
       rails (~> 3.2.13)
 
 GIT
@@ -51,10 +51,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
-  revision: edcb8f5ea5f0e132911e2a5b58fdb1aba075945a
-  tag: v2.1.0
+  revision: db24f12773a5cb3c216e68c40648787b005fb090
+  tag: v2.1.1
   specs:
-    active_resource_extensions (2.1.0)
+    active_resource_extensions (2.1.1)
       rails (~> 3.2.8)
 
 GIT
@@ -108,10 +108,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 4d9db58747ea4269b0d04482fd74ca58e2320ffe
-  tag: v3.7.5
+  revision: ba01eb88ffe1448d2e4d93b379788458194e9cac
+  tag: v3.7.6
   specs:
-    places_engine (3.7.5)
+    places_engine (3.7.6)
       rails (~> 3.2.11)
 
 GIT
@@ -275,7 +275,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_resource_extensions (= 2.1.0)!
+  active_resource_extensions (= 2.1.1)!
   acts_as_family_tree (= 1.1.0)!
   annotate
   authenticated_system (= 2.2.3)!
@@ -289,7 +289,7 @@ DEPENDENCIES
   hpricot
   interface_utils (= 2.1.3)!
   jquery-rails
-  kmaps_engine (= 2.2.1)!
+  kmaps_engine (= 2.2.2)!
   libv8
   makandra_resource_controller
   memcache-client
@@ -298,7 +298,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 3.7.5)!
+  places_engine (= 3.7.6)!
   places_integration (= 2.1.0)!
   proxy_engine (= 2.1.0)!
   rack-openid
