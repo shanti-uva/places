@@ -42,7 +42,7 @@ gem 'restful-authentication',     '2.0.0.beta1',  :git => 'git://github.com/Sati
 gem 'spawn',                      '1.0.1',        :git => 'git://github.com/kartofflly/spawn.git'
 # gem 'spatial_adapter',            '1.3.1',        :git => 'git://github.com/movableink/spatial_adapter.git' will try this later for rails4
 gem 'spatial_adapter',            '1.3.1',        :git => 'git://github.com/tcrayford/spatial_adapter.git'
-gem 'active_resource_extensions', '2.1.1',        :git => 'git://github.com/thl/active_resource_extensions.git',  :tag => 'v2.1.1' #:path => '../../thl/engines/active_resource_extensions'
+gem 'active_resource_extensions', '2.1.2',        :git => 'git://github.com/thl/active_resource_extensions.git',  :tag => 'v2.1.2' #:path => '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.1.0',        :git => 'git://github.com/thl/acts_as_family_tree.git',         :tag => 'v1.1.0' #:path => '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.2.3',        :git => 'git://github.com/thl/authenticated_system.git',        :tag => 'v2.2.3' #:path => '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.1.0',        :git => 'git://github.com/thl/complex_dates.git',               :tag => 'v2.1.0' #:path => '../../thl/engines/complex_dates'
