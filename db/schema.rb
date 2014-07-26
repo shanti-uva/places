@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023052437) do
+ActiveRecord::Schema.define(:version => 20140723222058) do
 
   create_table "Birth_rate", :id => false, :force => true do |t|
     t.integer "gid",                       :null => false
@@ -637,7 +638,7 @@ ActiveRecord::Schema.define(:version => 20131023052437) do
 
   add_index "shapes", ["fid"], :name => "shapes_fid"
   add_index "shapes", ["geometry"], :name => "features_geometry_gist", :spatial => true
-  add_index "shapes", [], :name => "shapes_geotype"
+  add_index "shapes", [nil], :name => "shapes_geotype"
 
   create_table "simple_chinese", :primary_key => "gid", :force => true do |t|
     t.integer  "fid"
@@ -792,6 +793,14 @@ ActiveRecord::Schema.define(:version => 20131023052437) do
     t.datetime "updated_at"
     t.string   "identity_url"
     t.string   "shibboleth_id"
+  end
+
+  create_table "web_pages", :force => true do |t|
+    t.string   "path",        :null => false
+    t.string   "title",       :null => false
+    t.integer  "citation_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "xml_documents", :force => true do |t|
