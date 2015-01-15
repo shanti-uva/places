@@ -12,3 +12,4 @@
 //
 //= require kmaps_engine/application
 //= require universal_navigation/application
+//= require shanti_integration/application
