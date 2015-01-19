@@ -13,10 +13,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 86b9107a2d1ead6cdbdcd589895b59a1a9d8a8a5
-  tag: v3.0.3
+  revision: e9b641bd96634b7814c3d5842c397922e2b421f1
+  tag: v3.0.4
   specs:
-    kmaps_engine (3.0.3)
+    kmaps_engine (3.0.4)
       rails (~> 4.0)
 
 GIT
@@ -87,18 +87,18 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 15cc11f59fd461081ffeea9b57fa536aa780b249
-  tag: v2.2.4
+  revision: 03ca612d3f7f06238956d8eb787bd3fe0db88767
+  tag: v2.2.5
   specs:
-    mms_integration (2.2.4)
+    mms_integration (2.2.5)
       rails (~> 4.0)
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 0f8276692e13c017592de6d4935f9f34d0b0e79b
-  tag: v4.0.0
+  revision: 9c1bcc6ad2b521d1aa0127135328d9c857bc6395
+  tag: v4.0.1
   specs:
-    places_engine (4.0.0)
+    places_engine (4.0.1)
       rails (~> 4.0)
 
 GIT
@@ -309,15 +309,15 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.0.3)!
+  kmaps_engine (= 3.0.4)!
   makandra_resource_controller
   memcache-client
-  mms_integration (= 2.2.4)!
+  mms_integration (= 2.2.5)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 4.0.0)!
+  places_engine (= 4.0.1)!
   places_integration (= 2.1.3)!
   protected_attributes
   proxy_engine (= 2.1.2)!
