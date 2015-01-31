@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: 82456667537fc892872217cad0124a82b1c11f88
-  tag: v0.1.3
+  revision: 87e6c47a304e68e198953d2f5995648aa7f52459
+  tag: v0.1.4
   specs:
-    subjects_integration (0.1.3)
+    subjects_integration (0.1.4)
       rails (~> 4.0)
 
 GIT
@@ -95,10 +95,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: d6a177523d7a1d7e932883fc82f269f5d75dfd45
-  tag: v4.0.3
+  revision: 084fdbef3754a6802976f41747b27604729929f6
+  tag: v4.0.4
   specs:
-    places_engine (4.0.3)
+    places_engine (4.0.4)
       rails (~> 4.0)
 
 GIT
@@ -317,7 +317,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 4.0.3)!
+  places_engine (= 4.0.4)!
   places_integration (= 2.1.3)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -330,7 +330,7 @@ DEPENDENCIES
   shanti_integration (= 3.1.0)!
   spawnling
   spring
-  subjects_integration (= 0.1.3)!
+  subjects_integration (= 0.1.4)!
   therubyracer
   tinymce-rails
   turbolinks

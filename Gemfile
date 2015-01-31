@@ -71,10 +71,10 @@ gem 'interface_utils',            '2.2.1',        github: 'thl/interface_utils',
 gem 'mms_integration',            '2.2.5',        github: 'thl/mms_integration',             tag: 'v2.2.5' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '3.0.7',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.0.7' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.3',        github: 'thl/places_integration',          tag: 'v2.1.3' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.0.3',        github: 'thl/places_engine',               tag: 'v4.0.3' #path: '../../thl/engines/places_engine'
+gem 'places_engine',              '4.0.4',        github: 'thl/places_engine',               tag: 'v4.0.4' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
 gem 'shanti_integration',         '3.1.0',        github: 'shanti-uva/shanti_integration',   tag: 'v3.1.0' #path: '../engines/shanti_integration'
-gem 'subjects_integration',       '0.1.3',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.3' #path: '../engines/subjects_integration'
+gem 'subjects_integration',       '0.1.4',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.4' #path: '../engines/subjects_integration'
 gem 'universal_navigation',       '3.0.1',        github: 'thl/universal_navigation',        tag: 'v3.0.1' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
