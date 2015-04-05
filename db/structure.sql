@@ -8590,38 +8590,6 @@ CREATE SEQUENCE open_id_authentication_nonces_id_seq
 
 
 --
--- Name: oral_sources; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE oral_sources (
-    id integer NOT NULL,
-    name character varying(255) NOT NULL,
-    code character varying(255),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
--- Name: oral_sources_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE oral_sources_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: oral_sources_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE oral_sources_id_seq OWNED BY oral_sources.id;
-
-
---
 -- Name: pages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -9765,13 +9733,6 @@ ALTER TABLE ONLY notes ALTER COLUMN id SET DEFAULT nextval('notes_id_seq'::regcl
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oral_sources ALTER COLUMN id SET DEFAULT nextval('oral_sources_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
 ALTER TABLE ONLY pages ALTER COLUMN id SET DEFAULT nextval('pages_id_seq'::regclass);
 
 
@@ -10282,14 +10243,6 @@ ALTER TABLE ONLY note_titles
 
 ALTER TABLE ONLY notes
     ADD CONSTRAINT notes_pkey PRIMARY KEY (id);
-
-
---
--- Name: oral_sources_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY oral_sources
-    ADD CONSTRAINT oral_sources_pkey PRIMARY KEY (id);
 
 
 --
