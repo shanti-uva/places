@@ -455,12 +455,277 @@ CREATE FUNCTION _st_within(geometry, geometry) RETURNS boolean
 
 
 --
+-- Name: addauth(text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION addauth(text) RETURNS boolean
+    LANGUAGE plpgsql
+    AS $_$ 
+DECLARE
+	lockid alias for $1;
+	okay boolean;
+	myrec record;
+BEGIN
+	-- check to see if table exists
+	--  if not, CREATE TEMP TABLE mylock (transid xid, lockcode text)
+	okay := 'f';
+	FOR myrec IN SELECT * FROM pg_class WHERE relname = 'temp_lock_have_table' LOOP
+		okay := 't';
+	END LOOP; 
+	IF (okay <> 't') THEN 
+		CREATE TEMP TABLE temp_lock_have_table (transid xid, lockcode text);
+			-- this will only work from pgsql7.4 up
+			-- ON COMMIT DELETE ROWS;
+	END IF;
+
+	--  INSERT INTO mylock VALUES ( $1)
+--	EXECUTE 'INSERT INTO temp_lock_have_table VALUES ( '||
+--		quote_literal(getTransactionID()) || ',' ||
+--		quote_literal(lockid) ||')';
+
+	INSERT INTO temp_lock_have_table VALUES (getTransactionID(), lockid);
+
+	RETURN true::boolean;
+END;
+$_$;
+
+
+--
 -- Name: addbbox(geometry); Type: FUNCTION; Schema: public; Owner: -
 --
 
 CREATE FUNCTION addbbox(geometry) RETURNS geometry
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'LWGEOM_addBBOX';
+
+
+--
+-- Name: addgeometrycolumn(character varying, character varying, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION addgeometrycolumn(character varying, character varying, integer, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$ 
+DECLARE
+	ret  text;
+BEGIN
+	SELECT AddGeometryColumn('','',$1,$2,$3,$4,$5) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: addgeometrycolumn(character varying, character varying, character varying, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION addgeometrycolumn(character varying, character varying, character varying, integer, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STABLE STRICT
+    AS $_$ 
+DECLARE
+	ret  text;
+BEGIN
+	SELECT AddGeometryColumn('',$1,$2,$3,$4,$5,$6) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: addgeometrycolumn(character varying, character varying, character varying, character varying, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION addgeometrycolumn(character varying, character varying, character varying, character varying, integer, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	catalog_name alias for $1;
+	schema_name alias for $2;
+	table_name alias for $3;
+	column_name alias for $4;
+	new_srid alias for $5;
+	new_type alias for $6;
+	new_dim alias for $7;
+	rec RECORD;
+	sr varchar;
+	real_schema name;
+	sql text;
+
+BEGIN
+
+	-- Verify geometry type
+	IF ( NOT ( (new_type = 'GEOMETRY') OR
+			   (new_type = 'GEOMETRYCOLLECTION') OR
+			   (new_type = 'POINT') OR
+			   (new_type = 'MULTIPOINT') OR
+			   (new_type = 'POLYGON') OR
+			   (new_type = 'MULTIPOLYGON') OR
+			   (new_type = 'LINESTRING') OR
+			   (new_type = 'MULTILINESTRING') OR
+			   (new_type = 'GEOMETRYCOLLECTIONM') OR
+			   (new_type = 'POINTM') OR
+			   (new_type = 'MULTIPOINTM') OR
+			   (new_type = 'POLYGONM') OR
+			   (new_type = 'MULTIPOLYGONM') OR
+			   (new_type = 'LINESTRINGM') OR
+			   (new_type = 'MULTILINESTRINGM') OR
+			   (new_type = 'CIRCULARSTRING') OR
+			   (new_type = 'CIRCULARSTRINGM') OR
+			   (new_type = 'COMPOUNDCURVE') OR
+			   (new_type = 'COMPOUNDCURVEM') OR
+			   (new_type = 'CURVEPOLYGON') OR
+			   (new_type = 'CURVEPOLYGONM') OR
+			   (new_type = 'MULTICURVE') OR
+			   (new_type = 'MULTICURVEM') OR
+			   (new_type = 'MULTISURFACE') OR
+			   (new_type = 'MULTISURFACEM')) )
+	THEN
+		RAISE EXCEPTION 'Invalid type name - valid ones are:
+	POINT, MULTIPOINT,
+	LINESTRING, MULTILINESTRING,
+	POLYGON, MULTIPOLYGON,
+	CIRCULARSTRING, COMPOUNDCURVE, MULTICURVE,
+	CURVEPOLYGON, MULTISURFACE,
+	GEOMETRY, GEOMETRYCOLLECTION,
+	POINTM, MULTIPOINTM,
+	LINESTRINGM, MULTILINESTRINGM,
+	POLYGONM, MULTIPOLYGONM,
+	CIRCULARSTRINGM, COMPOUNDCURVEM, MULTICURVEM
+	CURVEPOLYGONM, MULTISURFACEM,
+	or GEOMETRYCOLLECTIONM';
+		RETURN 'fail';
+	END IF;
+
+
+	-- Verify dimension
+	IF ( (new_dim >4) OR (new_dim <0) ) THEN
+		RAISE EXCEPTION 'invalid dimension';
+		RETURN 'fail';
+	END IF;
+
+	IF ( (new_type LIKE '%M') AND (new_dim!=3) ) THEN
+		RAISE EXCEPTION 'TypeM needs 3 dimensions';
+		RETURN 'fail';
+	END IF;
+
+
+	-- Verify SRID
+	IF ( new_srid != -1 ) THEN
+		SELECT SRID INTO sr FROM spatial_ref_sys WHERE SRID = new_srid;
+		IF NOT FOUND THEN
+			RAISE EXCEPTION 'AddGeometryColumns() - invalid SRID';
+			RETURN 'fail';
+		END IF;
+	END IF;
+
+
+	-- Verify schema
+	IF ( schema_name IS NOT NULL AND schema_name != '' ) THEN
+		sql := 'SELECT nspname FROM pg_namespace ' ||
+			'WHERE text(nspname) = ' || quote_literal(schema_name) ||
+			'LIMIT 1';
+		RAISE DEBUG '%', sql;
+		EXECUTE sql INTO real_schema;
+
+		IF ( real_schema IS NULL ) THEN
+			RAISE EXCEPTION 'Schema % is not a valid schemaname', quote_literal(schema_name);
+			RETURN 'fail';
+		END IF;
+	END IF;
+
+	IF ( real_schema IS NULL ) THEN
+		RAISE DEBUG 'Detecting schema';
+		sql := 'SELECT n.nspname AS schemaname ' ||
+			'FROM pg_catalog.pg_class c ' ||
+			  'JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace ' ||
+			'WHERE c.relkind = ' || quote_literal('r') ||
+			' AND n.nspname NOT IN (' || quote_literal('pg_catalog') || ', ' || quote_literal('pg_toast') || ')' ||
+			' AND pg_catalog.pg_table_is_visible(c.oid)' ||
+			' AND c.relname = ' || quote_literal(table_name);
+		RAISE DEBUG '%', sql;
+		EXECUTE sql INTO real_schema;
+
+		IF ( real_schema IS NULL ) THEN
+			RAISE EXCEPTION 'Table % does not occur in the search_path', quote_literal(table_name);
+			RETURN 'fail';
+		END IF;
+	END IF;
+	
+
+	-- Add geometry column to table
+	sql := 'ALTER TABLE ' ||
+		quote_ident(real_schema) || '.' || quote_ident(table_name)
+		|| ' ADD COLUMN ' || quote_ident(column_name) ||
+		' geometry ';
+	RAISE DEBUG '%', sql;
+	EXECUTE sql;
+
+
+	-- Delete stale record in geometry_columns (if any)
+	sql := 'DELETE FROM geometry_columns WHERE
+		f_table_catalog = ' || quote_literal('') ||
+		' AND f_table_schema = ' ||
+		quote_literal(real_schema) ||
+		' AND f_table_name = ' || quote_literal(table_name) ||
+		' AND f_geometry_column = ' || quote_literal(column_name);
+	RAISE DEBUG '%', sql;
+	EXECUTE sql;
+
+
+	-- Add record in geometry_columns
+	sql := 'INSERT INTO geometry_columns (f_table_catalog,f_table_schema,f_table_name,' ||
+										  'f_geometry_column,coord_dimension,srid,type)' ||
+		' VALUES (' ||
+		quote_literal('') || ',' ||
+		quote_literal(real_schema) || ',' ||
+		quote_literal(table_name) || ',' ||
+		quote_literal(column_name) || ',' ||
+		new_dim::text || ',' ||
+		new_srid::text || ',' ||
+		quote_literal(new_type) || ')';
+	RAISE DEBUG '%', sql;
+	EXECUTE sql;
+
+
+	-- Add table CHECKs
+	sql := 'ALTER TABLE ' ||
+		quote_ident(real_schema) || '.' || quote_ident(table_name)
+		|| ' ADD CONSTRAINT '
+		|| quote_ident('enforce_srid_' || column_name)
+		|| ' CHECK (ST_SRID(' || quote_ident(column_name) ||
+		') = ' || new_srid::text || ')' ;
+	RAISE DEBUG '%', sql;
+	EXECUTE sql;
+
+	sql := 'ALTER TABLE ' ||
+		quote_ident(real_schema) || '.' || quote_ident(table_name)
+		|| ' ADD CONSTRAINT '
+		|| quote_ident('enforce_dims_' || column_name)
+		|| ' CHECK (ST_NDims(' || quote_ident(column_name) ||
+		') = ' || new_dim::text || ')' ;
+	RAISE DEBUG '%', sql;
+	EXECUTE sql;
+
+	IF ( NOT (new_type = 'GEOMETRY')) THEN
+		sql := 'ALTER TABLE ' ||
+			quote_ident(real_schema) || '.' || quote_ident(table_name) || ' ADD CONSTRAINT ' ||
+			quote_ident('enforce_geotype_' || column_name) ||
+			' CHECK (GeometryType(' ||
+			quote_ident(column_name) || ')=' ||
+			quote_literal(new_type) || ' OR (' ||
+			quote_ident(column_name) || ') is null)';
+		RAISE DEBUG '%', sql;
+		EXECUTE sql;
+	END IF;
+
+	RETURN
+		real_schema || '.' ||
+		table_name || '.' || column_name ||
+		' SRID:' || new_srid::text ||
+		' TYPE:' || new_type ||
+		' DIMS:' || new_dim::text || ' ';
+END;
+$_$;
 
 
 --
@@ -704,6 +969,65 @@ CREATE FUNCTION asukml(geometry, integer, integer) RETURNS text
 CREATE FUNCTION azimuth(geometry, geometry) RETURNS double precision
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'LWGEOM_azimuth';
+
+
+--
+-- Name: bdmpolyfromtext(text, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION bdmpolyfromtext(text, integer) RETURNS geometry
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$ 
+DECLARE
+	geomtext alias for $1;
+	srid alias for $2;
+	mline geometry;
+	geom geometry;
+BEGIN
+	mline := MultiLineStringFromText(geomtext, srid);
+
+	IF mline IS NULL
+	THEN
+		RAISE EXCEPTION 'Input is not a MultiLinestring';
+	END IF;
+
+	geom := multi(BuildArea(mline));
+
+	RETURN geom;
+END;
+$_$;
+
+
+--
+-- Name: bdpolyfromtext(text, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION bdpolyfromtext(text, integer) RETURNS geometry
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$ 
+DECLARE
+	geomtext alias for $1;
+	srid alias for $2;
+	mline geometry;
+	geom geometry;
+BEGIN
+	mline := MultiLineStringFromText(geomtext, srid);
+
+	IF mline IS NULL
+	THEN
+		RAISE EXCEPTION 'Input is not a MultiLinestring';
+	END IF;
+
+	geom := BuildArea(mline);
+
+	IF GeometryType(geom) != 'POLYGON'
+	THEN
+		RAISE EXCEPTION 'Input returns more then a single polygon, try using BdMPolyFromText instead';
+	END IF;
+
+	RETURN geom;
+END;
+$_$;
 
 
 --
@@ -959,6 +1283,38 @@ CREATE FUNCTION checkauth(text, text) RETURNS integer
 
 
 --
+-- Name: checkauth(text, text, text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION checkauth(text, text, text) RETURNS integer
+    LANGUAGE plpgsql
+    AS $_$ 
+DECLARE
+	schema text;
+BEGIN
+	IF NOT LongTransactionsEnabled() THEN
+		RAISE EXCEPTION 'Long transaction support disabled, use EnableLongTransaction() to enable.';
+	END IF;
+
+	if ( $1 != '' ) THEN
+		schema = $1;
+	ELSE
+		SELECT current_schema() into schema;
+	END IF;
+
+	-- TODO: check for an already existing trigger ?
+
+	EXECUTE 'CREATE TRIGGER check_auth BEFORE UPDATE OR DELETE ON ' 
+		|| quote_ident(schema) || '.' || quote_ident($2)
+		||' FOR EACH ROW EXECUTE PROCEDURE CheckAuthTrigger('
+		|| quote_literal($3) || ')';
+
+	RETURN 0;
+END;
+$_$;
+
+
+--
 -- Name: checkauthtrigger(); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -1103,6 +1459,48 @@ CREATE FUNCTION dimension(geometry) RETURNS integer
 
 
 --
+-- Name: disablelongtransactions(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION disablelongtransactions() RETURNS text
+    LANGUAGE plpgsql
+    AS $$ 
+DECLARE
+	rec RECORD;
+
+BEGIN
+
+	--
+	-- Drop all triggers applied by CheckAuth()
+	--
+	FOR rec IN
+		SELECT c.relname, t.tgname, t.tgargs FROM pg_trigger t, pg_class c, pg_proc p
+		WHERE p.proname = 'checkauthtrigger' and t.tgfoid = p.oid and t.tgrelid = c.oid
+	LOOP
+		EXECUTE 'DROP TRIGGER ' || quote_ident(rec.tgname) ||
+			' ON ' || quote_ident(rec.relname);
+	END LOOP;
+
+	--
+	-- Drop the authorization_table table
+	--
+	FOR rec IN SELECT * FROM pg_class WHERE relname = 'authorization_table' LOOP
+		DROP TABLE authorization_table;
+	END LOOP;
+
+	--
+	-- Drop the authorized_tables view
+	--
+	FOR rec IN SELECT * FROM pg_class WHERE relname = 'authorized_tables' LOOP
+		DROP VIEW authorized_tables;
+	END LOOP;
+
+	RETURN 'Long transactions support disabled';
+END;
+$$;
+
+
+--
 -- Name: disjoint(geometry, geometry); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -1139,6 +1537,102 @@ CREATE FUNCTION dropbbox(geometry) RETURNS geometry
 
 
 --
+-- Name: dropgeometrycolumn(character varying, character varying); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION dropgeometrycolumn(character varying, character varying) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	ret text;
+BEGIN
+	SELECT DropGeometryColumn('','',$1,$2) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: dropgeometrycolumn(character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION dropgeometrycolumn(character varying, character varying, character varying) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	ret text;
+BEGIN
+	SELECT DropGeometryColumn('',$1,$2,$3) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: dropgeometrycolumn(character varying, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION dropgeometrycolumn(character varying, character varying, character varying, character varying) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	catalog_name alias for $1; 
+	schema_name alias for $2;
+	table_name alias for $3;
+	column_name alias for $4;
+	myrec RECORD;
+	okay boolean;
+	real_schema name;
+
+BEGIN
+
+
+	-- Find, check or fix schema_name
+	IF ( schema_name != '' ) THEN
+		okay = 'f';
+
+		FOR myrec IN SELECT nspname FROM pg_namespace WHERE text(nspname) = schema_name LOOP
+			okay := 't';
+		END LOOP;
+
+		IF ( okay <> 't' ) THEN
+			RAISE NOTICE 'Invalid schema name - using current_schema()';
+			SELECT current_schema() into real_schema;
+		ELSE
+			real_schema = schema_name;
+		END IF;
+	ELSE
+		SELECT current_schema() into real_schema;
+	END IF;
+
+ 	-- Find out if the column is in the geometry_columns table
+	okay = 'f';
+	FOR myrec IN SELECT * from geometry_columns where f_table_schema = text(real_schema) and f_table_name = table_name and f_geometry_column = column_name LOOP
+		okay := 't';
+	END LOOP; 
+	IF (okay <> 't') THEN 
+		RAISE EXCEPTION 'column not found in geometry_columns table';
+		RETURN 'f';
+	END IF;
+
+	-- Remove ref from geometry_columns table
+	EXECUTE 'delete from geometry_columns where f_table_schema = ' ||
+		quote_literal(real_schema) || ' and f_table_name = ' ||
+		quote_literal(table_name)  || ' and f_geometry_column = ' ||
+		quote_literal(column_name);
+	
+	-- Remove table column
+	EXECUTE 'ALTER TABLE ' || quote_ident(real_schema) || '.' ||
+		quote_ident(table_name) || ' DROP COLUMN ' ||
+		quote_ident(column_name);
+
+	RETURN real_schema || '.' || table_name || '.' || column_name ||' effectively removed.';
+	
+END;
+$_$;
+
+
+--
 -- Name: dropgeometrytable(character varying); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -1157,6 +1651,46 @@ CREATE FUNCTION dropgeometrytable(character varying, character varying) RETURNS 
 
 
 --
+-- Name: dropgeometrytable(character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION dropgeometrytable(character varying, character varying, character varying) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	catalog_name alias for $1; 
+	schema_name alias for $2;
+	table_name alias for $3;
+	real_schema name;
+
+BEGIN
+
+	IF ( schema_name = '' ) THEN
+		SELECT current_schema() into real_schema;
+	ELSE
+		real_schema = schema_name;
+	END IF;
+
+	-- Remove refs from geometry_columns table
+	EXECUTE 'DELETE FROM geometry_columns WHERE ' ||
+		'f_table_schema = ' || quote_literal(real_schema) ||
+		' AND ' ||
+		' f_table_name = ' || quote_literal(table_name);
+	
+	-- Remove table 
+	EXECUTE 'DROP TABLE '
+		|| quote_ident(real_schema) || '.' ||
+		quote_ident(table_name);
+
+	RETURN
+		real_schema || '.' ||
+		table_name ||' dropped.';
+	
+END;
+$_$;
+
+
+--
 -- Name: dump(geometry); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -1172,6 +1706,63 @@ CREATE FUNCTION dump(geometry) RETURNS SETOF geometry_dump
 CREATE FUNCTION dumprings(geometry) RETURNS SETOF geometry_dump
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'LWGEOM_dump_rings';
+
+
+--
+-- Name: enablelongtransactions(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION enablelongtransactions() RETURNS text
+    LANGUAGE plpgsql
+    AS $$ 
+DECLARE
+	"query" text;
+	exists bool;
+	rec RECORD;
+
+BEGIN
+
+	exists = 'f';
+	FOR rec IN SELECT * FROM pg_class WHERE relname = 'authorization_table'
+	LOOP
+		exists = 't';
+	END LOOP;
+
+	IF NOT exists
+	THEN
+		"query" = 'CREATE TABLE authorization_table (
+			toid oid, -- table oid
+			rid text, -- row id
+			expires timestamp,
+			authid text
+		)';
+		EXECUTE "query";
+	END IF;
+
+	exists = 'f';
+	FOR rec IN SELECT * FROM pg_class WHERE relname = 'authorized_tables'
+	LOOP
+		exists = 't';
+	END LOOP;
+
+	IF NOT exists THEN
+		"query" = 'CREATE VIEW authorized_tables AS ' ||
+			'SELECT ' ||
+			'n.nspname as schema, ' ||
+			'c.relname as table, trim(' ||
+			quote_literal(chr(92) || '000') ||
+			' from t.tgargs) as id_column ' ||
+			'FROM pg_trigger t, pg_class c, pg_proc p ' ||
+			', pg_namespace n ' ||
+			'WHERE p.proname = ' || quote_literal('checkauthtrigger') ||
+			' AND c.relnamespace = n.oid' ||
+			' AND t.tgfoid = p.oid and t.tgrelid = c.oid';
+		EXECUTE "query";
+	END IF;
+
+	RETURN 'Long transactions support enabled';
+END;
+$$;
 
 
 --
@@ -1262,6 +1853,151 @@ CREATE FUNCTION exteriorring(geometry) RETURNS geometry
 CREATE FUNCTION factor(chip) RETURNS real
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'CHIP_getFactor';
+
+
+--
+-- Name: find_extent(text, text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION find_extent(text, text) RETURNS box2d
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+DECLARE
+	tablename alias for $1;
+	columnname alias for $2;
+	myrec RECORD;
+
+BEGIN
+	FOR myrec IN EXECUTE 'SELECT extent("' || columnname || '") FROM "' || tablename || '"' LOOP
+		return myrec.extent;
+	END LOOP; 
+END;
+$_$;
+
+
+--
+-- Name: find_extent(text, text, text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION find_extent(text, text, text) RETURNS box2d
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+DECLARE
+	schemaname alias for $1;
+	tablename alias for $2;
+	columnname alias for $3;
+	myrec RECORD;
+
+BEGIN
+	FOR myrec IN EXECUTE 'SELECT extent("' || columnname || '") FROM "' || schemaname || '"."' || tablename || '"' LOOP
+		return myrec.extent;
+	END LOOP; 
+END;
+$_$;
+
+
+--
+-- Name: find_srid(character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION find_srid(character varying, character varying, character varying) RETURNS integer
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+DECLARE
+	schem text;
+	tabl text;
+	sr int4;
+BEGIN
+	IF $1 IS NULL THEN
+	  RAISE EXCEPTION 'find_srid() - schema is NULL!';
+	END IF;
+	IF $2 IS NULL THEN
+	  RAISE EXCEPTION 'find_srid() - table name is NULL!';
+	END IF;
+	IF $3 IS NULL THEN
+	  RAISE EXCEPTION 'find_srid() - column name is NULL!';
+	END IF;
+	schem = $1;
+	tabl = $2;
+-- if the table contains a . and the schema is empty
+-- split the table into a schema and a table
+-- otherwise drop through to default behavior
+	IF ( schem = '' and tabl LIKE '%.%' ) THEN
+	 schem = substr(tabl,1,strpos(tabl,'.')-1);
+	 tabl = substr(tabl,length(schem)+2);
+	ELSE
+	 schem = schem || '%';
+	END IF;
+
+	select SRID into sr from geometry_columns where f_table_schema like schem and f_table_name = tabl and f_geometry_column = $3;
+	IF NOT FOUND THEN
+	   RAISE EXCEPTION 'find_srid() - couldnt find the corresponding SRID - is the geometry registered in the GEOMETRY_COLUMNS table?  Is there an uppercase/lowercase missmatch?';
+	END IF;
+	return sr;
+END;
+$_$;
+
+
+--
+-- Name: fix_geometry_columns(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION fix_geometry_columns() RETURNS text
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	mislinked record;
+	result text;
+	linked integer;
+	deleted integer;
+	foundschema integer;
+BEGIN
+
+	-- Since 7.3 schema support has been added.
+	-- Previous postgis versions used to put the database name in
+	-- the schema column. This needs to be fixed, so we try to 
+	-- set the correct schema for each geometry_colums record
+	-- looking at table, column, type and srid.
+	UPDATE geometry_columns SET f_table_schema = n.nspname
+		FROM pg_namespace n, pg_class c, pg_attribute a,
+			pg_constraint sridcheck, pg_constraint typecheck
+	        WHERE ( f_table_schema is NULL
+		OR f_table_schema = ''
+	        OR f_table_schema NOT IN (
+	                SELECT nspname::varchar
+	                FROM pg_namespace nn, pg_class cc, pg_attribute aa
+	                WHERE cc.relnamespace = nn.oid
+	                AND cc.relname = f_table_name::name
+	                AND aa.attrelid = cc.oid
+	                AND aa.attname = f_geometry_column::name))
+	        AND f_table_name::name = c.relname
+	        AND c.oid = a.attrelid
+	        AND c.relnamespace = n.oid
+	        AND f_geometry_column::name = a.attname
+
+	        AND sridcheck.conrelid = c.oid
+		AND sridcheck.consrc LIKE '(srid(% = %)'
+	        AND sridcheck.consrc ~ textcat(' = ', srid::text)
+
+	        AND typecheck.conrelid = c.oid
+		AND typecheck.consrc LIKE
+		'((geometrytype(%) = ''%''::text) OR (% IS NULL))'
+	        AND typecheck.consrc ~ textcat(' = ''', type::text)
+
+	        AND NOT EXISTS (
+	                SELECT oid FROM geometry_columns gc
+	                WHERE c.relname::varchar = gc.f_table_name
+	                AND n.nspname::varchar = gc.f_table_schema
+	                AND a.attname::varchar = gc.f_geometry_column
+	        );
+
+	GET DIAGNOSTICS foundschema = ROW_COUNT;
+
+	-- no linkage to system table needed
+	return 'fixed:'||foundschema::text;
+
+END;
+$$;
 
 
 --
@@ -1753,6 +2489,19 @@ CREATE FUNCTION geosnoop(geometry) RETURNS geometry
 
 
 --
+-- Name: get_proj4_from_srid(integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION get_proj4_from_srid(integer) RETURNS text
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+BEGIN
+	RETURN proj4text::text FROM spatial_ref_sys WHERE srid= $1;
+END;
+$_$;
+
+
+--
 -- Name: getbbox(geometry); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -2098,6 +2847,79 @@ CREATE FUNCTION lockrow(text, text, text, text) RETURNS integer
 CREATE FUNCTION lockrow(text, text, text, timestamp without time zone) RETURNS integer
     LANGUAGE sql STRICT
     AS $_$ SELECT LockRow(current_schema(), $1, $2, $3, $4); $_$;
+
+
+--
+-- Name: lockrow(text, text, text, text, timestamp without time zone); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION lockrow(text, text, text, text, timestamp without time zone) RETURNS integer
+    LANGUAGE plpgsql STRICT
+    AS $_$ 
+DECLARE
+	myschema alias for $1;
+	mytable alias for $2;
+	myrid   alias for $3;
+	authid alias for $4;
+	expires alias for $5;
+	ret int;
+	mytoid oid;
+	myrec RECORD;
+	
+BEGIN
+
+	IF NOT LongTransactionsEnabled() THEN
+		RAISE EXCEPTION 'Long transaction support disabled, use EnableLongTransaction() to enable.';
+	END IF;
+
+	EXECUTE 'DELETE FROM authorization_table WHERE expires < now()'; 
+
+	SELECT c.oid INTO mytoid FROM pg_class c, pg_namespace n
+		WHERE c.relname = mytable
+		AND c.relnamespace = n.oid
+		AND n.nspname = myschema;
+
+	-- RAISE NOTICE 'toid: %', mytoid;
+
+	FOR myrec IN SELECT * FROM authorization_table WHERE 
+		toid = mytoid AND rid = myrid
+	LOOP
+		IF myrec.authid != authid THEN
+			RETURN 0;
+		ELSE
+			RETURN 1;
+		END IF;
+	END LOOP;
+
+	EXECUTE 'INSERT INTO authorization_table VALUES ('||
+		quote_literal(mytoid::text)||','||quote_literal(myrid)||
+		','||quote_literal(expires::text)||
+		','||quote_literal(authid) ||')';
+
+	GET DIAGNOSTICS ret = ROW_COUNT;
+
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: longtransactionsenabled(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION longtransactionsenabled() RETURNS boolean
+    LANGUAGE plpgsql
+    AS $$ 
+DECLARE
+	rec RECORD;
+BEGIN
+	FOR rec IN SELECT oid FROM pg_class WHERE relname = 'authorized_tables'
+	LOOP
+		return 't';
+	END LOOP;
+	return 'f';
+END;
+$$;
 
 
 --
@@ -2925,6 +3747,370 @@ CREATE FUNCTION polygonize_garray(geometry[]) RETURNS geometry
 
 
 --
+-- Name: populate_geometry_columns(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION populate_geometry_columns() RETURNS text
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	inserted    integer;
+	oldcount    integer;
+	probed      integer;
+	stale       integer;
+	gcs         RECORD;
+	gc          RECORD;
+	gsrid       integer;
+	gndims      integer;
+	gtype       text;
+	query       text;
+	gc_is_valid boolean;
+	
+BEGIN
+	SELECT count(*) INTO oldcount FROM geometry_columns;
+	inserted := 0;
+
+	EXECUTE 'TRUNCATE geometry_columns';
+
+	-- Count the number of geometry columns in all tables and views
+	SELECT count(DISTINCT c.oid) INTO probed
+	FROM pg_class c, 
+	     pg_attribute a, 
+	     pg_type t, 
+	     pg_namespace n
+	WHERE (c.relkind = 'r' OR c.relkind = 'v')
+	AND t.typname = 'geometry'
+	AND a.attisdropped = false
+	AND a.atttypid = t.oid
+	AND a.attrelid = c.oid
+	AND c.relnamespace = n.oid
+	AND n.nspname NOT ILIKE 'pg_temp%';
+
+	-- Iterate through all non-dropped geometry columns
+	RAISE DEBUG 'Processing Tables.....';
+
+	FOR gcs IN 
+	SELECT DISTINCT ON (c.oid) c.oid, n.nspname, c.relname
+	    FROM pg_class c, 
+	         pg_attribute a, 
+	         pg_type t, 
+	         pg_namespace n
+	    WHERE c.relkind = 'r'
+	    AND t.typname = 'geometry'
+	    AND a.attisdropped = false
+	    AND a.atttypid = t.oid
+	    AND a.attrelid = c.oid
+	    AND c.relnamespace = n.oid
+	    AND n.nspname NOT ILIKE 'pg_temp%'
+	LOOP
+	
+	inserted := inserted + populate_geometry_columns(gcs.oid);
+	END LOOP;
+	
+	-- Add views to geometry columns table
+	RAISE DEBUG 'Processing Views.....';
+	FOR gcs IN 
+	SELECT DISTINCT ON (c.oid) c.oid, n.nspname, c.relname
+	    FROM pg_class c, 
+	         pg_attribute a, 
+	         pg_type t, 
+	         pg_namespace n
+	    WHERE c.relkind = 'v'
+	    AND t.typname = 'geometry'
+	    AND a.attisdropped = false
+	    AND a.atttypid = t.oid
+	    AND a.attrelid = c.oid
+	    AND c.relnamespace = n.oid
+	LOOP            
+	    
+	inserted := inserted + populate_geometry_columns(gcs.oid);
+	END LOOP;
+
+	IF oldcount > inserted THEN
+	stale = oldcount-inserted;
+	ELSE
+	stale = 0;
+	END IF;
+
+	RETURN 'probed:' ||probed|| ' inserted:'||inserted|| ' conflicts:'||probed-inserted|| ' deleted:'||stale;
+END
+
+$$;
+
+
+--
+-- Name: populate_geometry_columns(oid); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION populate_geometry_columns(tbl_oid oid) RETURNS integer
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	gcs         RECORD;
+	gc          RECORD;
+	gsrid       integer;
+	gndims      integer;
+	gtype       text;
+	query       text;
+	gc_is_valid boolean;
+	inserted    integer;
+	
+BEGIN
+	inserted := 0;
+	
+	-- Iterate through all geometry columns in this table
+	FOR gcs IN 
+	SELECT n.nspname, c.relname, a.attname
+	    FROM pg_class c, 
+	         pg_attribute a, 
+	         pg_type t, 
+	         pg_namespace n
+	    WHERE c.relkind = 'r'
+	    AND t.typname = 'geometry'
+	    AND a.attisdropped = false
+	    AND a.atttypid = t.oid
+	    AND a.attrelid = c.oid
+	    AND c.relnamespace = n.oid
+	    AND n.nspname NOT ILIKE 'pg_temp%'
+	    AND c.oid = tbl_oid
+	LOOP
+	
+	RAISE DEBUG 'Processing table %.%.%', gcs.nspname, gcs.relname, gcs.attname;
+
+	DELETE FROM geometry_columns 
+	  WHERE f_table_schema = quote_ident(gcs.nspname) 
+	  AND f_table_name = quote_ident(gcs.relname)
+	  AND f_geometry_column = quote_ident(gcs.attname);
+	
+	gc_is_valid := true;
+	
+	-- Try to find srid check from system tables (pg_constraint)
+	gsrid := 
+	    (SELECT replace(replace(split_part(s.consrc, ' = ', 2), ')', ''), '(', '') 
+	     FROM pg_class c, pg_namespace n, pg_attribute a, pg_constraint s 
+	     WHERE n.nspname = gcs.nspname 
+	     AND c.relname = gcs.relname 
+	     AND a.attname = gcs.attname 
+	     AND a.attrelid = c.oid
+	     AND s.connamespace = n.oid
+	     AND s.conrelid = c.oid
+	     AND a.attnum = ANY (s.conkey)
+	     AND s.consrc LIKE '%srid(% = %');
+	IF (gsrid IS NULL) THEN 
+	    -- Try to find srid from the geometry itself
+	    EXECUTE 'SELECT public.srid(' || quote_ident(gcs.attname) || ') 
+	             FROM ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gsrid := gc.srid;
+	    
+	    -- Try to apply srid check to column
+	    IF (gsrid IS NOT NULL) THEN
+	        BEGIN
+	            EXECUTE 'ALTER TABLE ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	                     ADD CONSTRAINT ' || quote_ident('enforce_srid_' || gcs.attname) || ' 
+	                     CHECK (srid(' || quote_ident(gcs.attname) || ') = ' || gsrid || ')';
+	        EXCEPTION
+	            WHEN check_violation THEN
+	                RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not apply constraint CHECK (srid(%) = %)', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname), quote_ident(gcs.attname), gsrid;
+	                gc_is_valid := false;
+	        END;
+	    END IF;
+	END IF;
+	
+	-- Try to find ndims check from system tables (pg_constraint)
+	gndims := 
+	    (SELECT replace(split_part(s.consrc, ' = ', 2), ')', '') 
+	     FROM pg_class c, pg_namespace n, pg_attribute a, pg_constraint s 
+	     WHERE n.nspname = gcs.nspname 
+	     AND c.relname = gcs.relname 
+	     AND a.attname = gcs.attname 
+	     AND a.attrelid = c.oid
+	     AND s.connamespace = n.oid
+	     AND s.conrelid = c.oid
+	     AND a.attnum = ANY (s.conkey)
+	     AND s.consrc LIKE '%ndims(% = %');
+	IF (gndims IS NULL) THEN
+	    -- Try to find ndims from the geometry itself
+	    EXECUTE 'SELECT public.ndims(' || quote_ident(gcs.attname) || ') 
+	             FROM ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gndims := gc.ndims;
+	    
+	    -- Try to apply ndims check to column
+	    IF (gndims IS NOT NULL) THEN
+	        BEGIN
+	            EXECUTE 'ALTER TABLE ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	                     ADD CONSTRAINT ' || quote_ident('enforce_dims_' || gcs.attname) || ' 
+	                     CHECK (ndims(' || quote_ident(gcs.attname) || ') = '||gndims||')';
+	        EXCEPTION
+	            WHEN check_violation THEN
+	                RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not apply constraint CHECK (ndims(%) = %)', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname), quote_ident(gcs.attname), gndims;
+	                gc_is_valid := false;
+	        END;
+	    END IF;
+	END IF;
+	
+	-- Try to find geotype check from system tables (pg_constraint)
+	gtype := 
+	    (SELECT replace(split_part(s.consrc, '''', 2), ')', '') 
+	     FROM pg_class c, pg_namespace n, pg_attribute a, pg_constraint s 
+	     WHERE n.nspname = gcs.nspname 
+	     AND c.relname = gcs.relname 
+	     AND a.attname = gcs.attname 
+	     AND a.attrelid = c.oid
+	     AND s.connamespace = n.oid
+	     AND s.conrelid = c.oid
+	     AND a.attnum = ANY (s.conkey)
+	     AND s.consrc LIKE '%geometrytype(% = %');
+	IF (gtype IS NULL) THEN
+	    -- Try to find geotype from the geometry itself
+	    EXECUTE 'SELECT public.geometrytype(' || quote_ident(gcs.attname) || ') 
+	             FROM ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gtype := gc.geometrytype;
+	    --IF (gtype IS NULL) THEN
+	    --    gtype := 'GEOMETRY';
+	    --END IF;
+	    
+	    -- Try to apply geometrytype check to column
+	    IF (gtype IS NOT NULL) THEN
+	        BEGIN
+	            EXECUTE 'ALTER TABLE ONLY ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	            ADD CONSTRAINT ' || quote_ident('enforce_geotype_' || gcs.attname) || ' 
+	            CHECK ((geometrytype(' || quote_ident(gcs.attname) || ') = ' || quote_literal(gtype) || ') OR (' || quote_ident(gcs.attname) || ' IS NULL))';
+	        EXCEPTION
+	            WHEN check_violation THEN
+	                -- No geometry check can be applied. This column contains a number of geometry types.
+	                RAISE WARNING 'Could not add geometry type check (%) to table column: %.%.%', gtype, quote_ident(gcs.nspname),quote_ident(gcs.relname),quote_ident(gcs.attname);
+	        END;
+	    END IF;
+	END IF;
+	        
+	IF (gsrid IS NULL) THEN             
+	    RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine the srid', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	ELSIF (gndims IS NULL) THEN
+	    RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine the number of dimensions', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	ELSIF (gtype IS NULL) THEN
+	    RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine the geometry type', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	ELSE
+	    -- Only insert into geometry_columns if table constraints could be applied.
+	    IF (gc_is_valid) THEN
+	        INSERT INTO geometry_columns (f_table_catalog,f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
+	        VALUES ('', gcs.nspname, gcs.relname, gcs.attname, gndims, gsrid, gtype);
+	        inserted := inserted + 1;
+	    END IF;
+	END IF;
+	END LOOP;
+
+	-- Add views to geometry columns table
+	FOR gcs IN 
+	SELECT n.nspname, c.relname, a.attname
+	    FROM pg_class c, 
+	         pg_attribute a, 
+	         pg_type t, 
+	         pg_namespace n
+	    WHERE c.relkind = 'v'
+	    AND t.typname = 'geometry'
+	    AND a.attisdropped = false
+	    AND a.atttypid = t.oid
+	    AND a.attrelid = c.oid
+	    AND c.relnamespace = n.oid
+	    AND n.nspname NOT ILIKE 'pg_temp%'
+	    AND c.oid = tbl_oid
+	LOOP            
+	    RAISE DEBUG 'Processing view %.%.%', gcs.nspname, gcs.relname, gcs.attname;
+
+	    EXECUTE 'SELECT public.ndims(' || quote_ident(gcs.attname) || ') 
+	             FROM ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gndims := gc.ndims;
+	    
+	    EXECUTE 'SELECT public.srid(' || quote_ident(gcs.attname) || ') 
+	             FROM ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gsrid := gc.srid;
+	    
+	    EXECUTE 'SELECT public.geometrytype(' || quote_ident(gcs.attname) || ') 
+	             FROM ' || quote_ident(gcs.nspname) || '.' || quote_ident(gcs.relname) || ' 
+	             WHERE ' || quote_ident(gcs.attname) || ' IS NOT NULL LIMIT 1' 
+	        INTO gc;
+	    gtype := gc.geometrytype;
+	    
+	    IF (gndims IS NULL) THEN
+	        RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine ndims', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	    ELSIF (gsrid IS NULL) THEN
+	        RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine srid', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	    ELSIF (gtype IS NULL) THEN
+	        RAISE WARNING 'Not inserting ''%'' in ''%.%'' into geometry_columns: could not determine gtype', quote_ident(gcs.attname), quote_ident(gcs.nspname), quote_ident(gcs.relname);
+	    ELSE
+	        query := 'INSERT INTO geometry_columns (f_table_catalog,f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) ' ||
+	                 'VALUES ('''', ' || quote_literal(gcs.nspname) || ',' || quote_literal(gcs.relname) || ',' || quote_literal(gcs.attname) || ',' || gndims || ',' || gsrid || ',' || quote_literal(gtype) || ')';
+	        EXECUTE query;
+	        inserted := inserted + 1;
+	    END IF;
+	END LOOP;
+	
+	RETURN inserted;
+END
+
+$$;
+
+
+--
+-- Name: postgis_full_version(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION postgis_full_version() RETURNS text
+    LANGUAGE plpgsql IMMUTABLE
+    AS $$ 
+DECLARE
+	libver text;
+	projver text;
+	geosver text;
+	usestats bool;
+	dbproc text;
+	relproc text;
+	fullver text;
+BEGIN
+	SELECT postgis_lib_version() INTO libver;
+	SELECT postgis_proj_version() INTO projver;
+	SELECT postgis_geos_version() INTO geosver;
+	SELECT postgis_uses_stats() INTO usestats;
+	SELECT postgis_scripts_installed() INTO dbproc;
+	SELECT postgis_scripts_released() INTO relproc;
+
+	fullver = 'POSTGIS="' || libver || '"';
+
+	IF  geosver IS NOT NULL THEN
+		fullver = fullver || ' GEOS="' || geosver || '"';
+	END IF;
+
+	IF  projver IS NOT NULL THEN
+		fullver = fullver || ' PROJ="' || projver || '"';
+	END IF;
+
+	IF usestats THEN
+		fullver = fullver || ' USE_STATS';
+	END IF;
+
+	-- fullver = fullver || ' DBPROC="' || dbproc || '"';
+	-- fullver = fullver || ' RELPROC="' || relproc || '"';
+
+	IF dbproc != relproc THEN
+		fullver = fullver || ' (procs from ' || dbproc || ' need upgrade)';
+	END IF;
+
+	RETURN fullver;
+END
+$$;
+
+
+--
 -- Name: postgis_geos_version(); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -3021,6 +4207,93 @@ CREATE FUNCTION postgis_uses_stats() RETURNS boolean
 CREATE FUNCTION postgis_version() RETURNS text
     LANGUAGE c IMMUTABLE
     AS '$libdir/postgis-1.5', 'postgis_version';
+
+
+--
+-- Name: probe_geometry_columns(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION probe_geometry_columns() RETURNS text
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	inserted integer;
+	oldcount integer;
+	probed integer;
+	stale integer;
+BEGIN
+
+	SELECT count(*) INTO oldcount FROM geometry_columns;
+
+	SELECT count(*) INTO probed
+		FROM pg_class c, pg_attribute a, pg_type t, 
+			pg_namespace n,
+			pg_constraint sridcheck, pg_constraint typecheck
+
+		WHERE t.typname = 'geometry'
+		AND a.atttypid = t.oid
+		AND a.attrelid = c.oid
+		AND c.relnamespace = n.oid
+		AND sridcheck.connamespace = n.oid
+		AND typecheck.connamespace = n.oid
+		AND sridcheck.conrelid = c.oid
+		AND sridcheck.consrc LIKE '(srid('||a.attname||') = %)'
+		AND typecheck.conrelid = c.oid
+		AND typecheck.consrc LIKE
+		'((geometrytype('||a.attname||') = ''%''::text) OR (% IS NULL))'
+		;
+
+	INSERT INTO geometry_columns SELECT
+		''::varchar as f_table_catalogue,
+		n.nspname::varchar as f_table_schema,
+		c.relname::varchar as f_table_name,
+		a.attname::varchar as f_geometry_column,
+		2 as coord_dimension,
+		trim(both  ' =)' from 
+			replace(replace(split_part(
+				sridcheck.consrc, ' = ', 2), ')', ''), '(', ''))::integer AS srid,
+		trim(both ' =)''' from substr(typecheck.consrc, 
+			strpos(typecheck.consrc, '='),
+			strpos(typecheck.consrc, '::')-
+			strpos(typecheck.consrc, '=')
+			))::varchar as type
+		FROM pg_class c, pg_attribute a, pg_type t, 
+			pg_namespace n,
+			pg_constraint sridcheck, pg_constraint typecheck
+		WHERE t.typname = 'geometry'
+		AND a.atttypid = t.oid
+		AND a.attrelid = c.oid
+		AND c.relnamespace = n.oid
+		AND sridcheck.connamespace = n.oid
+		AND typecheck.connamespace = n.oid
+		AND sridcheck.conrelid = c.oid
+		AND sridcheck.consrc LIKE '(st_srid('||a.attname||') = %)'
+		AND typecheck.conrelid = c.oid
+		AND typecheck.consrc LIKE
+		'((geometrytype('||a.attname||') = ''%''::text) OR (% IS NULL))'
+
+	        AND NOT EXISTS (
+	                SELECT oid FROM geometry_columns gc
+	                WHERE c.relname::varchar = gc.f_table_name
+	                AND n.nspname::varchar = gc.f_table_schema
+	                AND a.attname::varchar = gc.f_geometry_column
+	        );
+
+	GET DIAGNOSTICS inserted = ROW_COUNT;
+
+	IF oldcount > probed THEN
+		stale = oldcount-probed;
+	ELSE
+		stale = 0;
+	END IF;
+
+	RETURN 'probed:'||probed::text||
+		' inserted:'||inserted::text||
+		' conflicts:'||(probed-inserted)::text||
+		' stale:'||stale::text;
+END
+
+$$;
 
 
 --
@@ -3248,6 +4521,26 @@ CREATE FUNCTION setsrid(chip, integer) RETURNS chip
 CREATE FUNCTION setsrid(geometry, integer) RETURNS geometry
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'LWGEOM_setSRID';
+
+
+--
+-- Name: shapetrig(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION shapetrig() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+  BEGIN
+    IF (GeometryType(NEW.geometry) = 'POLYGON') THEN
+      NEW.geometry = Multi(New.geometry);
+      NEW.area = Area(New.geometry);
+    END IF;
+    IF (GeometryType(NEW.geometry) = 'LINESTRING') THEN
+      NEW.geometry = Multi(New.geometry);
+    END IF;
+    RETURN NEW;
+  END;
+$$;
 
 
 --
@@ -3689,6 +4982,65 @@ CREATE FUNCTION st_asukml(geometry, integer, integer) RETURNS text
 CREATE FUNCTION st_azimuth(geometry, geometry) RETURNS double precision
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'LWGEOM_azimuth';
+
+
+--
+-- Name: st_bdmpolyfromtext(text, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION st_bdmpolyfromtext(text, integer) RETURNS geometry
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$ 
+DECLARE
+	geomtext alias for $1;
+	srid alias for $2;
+	mline geometry;
+	geom geometry;
+BEGIN
+	mline := ST_MultiLineStringFromText(geomtext, srid);
+
+	IF mline IS NULL
+	THEN
+		RAISE EXCEPTION 'Input is not a MultiLinestring';
+	END IF;
+
+	geom := multi(ST_BuildArea(mline));
+
+	RETURN geom;
+END;
+$_$;
+
+
+--
+-- Name: st_bdpolyfromtext(text, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION st_bdpolyfromtext(text, integer) RETURNS geometry
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$ 
+DECLARE
+	geomtext alias for $1;
+	srid alias for $2;
+	mline geometry;
+	geom geometry;
+BEGIN
+	mline := ST_MultiLineStringFromText(geomtext, srid);
+
+	IF mline IS NULL
+	THEN
+		RAISE EXCEPTION 'Input is not a MultiLinestring';
+	END IF;
+
+	geom := ST_BuildArea(mline);
+
+	IF GeometryType(geom) != 'POLYGON'
+	THEN
+		RAISE EXCEPTION 'Input returns more then a single polygon, try using BdMPolyFromText instead';
+	END IF;
+
+	RETURN geom;
+END;
+$_$;
 
 
 --
@@ -4238,6 +5590,47 @@ CREATE FUNCTION st_exteriorring(geometry) RETURNS geometry
 CREATE FUNCTION st_factor(chip) RETURNS real
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'CHIP_getFactor';
+
+
+--
+-- Name: st_find_extent(text, text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION st_find_extent(text, text) RETURNS box2d
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+DECLARE
+	tablename alias for $1;
+	columnname alias for $2;
+	myrec RECORD;
+
+BEGIN
+	FOR myrec IN EXECUTE 'SELECT extent("' || columnname || '") FROM "' || tablename || '"' LOOP
+		return myrec.extent;
+	END LOOP; 
+END;
+$_$;
+
+
+--
+-- Name: st_find_extent(text, text, text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION st_find_extent(text, text, text) RETURNS box2d
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $_$
+DECLARE
+	schemaname alias for $1;
+	tablename alias for $2;
+	columnname alias for $3;
+	myrec RECORD;
+
+BEGIN
+	FOR myrec IN EXECUTE 'SELECT extent("' || columnname || '") FROM "' || schemaname || '"."' || tablename || '"' LOOP
+		return myrec.extent;
+	END LOOP; 
+END;
+$_$;
 
 
 --
@@ -5146,6 +6539,112 @@ CREATE FUNCTION st_mem_size(geometry) RETURNS integer
 CREATE FUNCTION st_minimumboundingcircle(geometry) RETURNS geometry
     LANGUAGE sql IMMUTABLE STRICT
     AS $_$SELECT ST_MinimumBoundingCircle($1, 48)$_$;
+
+
+--
+-- Name: st_minimumboundingcircle(geometry, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION st_minimumboundingcircle(inputgeom geometry, segs_per_quarter integer) RETURNS geometry
+    LANGUAGE plpgsql IMMUTABLE STRICT
+    AS $$
+	DECLARE     
+	hull GEOMETRY;
+	ring GEOMETRY;
+	center GEOMETRY;
+	radius DOUBLE PRECISION;
+	dist DOUBLE PRECISION;
+	d DOUBLE PRECISION;
+	idx1 integer;
+	idx2 integer;
+	l1 GEOMETRY;
+	l2 GEOMETRY;
+	p1 GEOMETRY;
+	p2 GEOMETRY;
+	a1 DOUBLE PRECISION;
+	a2 DOUBLE PRECISION;
+
+	
+	BEGIN
+
+	-- First compute the ConvexHull of the geometry
+	hull = ST_ConvexHull(inputgeom);
+	--A point really has no MBC
+	IF ST_GeometryType(hull) = 'ST_Point' THEN
+		RETURN hull;
+	END IF;
+	-- convert the hull perimeter to a linestring so we can manipulate individual points
+	--If its already a linestring force it to a closed linestring
+	ring = CASE WHEN ST_GeometryType(hull) = 'ST_LineString' THEN ST_AddPoint(hull, ST_StartPoint(hull)) ELSE ST_ExteriorRing(hull) END;
+
+	dist = 0;
+	-- Brute Force - check every pair
+	FOR i in 1 .. (ST_NumPoints(ring)-2)
+		LOOP
+			FOR j in i .. (ST_NumPoints(ring)-1)
+				LOOP
+				d = ST_Distance(ST_PointN(ring,i),ST_PointN(ring,j));
+				-- Check the distance and update if larger
+				IF (d > dist) THEN
+					dist = d;
+					idx1 = i;
+					idx2 = j;
+				END IF;
+			END LOOP;
+		END LOOP;
+
+	-- We now have the diameter of the convex hull.  The following line returns it if desired.
+	-- RETURN MakeLine(PointN(ring,idx1),PointN(ring,idx2));
+
+	-- Now for the Minimum Bounding Circle.  Since we know the two points furthest from each
+	-- other, the MBC must go through those two points. Start with those points as a diameter of a circle.
+	
+	-- The radius is half the distance between them and the center is midway between them
+	radius = ST_Distance(ST_PointN(ring,idx1),ST_PointN(ring,idx2)) / 2.0;
+	center = ST_Line_interpolate_point(ST_MakeLine(ST_PointN(ring,idx1),ST_PointN(ring,idx2)),0.5);
+
+	-- Loop through each vertex and check if the distance from the center to the point
+	-- is greater than the current radius.
+	FOR k in 1 .. (ST_NumPoints(ring)-1)
+		LOOP
+		IF(k <> idx1 and k <> idx2) THEN
+			dist = ST_Distance(center,ST_PointN(ring,k));
+			IF (dist > radius) THEN
+				-- We have to expand the circle.  The new circle must pass trhough
+				-- three points - the two original diameters and this point.
+				
+				-- Draw a line from the first diameter to this point
+				l1 = ST_Makeline(ST_PointN(ring,idx1),ST_PointN(ring,k));
+				-- Compute the midpoint
+				p1 = ST_line_interpolate_point(l1,0.5);
+				-- Rotate the line 90 degrees around the midpoint (perpendicular bisector)
+				l1 = ST_Translate(ST_Rotate(ST_Translate(l1,-X(p1),-Y(p1)),pi()/2),X(p1),Y(p1));
+				--  Compute the azimuth of the bisector
+				a1 = ST_Azimuth(ST_PointN(l1,1),ST_PointN(l1,2));
+				--  Extend the line in each direction the new computed distance to insure they will intersect
+				l1 = ST_AddPoint(l1,ST_Makepoint(X(ST_PointN(l1,2))+sin(a1)*dist,Y(ST_PointN(l1,2))+cos(a1)*dist),-1);
+				l1 = ST_AddPoint(l1,ST_Makepoint(X(ST_PointN(l1,1))-sin(a1)*dist,Y(ST_PointN(l1,1))-cos(a1)*dist),0);
+
+				-- Repeat for the line from the point to the other diameter point
+				l2 = ST_Makeline(ST_PointN(ring,idx2),ST_PointN(ring,k));
+				p2 = ST_Line_interpolate_point(l2,0.5);
+				l2 = ST_Translate(ST_Rotate(ST_Translate(l2,-X(p2),-Y(p2)),pi()/2),X(p2),Y(p2));
+				a2 = ST_Azimuth(ST_PointN(l2,1),ST_PointN(l2,2));
+				l2 = ST_AddPoint(l2,ST_Makepoint(X(ST_PointN(l2,2))+sin(a2)*dist,Y(ST_PointN(l2,2))+cos(a2)*dist),-1);
+				l2 = ST_AddPoint(l2,ST_Makepoint(X(ST_PointN(l2,1))-sin(a2)*dist,Y(ST_PointN(l2,1))-cos(a2)*dist),0);
+
+				-- The new center is the intersection of the two bisectors
+				center = ST_Intersection(l1,l2);
+				-- The new radius is the distance to any of the three points
+				radius = ST_Distance(center,ST_PointN(ring,idx1));
+			END IF;
+		END IF;
+		END LOOP;
+	--DONE!!  Return the MBC via the buffer command
+	RETURN ST_Buffer(center,radius,segs_per_quarter);
+
+	END;
+$$;
 
 
 --
@@ -6344,12 +7843,57 @@ CREATE FUNCTION transscale(geometry, double precision, double precision, double 
 
 
 --
+-- Name: trtibet(text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION trtibet(name text) RETURNS text
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+  trrec RECORD;
+  rname TEXT;
+BEGIN
+  rname := name;
+  FOR trrec IN SELECT * FROM trtibet WHERE position(std IN name) > 0 ORDER BY length(std) DESC LOOP
+    rname := replace(rname, trrec.std, trrec.pc);
+  END LOOP;
+  RETURN rname;
+END;
+$$;
+
+
+--
 -- Name: unite_garray(geometry[]); Type: FUNCTION; Schema: public; Owner: -
 --
 
 CREATE FUNCTION unite_garray(geometry[]) RETURNS geometry
     LANGUAGE c IMMUTABLE STRICT
     AS '$libdir/postgis-1.5', 'pgis_union_geometry_array';
+
+
+--
+-- Name: unlockrows(text); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION unlockrows(text) RETURNS integer
+    LANGUAGE plpgsql STRICT
+    AS $_$ 
+DECLARE
+	ret int;
+BEGIN
+
+	IF NOT LongTransactionsEnabled() THEN
+		RAISE EXCEPTION 'Long transaction support disabled, use EnableLongTransaction() to enable.';
+	END IF;
+
+	EXECUTE 'DELETE FROM authorization_table where authid = ' ||
+		quote_literal($1);
+
+	GET DIAGNOSTICS ret = ROW_COUNT;
+
+	RETURN ret;
+END;
+$_$;
 
 
 --
@@ -6368,6 +7912,121 @@ CREATE FUNCTION update_geometry_stats() RETURNS text
 CREATE FUNCTION update_geometry_stats(character varying, character varying) RETURNS text
     LANGUAGE sql
     AS $$SELECT update_geometry_stats();$$;
+
+
+--
+-- Name: updategeometrysrid(character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION updategeometrysrid(character varying, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$ 
+DECLARE
+	ret  text;
+BEGIN
+	SELECT UpdateGeometrySRID('','',$1,$2,$3) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: updategeometrysrid(character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION updategeometrysrid(character varying, character varying, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$ 
+DECLARE
+	ret  text;
+BEGIN
+	SELECT UpdateGeometrySRID('',$1,$2,$3,$4) into ret;
+	RETURN ret;
+END;
+$_$;
+
+
+--
+-- Name: updategeometrysrid(character varying, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION updategeometrysrid(character varying, character varying, character varying, character varying, integer) RETURNS text
+    LANGUAGE plpgsql STRICT
+    AS $_$
+DECLARE
+	catalog_name alias for $1; 
+	schema_name alias for $2;
+	table_name alias for $3;
+	column_name alias for $4;
+	new_srid alias for $5;
+	myrec RECORD;
+	okay boolean;
+	cname varchar;
+	real_schema name;
+
+BEGIN
+
+
+	-- Find, check or fix schema_name
+	IF ( schema_name != '' ) THEN
+		okay = 'f';
+
+		FOR myrec IN SELECT nspname FROM pg_namespace WHERE text(nspname) = schema_name LOOP
+			okay := 't';
+		END LOOP;
+
+		IF ( okay <> 't' ) THEN
+			RAISE EXCEPTION 'Invalid schema name';
+		ELSE
+			real_schema = schema_name;
+		END IF;
+	ELSE
+		SELECT INTO real_schema current_schema()::text;
+	END IF;
+
+ 	-- Find out if the column is in the geometry_columns table
+	okay = 'f';
+	FOR myrec IN SELECT * from geometry_columns where f_table_schema = text(real_schema) and f_table_name = table_name and f_geometry_column = column_name LOOP
+		okay := 't';
+	END LOOP; 
+	IF (okay <> 't') THEN 
+		RAISE EXCEPTION 'column not found in geometry_columns table';
+		RETURN 'f';
+	END IF;
+
+	-- Update ref from geometry_columns table
+	EXECUTE 'UPDATE geometry_columns SET SRID = ' || new_srid::text || 
+		' where f_table_schema = ' ||
+		quote_literal(real_schema) || ' and f_table_name = ' ||
+		quote_literal(table_name)  || ' and f_geometry_column = ' ||
+		quote_literal(column_name);
+	
+	-- Make up constraint name
+	cname = 'enforce_srid_'  || column_name;
+
+	-- Drop enforce_srid constraint
+	EXECUTE 'ALTER TABLE ' || quote_ident(real_schema) ||
+		'.' || quote_ident(table_name) ||
+		' DROP constraint ' || quote_ident(cname);
+
+	-- Update geometries SRID
+	EXECUTE 'UPDATE ' || quote_ident(real_schema) ||
+		'.' || quote_ident(table_name) ||
+		' SET ' || quote_ident(column_name) ||
+		' = setSRID(' || quote_ident(column_name) ||
+		', ' || new_srid::text || ')';
+
+	-- Reset enforce_srid constraint
+	EXECUTE 'ALTER TABLE ' || quote_ident(real_schema) ||
+		'.' || quote_ident(table_name) ||
+		' ADD constraint ' || quote_ident(cname) ||
+		' CHECK (srid(' || quote_ident(column_name) ||
+		') = ' || new_srid::text || ')';
+
+	RETURN real_schema || '.' || table_name || '.' || column_name ||' SRID changed to ' || new_srid::text;
+	
+END;
+$_$;
 
 
 --
@@ -9076,6 +10735,30 @@ SELECT DISTINCT ((10000 * shapes.gid) + feature_object_types.category_id) AS gid
 
 
 --
+-- Name: tibetan_chinese_line; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_chinese_line AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.chi'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'MULTILINESTRING'::text));
+
+
+--
+-- Name: tibetan_chinese_poly; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_chinese_poly AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.chi'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'MULTIPOLYGON'::text));
+
+
+--
+-- Name: tibetan_chinese_pt; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_chinese_pt AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.chi'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'POINT'::text));
+
+
+--
 -- Name: tibetan_roman; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -9107,6 +10790,46 @@ CREATE SEQUENCE tibetan_roman_gid_seq
 --
 
 ALTER SEQUENCE tibetan_roman_gid_seq OWNED BY tibetan_roman.gid;
+
+
+--
+-- Name: tibetan_roman_line; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_roman_line AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.roman'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'MULTILINESTRING'::text));
+
+
+--
+-- Name: tibetan_roman_poly; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_roman_poly AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.roman'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'MULTIPOLYGON'::text));
+
+
+--
+-- Name: tibetan_roman_pt; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_roman_pt AS
+SELECT DISTINCT ((10000 * shapes.gid) + category_features.category_id) AS gid, shapes.fid, category_features.category_id AS object_type, symbol_type.symbol, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.area, shapes.geometry FROM shapes, category_features, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2, symbol_type WHERE (((((((((((shapes.fid = features.fid) AND (features.id = category_features.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND (category_features.category_id = symbol_type.object_type)) AND ((sp1.code)::text = 'pri.tib.sec.roman'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND shapes.is_public) AND (geometrytype(shapes.geometry) = 'POINT'::text));
+
+
+--
+-- Name: tibetan_test_poly; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_test_poly AS
+SELECT DISTINCT ((10000 * shapes.gid) + feature_object_types.category_id) AS gid, shapes.fid, feature_object_types.category_id AS object_type, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.geometry FROM shapes, category_features feature_object_types, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2 WHERE (((((((((shapes.fid = features.fid) AND (features.id = feature_object_types.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND ((sp1.code)::text = 'pri.tib.sec.roman'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND (geometrytype(shapes.geometry) = 'MULTIPOLYGON'::text)) ORDER BY ((10000 * shapes.gid) + feature_object_types.category_id), shapes.fid, feature_object_types.category_id, sp1.name, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END, sp2.name, geometrytype(shapes.geometry), shapes.geometry;
+
+
+--
+-- Name: tibetan_test_pt; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW tibetan_test_pt AS
+SELECT DISTINCT ((10000 * shapes.gid) + feature_object_types.category_id) AS gid, shapes.fid, feature_object_types.category_id AS object_type, sp1.name AS language, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END AS name, sp2.name AS writing, geometrytype(shapes.geometry) AS geotype, shapes.geometry FROM shapes, category_features feature_object_types, features, feature_names, simple_props sp1, cached_feature_names, simple_props sp2 WHERE (((((((((shapes.fid = features.fid) AND (features.id = feature_object_types.feature_id)) AND (cached_feature_names.feature_id = features.id)) AND (cached_feature_names.feature_name_id = feature_names.id)) AND (sp1.id = cached_feature_names.view_id)) AND ((sp1.code)::text = 'pri.tib.sec.roman'::text)) AND ((sp2.type)::text ~~ 'WritingSystem'::text)) AND (feature_names.writing_system_id = sp2.id)) AND (geometrytype(shapes.geometry) = 'POINT'::text)) ORDER BY ((10000 * shapes.gid) + feature_object_types.category_id), shapes.fid, feature_object_types.category_id, sp1.name, CASE WHEN ((sp2.name)::text = 'Tibetan script'::text) THEN (trtibet((feature_names.name)::text))::character varying ELSE feature_names.name END, sp2.name, geometrytype(shapes.geometry), shapes.geometry;
 
 
 --
@@ -9339,7 +11062,11 @@ CREATE TABLE us_districts (
     lsad character varying(2),
     cdsessn character varying(3),
     aland double precision,
-    awater double precision
+    awater double precision,
+    the_geom geometry,
+    CONSTRAINT enforce_dims_the_geom CHECK ((st_ndims(the_geom) = 2)),
+    CONSTRAINT enforce_geotype_the_geom CHECK (((geometrytype(the_geom) = 'MULTIPOLYGON'::text) OR (the_geom IS NULL))),
+    CONSTRAINT enforce_srid_the_geom CHECK ((st_srid(the_geom) = 4269))
 );
 
 
@@ -9382,88 +11109,6 @@ CREATE TABLE us_states (
     CONSTRAINT enforce_geotype_the_geom CHECK (((geometrytype(the_geom) = 'MULTIPOLYGON'::text) OR (the_geom IS NULL))),
     CONSTRAINT enforce_srid_the_geom CHECK ((st_srid(the_geom) = 4269))
 );
-
-
---
--- Name: us_states_20m; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE us_states_20m (
-    gid integer NOT NULL,
-    statefp character varying(2),
-    statens character varying(8),
-    affgeoid character varying(11),
-    geoid character varying(2),
-    stusps character varying(2),
-    name character varying(100),
-    lsad character varying(2),
-    aland double precision,
-    awater double precision,
-    the_geom geometry,
-    CONSTRAINT enforce_dims_the_geom CHECK ((st_ndims(the_geom) = 2)),
-    CONSTRAINT enforce_geotype_the_geom CHECK (((geometrytype(the_geom) = 'MULTIPOLYGON'::text) OR (the_geom IS NULL))),
-    CONSTRAINT enforce_srid_the_geom CHECK ((st_srid(the_geom) = 4269))
-);
-
-
---
--- Name: us_states_20m_gid_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE us_states_20m_gid_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: us_states_20m_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE us_states_20m_gid_seq OWNED BY us_states_20m.gid;
-
-
---
--- Name: us_states_5m; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE us_states_5m (
-    gid integer NOT NULL,
-    statefp character varying(2),
-    statens character varying(8),
-    affgeoid character varying(11),
-    geoid character varying(2),
-    stusps character varying(2),
-    name character varying(100),
-    lsad character varying(2),
-    aland double precision,
-    awater double precision,
-    the_geom geometry,
-    CONSTRAINT enforce_dims_the_geom CHECK ((st_ndims(the_geom) = 2)),
-    CONSTRAINT enforce_geotype_the_geom CHECK (((geometrytype(the_geom) = 'MULTIPOLYGON'::text) OR (the_geom IS NULL))),
-    CONSTRAINT enforce_srid_the_geom CHECK ((st_srid(the_geom) = 4269))
-);
-
-
---
--- Name: us_states_5m_gid_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE us_states_5m_gid_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: us_states_5m_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE us_states_5m_gid_seq OWNED BY us_states_5m.gid;
 
 
 --
@@ -9846,20 +11491,6 @@ ALTER TABLE ONLY us_districts ALTER COLUMN gid SET DEFAULT nextval('us_districts
 --
 
 ALTER TABLE ONLY us_states ALTER COLUMN gid SET DEFAULT nextval('us_states_gid_seq'::regclass);
-
-
---
--- Name: gid; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY us_states_20m ALTER COLUMN gid SET DEFAULT nextval('us_states_20m_gid_seq'::regclass);
-
-
---
--- Name: gid; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY us_states_5m ALTER COLUMN gid SET DEFAULT nextval('us_states_5m_gid_seq'::regclass);
 
 
 --
@@ -10398,22 +12029,6 @@ ALTER TABLE ONLY us_districts
 
 
 --
--- Name: us_states_20m_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY us_states_20m
-    ADD CONSTRAINT us_states_20m_pkey PRIMARY KEY (gid);
-
-
---
--- Name: us_states_5m_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY us_states_5m
-    ADD CONSTRAINT us_states_5m_pkey PRIMARY KEY (gid);
-
-
---
 -- Name: us_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -10866,17 +12481,10 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
--- Name: us_states_20m_the_geom_gist; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: us_districts_the_geom_gist; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE INDEX us_states_20m_the_geom_gist ON us_states_20m USING gist (the_geom);
-
-
---
--- Name: us_states_5m_the_geom_gist; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX us_states_5m_the_geom_gist ON us_states_5m USING gist (the_geom);
+CREATE INDEX us_districts_the_geom_gist ON us_districts USING gist (the_geom);
 
 
 --
@@ -10891,6 +12499,16 @@ CREATE INDEX us_states_the_geom_gist ON us_states USING gist (the_geom);
 --
 
 CREATE INDEX xml_documents_feature_id_idx ON xml_documents USING btree (feature_id);
+
+
+--
+-- Name: shapetrig; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER shapetrig
+    BEFORE INSERT ON shapes
+    FOR EACH ROW
+    EXECUTE PROCEDURE shapetrig();
 
 
 --

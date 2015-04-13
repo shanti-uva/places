@@ -62,7 +62,7 @@ gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecor
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
 #gem 'activerecord-postgis-adapter'
 
-gem 'active_resource_extensions', '2.1.4',        github: 'thl/active_resource_extensions',  tag: 'v2.1.4' #path: '../../thl/engines/active_resource_extensions'
+gem 'active_resource_extensions', '2.1.6',        github: 'thl/active_resource_extensions',  tag: 'v2.1.6' #path: '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.1.3',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.3' #path: '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.3.0',        github: 'thl/authenticated_system',        tag: 'v2.3.0' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.1.4',        github: 'thl/complex_dates',               tag: 'v2.1.4' #path: '../../thl/engines/complex_dates'
