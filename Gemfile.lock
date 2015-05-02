@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: 87e6c47a304e68e198953d2f5995648aa7f52459
-  tag: v0.1.4
+  revision: be82890eec0fd5d0f846bf68c2d148c21d200b35
+  tag: v0.1.6
   specs:
-    subjects_integration (0.1.4)
+    subjects_integration (0.1.6)
       rails (~> 4.0)
 
 GIT
@@ -87,10 +87,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 03ca612d3f7f06238956d8eb787bd3fe0db88767
-  tag: v2.2.5
+  revision: caf7b365b7356f20a27f5dac770ec48c74d70e92
+  tag: v2.2.6
   specs:
-    mms_integration (2.2.5)
+    mms_integration (2.2.6)
       rails (~> 4.0)
 
 GIT
@@ -103,10 +103,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_integration.git
-  revision: 13bd60b7d47760ffbf851384211f4a74d6865187
-  tag: v2.1.4
+  revision: 57abea4c5a72da487ff67319425023413f64cbb4
+  tag: v2.1.5
   specs:
-    places_integration (2.1.4)
+    places_integration (2.1.5)
       rails (~> 4.0)
 
 GIT
@@ -312,13 +312,13 @@ DEPENDENCIES
   kmaps_engine (= 3.1.8)!
   makandra_resource_controller
   memcache-client
-  mms_integration (= 2.2.5)!
+  mms_integration (= 2.2.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   pg
   places_engine (= 4.1.0)!
-  places_integration (= 2.1.4)!
+  places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
   rack-openid
@@ -330,7 +330,7 @@ DEPENDENCIES
   shanti_integration (= 3.1.1)!
   spawnling
   spring
-  subjects_integration (= 0.1.4)!
+  subjects_integration (= 0.1.6)!
   therubyracer
   tinymce-rails
   turbolinks
