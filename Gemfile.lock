@@ -12,14 +12,6 @@ GIT
     restful-authentication (2.0.0.beta1)
 
 GIT
-  remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: beb0944baef75a8f56e7c03b462c09f66ff80b43
-  tag: v3.1.8
-  specs:
-    kmaps_engine (3.1.8)
-      rails (~> 4.1.5)
-
-GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
   revision: 6a1346b82c71c96d10b2a4fc3cb6573f16910f22
   tag: v3.1.1
@@ -94,14 +86,6 @@ GIT
       rails (~> 4.0)
 
 GIT
-  remote: git://github.com/thl/places_engine.git
-  revision: 8a3e88e826ef940e93a7c18d627e4d86fb72ab48
-  tag: v4.1.0
-  specs:
-    places_engine (4.1.0)
-      rails (~> 4.0)
-
-GIT
   remote: git://github.com/thl/places_integration.git
   revision: 57abea4c5a72da487ff67319425023413f64cbb4
   tag: v2.1.5
@@ -124,6 +108,18 @@ GIT
   specs:
     universal_navigation (3.0.1)
       rails (~> 4.0)
+
+PATH
+  remote: ../../thl/engines/places_engine
+  specs:
+    places_engine (4.1.0)
+      rails (~> 4.0)
+
+PATH
+  remote: ../engines/kmaps_engine
+  specs:
+    kmaps_engine (3.1.8)
+      rails (~> 4.1.5)
 
 GEM
   remote: http://rubygems.org/
