@@ -63,7 +63,6 @@ gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authent
 #gem 'activerecord-postgis-adapter'
 
 gem 'rsolr'
-gem 'sunspot_rails'
 
 gem 'active_resource_extensions', '2.1.6',        github: 'thl/active_resource_extensions',  tag: 'v2.1.6' #path: '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.1.3',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.3' #path: '../../thl/engines/acts_as_family_tree'
@@ -72,9 +71,9 @@ gem 'complex_dates',              '2.1.4',        github: 'thl/complex_dates',  
 gem 'complex_scripts',            '2.2.6',        github: 'thl/complex_scripts',             tag: 'v2.2.6' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.2.5',        github: 'thl/interface_utils',             tag: 'v2.2.5' #path: '../../thl/engines/interface_utils'
 gem 'mms_integration',            '2.2.6',        github: 'thl/mms_integration',             tag: 'v2.2.6' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '3.2.2',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.2.2' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '3.2.3',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.2.3' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.1.3',        github: 'thl/places_engine',               tag: 'v4.1.3' #path: '../../thl/engines/places_engine'
+gem 'places_engine',              '4.1.4',        github: 'thl/places_engine',               tag: 'v4.1.4' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
 gem 'shanti_integration',         '3.1.2',        github: 'shanti-uva/shanti_integration',   tag: 'v3.1.2' #path: '../engines/shanti_integration'
 gem 'subjects_integration',       '0.1.6',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.6' #path: '../engines/subjects_integration'
