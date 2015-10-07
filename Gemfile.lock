@@ -13,10 +13,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 57129b49b33e527e7c2a4094f26e5d70f7464c76
-  tag: v3.3.2
+  revision: da6f6bfdea8d07e646b4f045923639d6a02c00d3
+  tag: v3.3.3
   specs:
-    kmaps_engine (3.3.2)
+    kmaps_engine (3.3.3)
       rails (~> 4.1.5)
 
 GIT
@@ -317,7 +317,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.3.2)!
+  kmaps_engine (= 3.3.3)!
   memcache-client
   mms_integration (= 2.2.6)!
   newrelic_rpm
