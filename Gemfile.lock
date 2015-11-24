@@ -13,10 +13,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: da6f6bfdea8d07e646b4f045923639d6a02c00d3
-  tag: v3.3.3
+  revision: a2fdc6c15deb92cadda5ebea6b36e8133c6da2cd
+  tag: v3.3.4
   specs:
-    kmaps_engine (3.3.3)
+    kmaps_engine (3.3.4)
       rails (~> 4.1.5)
 
 GIT
@@ -69,10 +69,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 92b6613e89187b53bd454f3b96d33a2f60b11e4c
-  tag: v2.1.4
+  revision: 2081b30b9d4df48a4706f3b439537888f8c5374f
+  tag: v2.1.5
   specs:
-    complex_dates (2.1.4)
+    complex_dates (2.1.5)
       rails (~> 4.0)
 
 GIT
@@ -102,10 +102,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: efc3180a6875929b43be585e2b3ddbd5926b4db4
-  tag: v4.2.0
+  revision: 551d3469720e0c4834332336bdf91f1c2f2f57e2
+  tag: v4.2.1
   specs:
-    places_engine (4.2.0)
+    places_engine (4.2.1)
       rails (~> 4.0)
 
 GIT
@@ -308,7 +308,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   byebug
   coffee-rails (~> 4.0.0)
-  complex_dates (= 2.1.4)!
+  complex_dates (= 2.1.5)!
   complex_scripts (= 2.2.6)!
   dynamic_form
   exception_notification
@@ -317,14 +317,14 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.3.3)!
+  kmaps_engine (= 3.3.4)!
   memcache-client
   mms_integration (= 2.2.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   pg
-  places_engine (= 4.2.0)!
+  places_engine (= 4.2.1)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -346,3 +346,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   universal_navigation (= 3.0.1)!
   will_paginate
+
+BUNDLED WITH
+   1.10.6
