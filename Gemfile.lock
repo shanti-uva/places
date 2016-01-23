@@ -69,10 +69,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 2081b30b9d4df48a4706f3b439537888f8c5374f
-  tag: v2.1.5
+  revision: da3e8a1861638a1f9df42c0e35c80be85863971d
+  tag: v2.1.6
   specs:
-    complex_dates (2.1.5)
+    complex_dates (2.1.6)
       rails (~> 4.0)
 
 GIT
@@ -308,7 +308,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   byebug
   coffee-rails (~> 4.0.0)
-  complex_dates (= 2.1.5)!
+  complex_dates (= 2.1.6)!
   complex_scripts (= 2.2.6)!
   dynamic_form
   exception_notification
