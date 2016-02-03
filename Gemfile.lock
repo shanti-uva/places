@@ -13,8 +13,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 76cdf246f5e363b5579c91203a31214f5bdb8ee5
-  tag: v3.3.5-stable
+  revision: cff30eff7015483230b82558e8ff109d2e3a7431
+  tag: v3.3.5
   specs:
     kmaps_engine (3.3.5)
       rails (~> 4.1.5)
