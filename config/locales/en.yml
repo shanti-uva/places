@@ -3,6 +3,6 @@
 
 en:
     app:
-        short: 'SHANTI Places'
-        this: 'SHANTI Place Dictionary'
-    entry: 'SHANTI Place Dictionary Entry'
+        short: 'Places'
+        this: 'Place Dictionary'
+    entry: 'Places Entry'
