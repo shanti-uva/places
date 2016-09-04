@@ -13,19 +13,19 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 0e820e432eee91e8c1cf4afd40250806aac734a3
-  tag: v0.0.1
+  revision: 74b583884ae0dbe04d0c946d0f47e4102e263648
+  tag: v0.1.2
   specs:
-    flare (0.0.1)
+    flare (0.1.2)
       rails (~> 4.1.5)
       rsolr
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 311add0d69930acb9a469ea121281c0f7f09f1f8
-  tag: v3.4.4
+  revision: a88221108f54ffc0188e3f2244332a0062a60a3e
+  tag: v3.4.5
   specs:
-    kmaps_engine (3.4.4)
+    kmaps_engine (3.4.5)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -333,11 +333,11 @@ DEPENDENCIES
   complex_dates (= 2.1.6)!
   complex_scripts (= 2.2.7)!
   dynamic_form
-  flare (= 0.0.1)!
+  flare (= 0.1.2)!
   interface_utils (= 2.2.8)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.4.4)!
+  kmaps_engine (= 3.4.5)!
   mms_integration (= 2.2.7)!
   open_id_authentication
   passiverecord (= 0.2)!
