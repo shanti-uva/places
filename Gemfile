@@ -27,7 +27,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'rack-openid', require: 'rack/openid'
 gem 'will_paginate' #, '~> 3.0'
 gem 'tinymce-rails' #, '3.5.9' compatible with ruby 1.8.7
+gem 'newrelic_rpm'
 gem 'open_id_authentication'
+gem 'spawnling', '2.1.6', github: 'nexiahome/spawnling'
 gem 'dynamic_form'
 gem 'activeresource', require: 'active_resource'
 
@@ -36,14 +38,14 @@ gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authent
 #gem 'activerecord-postgis-adapter'
 
 gem 'active_resource_extensions', '2.1.7',        github: 'thl/active_resource_extensions',  tag: 'v2.1.7' #path: '../../thl/engines/active_resource_extensions'
-gem 'acts_as_family_tree',        '1.1.3',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.3' #path: '../../thl/engines/acts_as_family_tree'
+gem 'acts_as_family_tree',        '1.1.4',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.4' #path: '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.3.4',        github: 'thl/authenticated_system',        tag: 'v2.3.4' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.1.6',        github: 'thl/complex_dates',               tag: 'v2.1.6' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '2.2.7',        github: 'thl/complex_scripts',             tag: 'v2.2.7' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.2.8',        github: 'thl/interface_utils',             tag: 'v2.2.8' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '0.1.2',        github: 'shanti-uva/flare',                tag: 'v0.1.2' #path: '../engines/flare'
 gem 'mms_integration',            '2.2.7',        github: 'thl/mms_integration',             tag: 'v2.2.7' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '3.4.6',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.4.6' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '3.4.7',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.4.7' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '4.2.8',        github: 'thl/places_engine',               tag: 'v4.2.8' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
