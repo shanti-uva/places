@@ -337,6 +337,7 @@ DEPENDENCIES
   complex_scripts (= 2.2.7)!
   dynamic_form
   flare (= 0.1.2)!
+  hpricot
   interface_utils (= 2.2.8)!
   jquery-rails
   jquery-ui-rails
