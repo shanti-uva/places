@@ -51,7 +51,7 @@ gem 'places_integration',         '2.1.5',        github: 'thl/places_integratio
 gem 'places_engine',              '4.3.5',        github: 'thl/places_engine',               tag: 'v4.3.5' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.0',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.0' #path: '../engines/resource_controller'
-gem 'shanti_integration',         '3.2.5',        github: 'shanti-uva/shanti_integration',   tag: 'v3.2.5' #path: '../engines/shanti_integration'
+gem 'shanti_integration',         '3.2.6',        github: 'shanti-uva/shanti_integration',   tag: 'v3.2.6' #path: '../engines/shanti_integration'
 gem 'subjects_integration',       '0.1.7',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.7' #path: '../engines/subjects_integration'
 gem 'universal_navigation',       '3.0.6',        github: 'thl/universal_navigation',        tag: 'v3.0.6' #path: '../../thl/engines/universal_navigation'
 
