@@ -53,10 +53,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: f5a8bc430557527ba502a510148317de8118f43e
-  tag: v3.2.6
+  revision: a2bfe00d4ffe786bfa1826383e6df6f049f205ae
+  tag: v3.2.7
   specs:
-    shanti_integration (3.2.6)
+    shanti_integration (3.2.7)
       rails (~> 4.0)
 
 GIT
@@ -121,10 +121,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: a3f13c856e70e2462b39e8dd8b3151c39cb8f57c
-  tag: v2.2.7
+  revision: 52f6fcec8b803bcf43babeaea051beed220ec4b7
+  tag: v2.2.8
   specs:
-    mms_integration (2.2.7)
+    mms_integration (2.2.8)
       rails (~> 4.0)
 
 GIT
@@ -338,7 +338,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kmaps_engine (= 3.5.5)!
-  mms_integration (= 2.2.7)!
+  mms_integration (= 2.2.8)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
@@ -352,7 +352,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.2.6)!
+  shanti_integration (= 3.2.7)!
   spawnling (= 2.1.6)!
   spring
   subjects_integration (= 0.1.7)!
