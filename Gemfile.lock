@@ -28,10 +28,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 74469480f646fbea76891105ee8e2a2d3af2174c
-  tag: v3.6.0
+  revision: f8a21d7d4a5a2e7b6374288246d67370fac226b4
+  tag: v3.6.1
   specs:
-    kmaps_engine (3.6.0)
+    kmaps_engine (3.6.1)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -113,10 +113,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: 12f1a55df3a14bc9daab7ad1731c96c7bd702f0b
-  tag: v2.2.8
+  revision: 5399b3c1a9f95f67abf25f747eb29a75de45cde6
+  tag: v2.2.9
   specs:
-    interface_utils (2.2.8)
+    interface_utils (2.2.9)
       rails (~> 4.0)
 
 GIT
@@ -334,10 +334,10 @@ DEPENDENCIES
   dynamic_form
   flare (= 0.1.2)!
   hpricot
-  interface_utils (= 2.2.8)!
+  interface_utils (= 2.2.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.6.0)!
+  kmaps_engine (= 3.6.1)!
   mms_integration (= 2.2.8)!
   newrelic_rpm
   open_id_authentication
