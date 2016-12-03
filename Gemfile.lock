@@ -19,19 +19,19 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 74b583884ae0dbe04d0c946d0f47e4102e263648
-  tag: v0.1.2
+  revision: 3bc723bac49d774cfada88dc636c43600b64e89e
+  tag: v1.0.0
   specs:
-    flare (0.1.2)
+    flare (1.0.0)
       rails (~> 4.1.5)
       rsolr
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: f8a21d7d4a5a2e7b6374288246d67370fac226b4
-  tag: v3.6.1
+  revision: 7174465509e33c499ca46b993fa84de81d08d852
+  tag: v3.6.3
   specs:
-    kmaps_engine (3.6.1)
+    kmaps_engine (3.6.3)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -53,10 +53,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 59efa427155df8d3f8a8242d462561a39dbba4cc
-  tag: v3.2.8
+  revision: 14fdaf5139886e97e18d94d3efc95c84d873c5b9
+  tag: v3.2.9
   specs:
-    shanti_integration (3.2.8)
+    shanti_integration (3.2.9)
       rails (~> 4.0)
 
 GIT
@@ -121,18 +121,18 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 52f6fcec8b803bcf43babeaea051beed220ec4b7
-  tag: v2.2.8
+  revision: a8f6726f6980e0d1185b5ca302ebb80faf132e1d
+  tag: v2.3.0
   specs:
-    mms_integration (2.2.8)
+    mms_integration (2.3.0)
       rails (~> 4.0)
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 4f57dacac8b768b931290d2b23a564fca7ed13ca
-  tag: v4.3.8
+  revision: 806f874bc5a3c421e761131514abaac82b11324b
+  tag: v4.3.9
   specs:
-    places_engine (4.3.8)
+    places_engine (4.3.9)
       rails (~> 4.0)
 
 GIT
@@ -313,7 +313,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.3)
+    uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
     will_paginate (3.1.0)
 
@@ -332,17 +332,17 @@ DEPENDENCIES
   complex_dates (= 2.1.8)!
   complex_scripts (= 2.2.7)!
   dynamic_form
-  flare (= 0.1.2)!
+  flare (= 1.0.0)!
   hpricot
   interface_utils (= 2.2.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.6.1)!
-  mms_integration (= 2.2.8)!
+  kmaps_engine (= 3.6.3)!
+  mms_integration (= 2.3.0)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.3.8)!
+  places_engine (= 4.3.9)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -352,7 +352,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.2.8)!
+  shanti_integration (= 3.2.9)!
   spawnling (= 2.1.6)!
   spring
   subjects_integration (= 0.1.7)!
