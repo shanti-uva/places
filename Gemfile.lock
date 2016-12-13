@@ -19,19 +19,19 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 3bc723bac49d774cfada88dc636c43600b64e89e
-  tag: v1.0.0
+  revision: 8519652ec2b109f926085f142a477f834954549c
+  tag: v1.0.1
   specs:
-    flare (1.0.0)
+    flare (1.0.1)
       rails (~> 4.1.5)
       rsolr
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 7174465509e33c499ca46b993fa84de81d08d852
-  tag: v3.6.3
+  revision: c3f68e06070de6e0d10a659bd3c86c8672faf5f8
+  tag: v3.6.4
   specs:
-    kmaps_engine (3.6.3)
+    kmaps_engine (3.6.4)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -121,18 +121,18 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: a8f6726f6980e0d1185b5ca302ebb80faf132e1d
-  tag: v2.3.0
+  revision: db9124bc13abbcba84e0a9196b9b81219c0dcd92
+  tag: v2.3.1
   specs:
-    mms_integration (2.3.0)
+    mms_integration (2.3.1)
       rails (~> 4.0)
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 806f874bc5a3c421e761131514abaac82b11324b
-  tag: v4.3.9
+  revision: 3dd5086d0e6d5ef95db0d4a375307d6a6ba10efc
+  tag: v4.4.0
   specs:
-    places_engine (4.3.9)
+    places_engine (4.4.0)
       rails (~> 4.0)
 
 GIT
@@ -332,17 +332,17 @@ DEPENDENCIES
   complex_dates (= 2.1.8)!
   complex_scripts (= 2.2.7)!
   dynamic_form
-  flare (= 1.0.0)!
+  flare (= 1.0.1)!
   hpricot
   interface_utils (= 2.2.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.6.3)!
-  mms_integration (= 2.3.0)!
+  kmaps_engine (= 3.6.4)!
+  mms_integration (= 2.3.1)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.3.9)!
+  places_engine (= 4.4.0)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
