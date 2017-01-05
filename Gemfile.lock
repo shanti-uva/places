@@ -95,10 +95,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 99e1b917b16a526ae286b050f316a69dcdad719f
-  tag: v2.1.8
+  revision: 07ac956523efa869267c8f5124672bd84d0bbe60
+  tag: v2.1.9
   specs:
-    complex_dates (2.1.8)
+    complex_dates (2.1.9)
       rails (~> 4.0)
 
 GIT
@@ -329,7 +329,7 @@ DEPENDENCIES
   authenticated_system (= 2.3.4)!
   bootstrap-sass (~> 3.3.5)
   byebug
-  complex_dates (= 2.1.8)!
+  complex_dates (= 2.1.9)!
   complex_scripts (= 2.2.7)!
   dynamic_form
   flare (= 1.0.1)!
