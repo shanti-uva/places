@@ -129,10 +129,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: fb4f5542d9c3759194aa88e8e002c8eae5d783c5
-  tag: v4.4.3
+  revision: 4fa4ff9531945b34f9834a7ca98db260b27d8247
+  tag: v4.4.4
   specs:
-    places_engine (4.4.3)
+    places_engine (4.4.4)
       rails (~> 4.0)
 
 GIT
@@ -342,7 +342,7 @@ DEPENDENCIES
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.4.3)!
+  places_engine (= 4.4.4)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
