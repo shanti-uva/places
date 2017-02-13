@@ -28,10 +28,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 348e5f752c443fd4e154c78f1192747c90628ddc
-  tag: v3.7.5
+  revision: 4c1e285617a0d1172a09bd59fe8d456bd741f5b5
+  tag: v3.7.6
   specs:
-    kmaps_engine (3.7.5)
+    kmaps_engine (3.7.6)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -53,10 +53,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 592e38f4803dd6d363db0342082eb2a20a3ddd1f
-  tag: v3.3.1
+  revision: d76da4746d474ccd11f0f2ef1090f1c50d9a9400
+  tag: v3.3.2
   specs:
-    shanti_integration (3.3.1)
+    shanti_integration (3.3.2)
       rails (~> 4.0)
 
 GIT
@@ -95,10 +95,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 18635340b71ed067481a30cc5dfbbde64b1c5c26
-  tag: v2.2.0
+  revision: 43e5d7f35d5039760793fc5663e2b42b99dc2826
+  tag: v2.2.1
   specs:
-    complex_dates (2.2.0)
+    complex_dates (2.2.1)
       rails (~> 4.0)
 
 GIT
@@ -129,10 +129,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 978ad042367c7fbc8c88c5dfb375731f13e9a243
-  tag: v4.4.8
+  revision: f3a59887226fc9a1049288bd6ec146cb590436b6
+  tag: v4.4.9
   specs:
-    places_engine (4.4.8)
+    places_engine (4.4.9)
       rails (~> 4.0)
 
 GIT
@@ -329,7 +329,7 @@ DEPENDENCIES
   authenticated_system (= 2.3.4)!
   bootstrap-sass (~> 3.3.5)
   byebug
-  complex_dates (= 2.2.0)!
+  complex_dates (= 2.2.1)!
   complex_scripts (= 2.2.7)!
   dynamic_form
   flare (= 1.0.1)!
@@ -337,12 +337,12 @@ DEPENDENCIES
   interface_utils (= 2.2.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.7.5)!
+  kmaps_engine (= 3.7.6)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.4.8)!
+  places_engine (= 4.4.9)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -352,7 +352,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.3.1)!
+  shanti_integration (= 3.3.2)!
   spawnling (= 2.1.6)!
   spring
   subjects_integration (= 0.1.7)!
