@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: e55f85126f60d08182c0b136d98ae75212176f69
-  tag: v3.8.6
+  revision: aa2df5a6ce94710c0a0318fb0a087ffe3babbcdd
+  branch: relation-tree/MANU-3716/drc2r
   specs:
     kmaps_engine (3.8.6)
       annotate
@@ -80,8 +80,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/acts_as_family_tree.git
-  revision: 01a26dfffdfd202d35c6163919ce50c615f4410b
-  tag: v1.1.4
+  revision: 53f31853910c1e14441454f2699dac707828559f
+  branch: relation-tree/MANU-3716/drc2r
   specs:
     acts_as_family_tree (1.1.4)
       rails (~> 4.0)
@@ -130,8 +130,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 48a42aac16c60a95067fc6a6664bb8417175f007
-  tag: v4.5.4
+  revision: 35828c1d11e98905505abbdabf30884ee7676cf9
+  branch: relation-tree/MANU-3716/drc2r
   specs:
     places_engine (4.5.4)
       rails (~> 4.0)
@@ -154,8 +154,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 8860f26e87776087021d077454a813acb46a51cf
-  tag: v3.0.6
+  revision: 6c25270bbf65b969d69b100ccc66a560a12eae75
+  branch: relation-tree/MANU-3716/drc2r
   specs:
     universal_navigation (3.0.6)
       rails (~> 4.0)
@@ -318,7 +318,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.1.13)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     will_paginate (3.1.0)
 
