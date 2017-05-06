@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 16f8e1ca01561509ef43702dd9ac7a5bb414bd9f
-  tag: v3.8.9
+  revision: f3c5fff3f26a92d0a8d34d1731b1eaca09da044e
+  tag: v3.9.0
   specs:
-    kmaps_engine (3.8.9)
+    kmaps_engine (3.9.0)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -54,10 +54,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 43d81edebd8565863625b7a20ca471455a494f94
-  tag: v3.3.4
+  revision: 33f7dadc8357a57cfc5aef7db2dba7319e5ab57a
+  tag: v3.3.5
   specs:
-    shanti_integration (3.3.4)
+    shanti_integration (3.3.5)
       rails (~> 4.0)
 
 GIT
@@ -315,7 +315,7 @@ GEM
       railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
+    turbolinks-source (5.0.3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -343,7 +343,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.8.9)!
+  kmaps_engine (= 3.9.0)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
@@ -358,7 +358,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.3.4)!
+  shanti_integration (= 3.3.5)!
   spawnling (= 2.1.6)!
   spring
   subjects_integration (= 0.1.7)!
