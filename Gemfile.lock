@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 51f904cac58ee44188475b36a4b0c2bc5099bb29
+  revision: f5b4ba7c43ea7c31774188abf34c2920485bd4a6
   branch: theme-sync/MANU-3793/drc2r
   specs:
     shanti_integration (3.3.5)
