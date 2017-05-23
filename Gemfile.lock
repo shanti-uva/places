@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: fb705aeffb7f7e455aa207d93298097270534356
-  tag: v3.9.1
+  revision: 55e0c9a7fa24176a8b7f49dfac86f6685299a2a7
+  branch: theme-sync/MANU-3793/drc2r
   specs:
     kmaps_engine (3.9.1)
       annotate
@@ -54,8 +54,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 33f7dadc8357a57cfc5aef7db2dba7319e5ab57a
-  tag: v3.3.5
+  revision: 51f904cac58ee44188475b36a4b0c2bc5099bb29
+  branch: theme-sync/MANU-3793/drc2r
   specs:
     shanti_integration (3.3.5)
       rails (~> 4.0)
@@ -130,10 +130,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: b0e90ecdd3ca3d465cce3e3a1bc2698839001665
-  tag: v4.5.8
+  revision: 92f01cb063103027a299071297fb2807aa1b77d1
+  branch: theme-sync/MANU-3793/drc2r
   specs:
-    places_engine (4.5.8)
+    places_engine (4.5.7)
       rails (~> 4.0)
 
 GIT
@@ -154,10 +154,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: ab12eae8f1970a7ba8c0b5af70830c1f50e90d20
-  tag: v3.0.7
+  revision: a270db50c7290ff655b51277902c101aeec9d731
+  tag: v3.0.8
   specs:
-    universal_navigation (3.0.7)
+    universal_navigation (3.0.8)
       rails (~> 4.0)
 
 GEM
@@ -348,7 +348,7 @@ DEPENDENCIES
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.5.8)!
+  places_engine (= 4.5.7)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -364,7 +364,7 @@ DEPENDENCIES
   subjects_integration (= 0.1.7)!
   therubyracer
   tinymce-rails
-  universal_navigation (= 3.0.7)!
+  universal_navigation (= 3.0.8)!
   will_paginate
 
 BUNDLED WITH
