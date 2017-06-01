@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: fb705aeffb7f7e455aa207d93298097270534356
-  tag: v3.9.1
+  revision: 782b49cb3d1923a00496e547e920c7898b0ba4c3
+  tag: v3.9.2
   specs:
-    kmaps_engine (3.9.1)
+    kmaps_engine (3.9.2)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -130,10 +130,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 96b6d52a17a705fd43ac76cb4d58b6f8c68db71c
-  tag: v4.5.9
+  revision: a5137e61a24127d6259d8b87c3c7b5c837985a99
+  tag: v4.6.0
   specs:
-    places_engine (4.5.9)
+    places_engine (4.6.0)
       rails (~> 4.0)
 
 GIT
@@ -154,10 +154,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: ab12eae8f1970a7ba8c0b5af70830c1f50e90d20
-  tag: v3.0.7
+  revision: a270db50c7290ff655b51277902c101aeec9d731
+  tag: v3.0.8
   specs:
-    universal_navigation (3.0.7)
+    universal_navigation (3.0.8)
       rails (~> 4.0)
 
 GEM
@@ -343,12 +343,12 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.9.1)!
+  kmaps_engine (= 3.9.2)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.5.9)!
+  places_engine (= 4.6.0)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -364,7 +364,7 @@ DEPENDENCIES
   subjects_integration (= 0.1.7)!
   therubyracer
   tinymce-rails
-  universal_navigation (= 3.0.7)!
+  universal_navigation (= 3.0.8)!
   will_paginate
 
 BUNDLED WITH

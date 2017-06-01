@@ -47,14 +47,14 @@ gem 'complex_scripts',            '2.2.7',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.0',        github: 'thl/interface_utils',             tag: 'v2.3.0' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.1.1',        github: 'shanti-uva/flare',                tag: 'v1.1.1' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.2',        github: 'thl/mms_integration',             tag: 'v2.3.2' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '3.9.1',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.9.1' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '3.9.2',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.9.2' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.5.9',        github: 'thl/places_engine',               tag: 'v4.5.9' #path: '../../thl/engines/places_engine'
+gem 'places_engine',              '4.6.0',        github: 'thl/places_engine',               tag: 'v4.6.0' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.0',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.0' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.3.5',        github: 'shanti-uva/shanti_integration',   tag: 'v3.3.5' #path: '../engines/shanti_integration'
 gem 'subjects_integration',       '0.1.7',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.7' #path: '../engines/subjects_integration'
-gem 'universal_navigation',       '3.0.7',        github: 'thl/universal_navigation',        tag: 'v3.0.7' #path: '../../thl/engines/universal_navigation'
+gem 'universal_navigation',       '3.0.8',        github: 'thl/universal_navigation',        tag: 'v3.0.8' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
 gem 'protected_attributes'
