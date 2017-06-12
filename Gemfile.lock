@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 782b49cb3d1923a00496e547e920c7898b0ba4c3
-  tag: v3.9.2
+  revision: ea8fa92f34083d3fa87b03b5a92939ca5bf7422b
+  branch: theme-sync/MANU-3793/drc2r
   specs:
     kmaps_engine (3.9.2)
       annotate
@@ -54,8 +54,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 33f7dadc8357a57cfc5aef7db2dba7319e5ab57a
-  tag: v3.3.5
+  revision: 1f1f0a6e31d27e33790eb1b0ce3b7649c7fb0ef0
+  branch: theme-sync/MANU-3793/drc2r
   specs:
     shanti_integration (3.3.5)
       rails (~> 4.0)
@@ -130,8 +130,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: a5137e61a24127d6259d8b87c3c7b5c837985a99
-  tag: v4.6.0
+  revision: 498d8fef2fca9d729985be5902e2ccad4d2d0de5
+  branch: theme-sync/MANU-3793/drc2r
   specs:
     places_engine (4.6.0)
       rails (~> 4.0)
@@ -197,9 +197,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    annotate (2.7.1)
+    annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
-      rake (>= 10.4, < 12.0)
+      rake (>= 10.4, < 13.0)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (6.3.1)
       execjs
