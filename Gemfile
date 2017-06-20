@@ -45,7 +45,7 @@ gem 'authenticated_system',       '2.3.4',        github: 'thl/authenticated_sys
 gem 'complex_dates',              '2.2.2',        github: 'thl/complex_dates',               tag: 'v2.2.2' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '2.2.7',        github: 'thl/complex_scripts',             tag: 'v2.2.7' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.3.0',        github: 'thl/interface_utils',             tag: 'v2.3.0' #path: '../../thl/engines/interface_utils'
-gem 'flare',                      '1.1.1',        github: 'shanti-uva/flare',                tag: 'v1.1.1' #path: '../engines/flare'
+gem 'flare',                      '1.1.2',        github: 'shanti-uva/flare',                tag: 'v1.1.2' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.2',        github: 'thl/mms_integration',             tag: 'v2.3.2' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '3.9.2',        github: 'shanti-uva/kmaps_engine',         branch: 'theme-sync/MANU-3793/drc2r' #tag: 'v3.9.2' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'

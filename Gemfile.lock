@@ -19,10 +19,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 6321097ab52fc86530c9e898a1570bc3c5e9aef8
-  tag: v1.1.1
+  revision: e3abceccf4c6a0bf17eb857bbb1ba34fbb60a944
+  tag: v1.1.2
   specs:
-    flare (1.1.1)
+    flare (1.1.2)
       faraday
       rails (~> 4.1.5)
       rsolr (~> 2.0.0.pre3)
@@ -227,7 +227,7 @@ GEM
       actionmailer (>= 4.0, < 6)
       activesupport (>= 4.0, < 6)
     execjs (2.6.0)
-    faraday (0.11.0)
+    faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     hpricot (0.8.6)
     i18n (0.7.0)
@@ -283,7 +283,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
-    rsolr (2.0.0.rc1)
+    rsolr (2.0.2)
       builder (>= 2.1.2)
       faraday
     ruby-openid (2.5.0)
@@ -337,7 +337,7 @@ DEPENDENCIES
   complex_dates (= 2.2.2)!
   complex_scripts (= 2.2.7)!
   dynamic_form
-  flare (= 1.1.1)!
+  flare (= 1.1.2)!
   hpricot
   interface_utils (= 2.3.0)!
   jbuilder
