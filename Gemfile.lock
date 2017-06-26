@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: aaf556351e2f16567e9ebd327eb8e260281a5af0
+  revision: 9f5cb22d8846d24b853765a651a5a75d3f8370fd
   branch: relation-tree-solr/MANU-3901/drc2r
   specs:
     kmaps_engine (3.9.3)
