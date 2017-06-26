@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 829c5fe0786cf880e6d2ae0ac8624c687ded1fce
-  branch: theme-sync/MANU-3793/drc2r
+  revision: 2f4db4a72bab151bdfc609014ef2fa29466f9529
+  tag: v3.9.3
   specs:
-    kmaps_engine (3.9.2)
+    kmaps_engine (3.9.3)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -54,10 +54,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 1f1f0a6e31d27e33790eb1b0ce3b7649c7fb0ef0
-  branch: theme-sync/MANU-3793/drc2r
+  revision: 19550820eea27d45f23c0dbfc6dc9892b41d3365
+  tag: v3.3.6
   specs:
-    shanti_integration (3.3.5)
+    shanti_integration (3.3.6)
       rails (~> 4.0)
 
 GIT
@@ -130,10 +130,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 498d8fef2fca9d729985be5902e2ccad4d2d0de5
-  branch: theme-sync/MANU-3793/drc2r
+  revision: 4d9132469c51bbedb6c45003275a4050aba7db6f
+  tag: v4.6.1
   specs:
-    places_engine (4.6.0)
+    places_engine (4.6.1)
       rails (~> 4.0)
 
 GIT
@@ -343,12 +343,12 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 3.9.2)!
+  kmaps_engine (= 3.9.3)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.6.0)!
+  places_engine (= 4.6.1)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -358,7 +358,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.3.5)!
+  shanti_integration (= 3.3.6)!
   spawnling (= 2.1.6)!
   spring
   subjects_integration (= 0.1.7)!
