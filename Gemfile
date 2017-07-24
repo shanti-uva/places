@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'hpricot'#, '>= 0.8.6'
 gem 'rack-openid', require: 'rack/openid'
 gem 'will_paginate' #, '~> 3.0'
-gem 'tinymce-rails' #, '3.5.9' compatible with ruby 1.8.7
+gem 'tinymce-rails', '~> 4.3.3' #compatible with ruby 1.8.7
 gem 'newrelic_rpm'
 gem 'open_id_authentication'
 gem 'spawnling', '2.1.6', github: 'nexiahome/spawnling'
@@ -47,7 +47,7 @@ gem 'complex_scripts',            '2.2.7',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.0',        github: 'thl/interface_utils',             tag: 'v2.3.0' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.1.4',        github: 'shanti-uva/flare',                tag: 'v1.1.4' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.2',        github: 'thl/mms_integration',             tag: 'v2.3.2' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '3.9.8',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.9.8' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '3.9.9',        github: 'shanti-uva/kmaps_engine',         tag: 'v3.9.9' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '4.6.6',        github: 'thl/places_engine',               tag: 'v4.6.6' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
