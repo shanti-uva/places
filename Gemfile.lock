@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 8f28c44e4a66c69e8a08a4cf2724b608d0741ea1
-  tag: v4.0.0
+  revision: 69b49e6bbcb7f611dee94c5afcab9e933a4e2297
+  tag: v4.0.2
   specs:
-    kmaps_engine (4.0.0)
+    kmaps_engine (4.0.2)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -54,18 +54,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 19550820eea27d45f23c0dbfc6dc9892b41d3365
-  tag: v3.3.6
+  revision: 2698300e502345bc50b22ec4fde1f492d265f9c3
+  tag: v3.3.7
   specs:
-    shanti_integration (3.3.6)
+    shanti_integration (3.3.7)
       rails (~> 4.0)
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: eb28cec3cea71337bba975c82bf06c979584b91f
-  tag: v0.1.7
+  revision: 808a417efd31c2ef54204c3e6b1ca2e8b234d6e2
+  tag: v0.1.8
   specs:
-    subjects_integration (0.1.7)
+    subjects_integration (0.1.8)
       rails (~> 4.0)
 
 GIT
@@ -114,10 +114,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: fd45fd18bb66034ce135f59fa30adce9dc81e652
-  tag: v2.3.0
+  revision: 68c4e302a55d71db1e275807cfad1a19316729e0
+  tag: v2.3.1
   specs:
-    interface_utils (2.3.0)
+    interface_utils (2.3.1)
       rails (~> 4.0)
 
 GIT
@@ -130,10 +130,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 842a2394219e0d89f1178a30c1e68dfc5cb62eab
-  tag: v4.6.6
+  revision: 588e6f16e52dd5422c8cd145aff86a86ae331577
+  tag: v4.6.8
   specs:
-    places_engine (4.6.6)
+    places_engine (4.6.8)
       rails (~> 4.0)
 
 GIT
@@ -339,16 +339,16 @@ DEPENDENCIES
   dynamic_form
   flare (= 1.1.4)!
   hpricot
-  interface_utils (= 2.3.0)!
+  interface_utils (= 2.3.1)!
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 4.0.0)!
+  kmaps_engine (= 4.0.2)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.6.6)!
+  places_engine (= 4.6.8)!
   places_integration (= 2.1.5)!
   protected_attributes
   proxy_engine (= 2.1.2)!
@@ -358,12 +358,12 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.3.6)!
+  shanti_integration (= 3.3.7)!
   spawnling (= 2.1.6)!
   spring
-  subjects_integration (= 0.1.7)!
+  subjects_integration (= 0.1.8)!
   therubyracer
-  tinymce-rails (~> 4.3.3)
+  tinymce-rails
   universal_navigation (= 3.0.8)!
   will_paginate
 
