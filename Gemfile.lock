@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 69b49e6bbcb7f611dee94c5afcab9e933a4e2297
-  tag: v4.0.2
+  revision: 65357e94ee12e74a06d2192e8591b21cf1dba96a
+  branch: persistent-search/MANU-4008/drc2r
   specs:
     kmaps_engine (4.0.2)
       annotate
@@ -130,8 +130,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 3e6255e1c9dc168d5e6e0404f1766666b7ab8fa6
-  tag: v4.6.9
+  revision: 0864d0699e23b3b04ee65d57ab17f7b1f4bf80b4
+  branch: persistent-search/MANU-4008/drc2r
   specs:
     places_engine (4.6.9)
       rails (~> 4.0)
