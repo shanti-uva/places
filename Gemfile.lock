@@ -130,7 +130,7 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 0864d0699e23b3b04ee65d57ab17f7b1f4bf80b4
+  revision: c70e58a233e565495697c71a870b265dd0fc4613
   branch: persistent-search/MANU-4008/drc2r
   specs:
     places_engine (4.6.9)
