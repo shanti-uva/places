@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 021db543d96fc23063384d7491a97ba154175212
+  revision: 2f8d9ed69bb577d7eae8a33a0647ca0ca1c21c60
   branch: persistent-search/MANU-4008/drc2r
   specs:
     kmaps_engine (4.0.2)
