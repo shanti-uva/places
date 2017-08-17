@@ -19,8 +19,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 3efbec7b1ce5c920422bacd9220cab84812df742
-  tag: v1.1.4
+  revision: f4df2bf31e22aacdb20dfeb44898a20c53aa4db4
+  branch: persistent-search/MANU-4008/drc2r
   specs:
     flare (1.1.4)
       faraday (~> 0.11.0)
@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: e634aa2ef9228e420b85c6c202b429fcfa2bd709
-  tag: v4.0.3
+  revision: 021db543d96fc23063384d7491a97ba154175212
+  branch: persistent-search/MANU-4008/drc2r
   specs:
-    kmaps_engine (4.0.3)
+    kmaps_engine (4.0.2)
       annotate
       coffee-rails (~> 4.0.0)
       exception_notification
@@ -130,8 +130,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 3e6255e1c9dc168d5e6e0404f1766666b7ab8fa6
-  tag: v4.6.9
+  revision: 99e0579fb7412d79b6e427f25336ac3f95879aa9
+  branch: persistent-search/MANU-4008/drc2r
   specs:
     places_engine (4.6.9)
       rails (~> 4.0)
@@ -343,7 +343,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 4.0.3)!
+  kmaps_engine (= 4.0.2)!
   mms_integration (= 2.3.2)!
   newrelic_rpm
   open_id_authentication
