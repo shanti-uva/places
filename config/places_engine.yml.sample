@@ -1,0 +1,20 @@
+production:
+  geoserver:
+    hostname: localhost
+    port: 8080
+    scheme: http
+    path: /thlib-geoserver
+    
+development:
+  geoserver:
+    hostname: localhost
+    port: 8080
+    scheme: http
+    path: /thlib-geoserver
+    
+test:
+  geoserver:
+    hostname: localhost
+    port: 8080
+    scheme: http
+    path: /thlib-geoserver
