@@ -49,7 +49,7 @@ gem 'flare',                      '1.1.5',        github: 'shanti-uva/flare',   
 gem 'mms_integration',            '2.3.2',        github: 'thl/mms_integration',             tag: 'v2.3.2' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '4.0.5',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.0.5' #path: '../engines/kmaps_engine', branch: 'persistent-search/MANU-4008/drc2r'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.7.3',        github: 'thl/places_engine',               tag: 'v4.7.3' #branch: 'persistent-search/MANU-4008/drc2r', path: '../../thl/engines/places_engine'
+gem 'places_engine',              '4.7.4',        github: 'thl/places_engine',               tag: 'v4.7.4' #path: '../../thl/engines/places_engine', branch: 'persistent-search/MANU-4008/drc2r'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.0',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.0' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.3.7',        github: 'shanti-uva/shanti_integration',   tag: 'v3.3.7' #path: '../engines/shanti_integration'
