@@ -47,7 +47,7 @@ gem 'complex_scripts',            '2.2.7',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.1',        github: 'thl/interface_utils',             tag: 'v2.3.1' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.1.5',        github: 'shanti-uva/flare',                tag: 'v1.1.5' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.2',        github: 'thl/mms_integration',             tag: 'v2.3.2' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '4.0.6',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.0.6' #path: '../engines/kmaps_engine', branch: 'persistent-search/MANU-4008/drc2r'
+gem 'kmaps_engine',               '4.0.8',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.0.8' #path: '../engines/kmaps_engine', branch: 'persistent-search/MANU-4008/drc2r'
 gem 'places_integration',         '2.1.5',        github: 'thl/places_integration',          tag: 'v2.1.5' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '4.7.5',        github: 'thl/places_engine',               tag: 'v4.7.5' #path: '../../thl/engines/places_engine', branch: 'persistent-search/MANU-4008/drc2r'
 gem 'proxy_engine',               '2.1.2',        github: 'thl/proxy_engine',                tag: 'v2.1.2' #path: '../../thl/engines/proxy_engine'
