@@ -15,9 +15,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
 #gem 'RedCloth'
 #gem 'redcarpet', '~> 2.1.1'
 #gem 'nokogiri'
