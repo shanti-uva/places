@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 0592fc0421f5dbcf34bea50e583eac0e47e54efb
-  tag: v4.0.9
+  revision: 24fc0badc98fc3b513cfbd602910b2dca452c93d
+  branch: improve-related-features-interface/MANU-4311/drc2r
   specs:
     kmaps_engine (4.0.9)
       annotate
@@ -131,8 +131,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 48e2e3c48b52f945d8eb5bc685527dacf4a4e013
-  tag: geoserver-code-update/MANU-4051/drc2r
+  revision: dd17f75d1d7426d3f23d9dbb37f259affe406eac
+  branch: improve-related-features-interface/MANU-4311/drc2r
   specs:
     places_engine (4.7.6)
       rails (~> 4.1.16)
