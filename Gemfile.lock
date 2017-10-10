@@ -105,10 +105,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_scripts.git
-  revision: 89f5b59575d1b8ede33811e5d1df8221e0842183
-  tag: v2.2.9
+  revision: d4cb2ff5fe7820491a03fb1c4eac4cf2aded8ddc
+  tag: v2.3.0
   specs:
-    complex_scripts (2.2.9)
+    complex_scripts (2.3.0)
       hpricot
       passiverecord (= 0.2)
       rails (~> 4.2.5)
@@ -375,7 +375,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug
   complex_dates (= 2.2.4)!
-  complex_scripts (= 2.2.9)!
+  complex_scripts (= 2.3.0)!
   dynamic_form
   flare (= 1.1.7)!
   hpricot
