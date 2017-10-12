@@ -131,7 +131,7 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: f9cdf31862dc0495f48a35215d9454732236848d
+  revision: d47dbf5ec0f2041cd5235827dc4ba1f1e7cf683b
   branch: improve-related-features-interface/MANU-4311/drc2r
   specs:
     places_engine (4.7.7)
