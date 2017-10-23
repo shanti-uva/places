@@ -131,8 +131,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: d47dbf5ec0f2041cd5235827dc4ba1f1e7cf683b
-  branch: improve-related-features-interface/MANU-4311/drc2r
+  revision: d6c5d3237e7a4d5c001819615925e9a891bb397c
+  branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     places_engine (4.7.7)
       rails (~> 4.2.5)
