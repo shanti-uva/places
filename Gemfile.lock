@@ -97,11 +97,11 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 82e05d3e14f5798f31873ca7d1c3875f31f29fc1
-  tag: v2.2.3
+  revision: 40086a2474b616855b4235153e59140b184d311c
+  branch: error-complex_date-hotfix/MANU-4382/drc2r
   specs:
-    complex_dates (2.2.3)
-      rails (~> 4.1.16)
+    complex_dates (2.2.4)
+      rails (= 4.1.16)
 
 GIT
   remote: git://github.com/thl/complex_scripts.git
@@ -345,7 +345,7 @@ DEPENDENCIES
   authenticated_system (= 2.3.5)!
   bootstrap-sass (~> 3.3.5)
   byebug
-  complex_dates (= 2.2.3)!
+  complex_dates (= 2.2.4)!
   complex_scripts (= 2.2.8)!
   dynamic_form
   flare (= 1.1.6)!
