@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 3cbba4b73983e998944e722a4423aeefc72b0c3f
-  branch: improve-related-features-interface/MANU-4311/drc2r
+  revision: 4627dc15fbdeaafcb5fab37eb248918edf0329aa
+  branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     kmaps_engine (4.1.0)
       annotate
@@ -131,7 +131,7 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: d6c5d3237e7a4d5c001819615925e9a891bb397c
+  revision: 8fb397a7303406fd3073412daaaa7242b391a843
   branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     places_engine (4.7.7)
@@ -155,8 +155,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 234370309936d6689607555f1f2ad58889c6b481
-  tag: v3.1.0
+  revision: 87d7397b90f5bfa8db054aefaee858dc5026e5f2
+  branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     universal_navigation (3.1.0)
       rails (~> 4.2.5)
