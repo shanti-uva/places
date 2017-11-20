@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: ed80bfaca20b2e751fdad5abd7c4cc4fb5499491
+  revision: c923644d869c70be77caac1cad42b1d12cd4791e
   branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     kmaps_engine (4.1.0)
@@ -131,7 +131,7 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 33fa7f5f00455ed67356085650de456a6c2b7a27
+  revision: d8704841b9ddd4f7d547fa2d78896545abc366ae
   branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     places_engine (4.7.7)
@@ -228,7 +228,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.2)
+    crass (1.0.3)
     debug_inspector (0.0.3)
     dynamic_form (1.1.4)
     erubis (2.7.0)
@@ -306,7 +306,7 @@ GEM
       activesupport (= 4.2.5)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (12.2.1)
+    rake (12.3.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
