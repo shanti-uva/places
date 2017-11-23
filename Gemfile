@@ -5,7 +5,7 @@ source 'http://rubygems.org'
 # gem 'json'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
+gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -13,6 +13,7 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jquery-ui-rails'
 
 #gem 'RedCloth'
@@ -36,22 +37,22 @@ gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecor
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
 #gem 'activerecord-postgis-adapter'
 
-gem 'active_resource_extensions', '2.1.8',        github: 'thl/active_resource_extensions',  tag: 'v2.1.8' #path: '../../thl/engines/active_resource_extensions'
-gem 'acts_as_family_tree',        '1.1.6',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.6' #path: '../../thl/engines/acts_as_family_tree'
-gem 'authenticated_system',       '2.3.5',        github: 'thl/authenticated_system',        tag: 'v2.3.5' #path: '../../thl/engines/authenticated_system'
-gem 'complex_dates',              '2.2.3',        github: 'thl/complex_dates',               tag: 'v2.2.3' #path: '../../thl/engines/complex_dates'
-gem 'complex_scripts',            '2.2.8',        github: 'thl/complex_scripts',             tag: 'v2.2.8' #path: '../../thl/engines/complex_scripts'
-gem 'interface_utils',            '2.3.2',        github: 'thl/interface_utils',             tag: 'v2.3.2' #path: '../../thl/engines/interface_utils'
-gem 'flare',                      '1.1.6',        github: 'shanti-uva/flare',                tag: 'v1.1.6' #path: '../engines/flare'
-gem 'mms_integration',            '2.3.3',        github: 'thl/mms_integration',             tag: 'v2.3.3' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '4.0.9',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.0.9' #path: '../engines/kmaps_engine', branch: 'persistent-search/MANU-4008/drc2r'
-gem 'places_integration',         '2.1.6',        github: 'thl/places_integration',          tag: 'v2.1.6' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.7.6',        github: 'thl/places_engine',               tag: 'v4.7.6' #path: '../../thl/engines/places_engine', branch: 'persistent-search/MANU-4008/drc2r', tag: 'geoserver-code-update/MANU-4051/drc2r'
-gem 'proxy_engine',               '2.1.3',        github: 'thl/proxy_engine',                tag: 'v2.1.3' #path: '../../thl/engines/proxy_engine'
+gem 'active_resource_extensions', '2.1.9',        github: 'thl/active_resource_extensions',  tag: 'v2.1.9' #path: '../../thl/engines/active_resource_extensions'
+gem 'acts_as_family_tree',        '1.1.7',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.7' #path: '../../thl/engines/acts_as_family_tree'
+gem 'authenticated_system',       '2.3.6',        github: 'thl/authenticated_system',        tag: 'v2.3.6' #path: '../../thl/engines/authenticated_system'
+gem 'complex_dates',              '2.2.5',        github: 'thl/complex_dates',               tag: 'v2.2.5' #path: '../../thl/engines/complex_dates'
+gem 'complex_scripts',            '2.3.0',        github: 'thl/complex_scripts',             tag: 'v2.3.0' #path: '../../thl/engines/complex_scripts'
+gem 'interface_utils',            '2.3.5',        github: 'thl/interface_utils',             tag: 'v2.3.5' #path: '../../thl/engines/interface_utils'
+gem 'flare',                      '1.1.7',        github: 'shanti-uva/flare',                tag: 'v1.1.7' #path: '../engines/flare'
+gem 'mms_integration',            '2.3.4',        github: 'thl/mms_integration',             tag: 'v2.3.4' #path: '../../thl/engines/mms_integration'
+gem 'kmaps_engine',               '4.1.0',        github: 'shanti-uva/kmaps_engine',         branch: 'related-features-summary-solr/MANU-4331/drc2r' #tag: 'v4.1.0' #path: '../engines/kmaps_engine'
+gem 'places_integration',         '2.1.7',        github: 'thl/places_integration',          tag: 'v2.1.7' #path: '../../thl/engines/places_integration'
+gem 'places_engine',              '4.7.7',        github: 'thl/places_engine',               branch: 'related-features-summary-solr/MANU-4331/drc2r' #tag: 'v4.7.7' #path: '../../thl/engines/places_engine'
+gem 'proxy_engine',               '2.1.4',        github: 'thl/proxy_engine',                tag: 'v2.1.4' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.0',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.0' #path: '../engines/resource_controller'
-gem 'shanti_integration',         '3.3.8',        github: 'shanti-uva/shanti_integration',   tag: 'v3.3.8' #path: '../engines/shanti_integration'
-gem 'subjects_integration',       '0.1.9',        github: 'shanti-uva/subjects_integration', tag: 'v0.1.9' #path: '../engines/subjects_integration'
-gem 'universal_navigation',       '3.0.9',        github: 'thl/universal_navigation',        tag: 'v3.0.9' #path: '../../thl/engines/universal_navigation'
+gem 'shanti_integration',         '3.3.9',        github: 'shanti-uva/shanti_integration',   tag: 'v3.3.9' #path: '../engines/shanti_integration'
+gem 'subjects_integration',       '0.2.0',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.0' #path: '../engines/subjects_integration'
+gem 'universal_navigation',       '3.1.0',        github: 'thl/universal_navigation',        branch: 'related-features-summary-solr/MANU-4331/drc2r' #tag: 'v3.1.0' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
 gem 'protected_attributes'
