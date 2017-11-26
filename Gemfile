@@ -1,19 +1,20 @@
 source 'http://rubygems.org'
 
-# Bundle edge Rails instead:
-# gem 'rails', github: 'rails/rails'
-# gem 'json'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jquery-ui-rails'
 
 #gem 'RedCloth'
@@ -37,48 +38,42 @@ gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecor
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
 #gem 'activerecord-postgis-adapter'
 
-gem 'active_resource_extensions', '2.1.9',        github: 'thl/active_resource_extensions',  tag: 'v2.1.9' #path: '../../thl/engines/active_resource_extensions'
-gem 'acts_as_family_tree',        '1.1.7',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.7' #path: '../../thl/engines/acts_as_family_tree'
-gem 'authenticated_system',       '2.3.6',        github: 'thl/authenticated_system',        tag: 'v2.3.6' #path: '../../thl/engines/authenticated_system'
-gem 'complex_dates',              '2.2.5',        github: 'thl/complex_dates',               tag: 'v2.2.5' #path: '../../thl/engines/complex_dates'
-gem 'complex_scripts',            '2.3.0',        github: 'thl/complex_scripts',             tag: 'v2.3.0' #path: '../../thl/engines/complex_scripts'
-gem 'interface_utils',            '2.3.5',        github: 'thl/interface_utils',             tag: 'v2.3.5' #path: '../../thl/engines/interface_utils'
-gem 'flare',                      '1.1.7',        github: 'shanti-uva/flare',                tag: 'v1.1.7' #path: '../engines/flare'
-gem 'mms_integration',            '2.3.4',        github: 'thl/mms_integration',             tag: 'v2.3.4' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '4.1.2',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.1.2' #path: '../engines/kmaps_engine'
-gem 'places_integration',         '2.1.7',        github: 'thl/places_integration',          tag: 'v2.1.7' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '4.7.8',        github: 'thl/places_engine',               tag: 'v4.7.8' #path: '../../thl/engines/places_engine'
-gem 'proxy_engine',               '2.1.4',        github: 'thl/proxy_engine',                tag: 'v2.1.4' #path: '../../thl/engines/proxy_engine'
-gem 'resource_controller',        '0.9.0',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.0' #path: '../engines/resource_controller'
-gem 'shanti_integration',         '3.3.9',        github: 'shanti-uva/shanti_integration',   tag: 'v3.3.9' #path: '../engines/shanti_integration'
-gem 'subjects_integration',       '0.2.0',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.0' #path: '../engines/subjects_integration'
-gem 'universal_navigation',       '3.1.1',        github: 'thl/universal_navigation',        tag: 'v3.1.1' #path: '../../thl/engines/universal_navigation'
+gem 'active_resource_extensions', '2.2.0',        github: 'thl/active_resource_extensions',  tag: 'v2.2.0' #path: '../../thl/engines/active_resource_extensions'
+gem 'acts_as_family_tree',        '1.1.8',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.8' #path: '../../thl/engines/acts_as_family_tree'
+gem 'authenticated_system',       '2.3.7',        github: 'thl/authenticated_system',        tag: 'v2.3.7' #path: '../../thl/engines/authenticated_system'
+gem 'complex_dates',              '2.2.6',        github: 'thl/complex_dates',               tag: 'v2.2.6' #path: '../../thl/engines/complex_dates'
+gem 'complex_scripts',            '2.3.1',        github: 'thl/complex_scripts',             tag: 'v2.3.1' #path: '../../thl/engines/complex_scripts'
+gem 'interface_utils',            '2.3.6',        github: 'thl/interface_utils',             tag: 'v2.3.6' #path: '../../thl/engines/interface_utils'
+gem 'flare',                      '1.1.8',        github: 'shanti-uva/flare',                tag: 'v1.1.8' #path: '../engines/flare'
+gem 'mms_integration',            '2.3.5',        github: 'thl/mms_integration',             tag: 'v2.3.5' #path: '../../thl/engines/mms_integration'
+gem 'kmaps_engine',               '4.1.3',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.1.3' #path: '../engines/kmaps_engine'
+gem 'places_integration',         '2.1.8',        github: 'thl/places_integration',          tag: 'v2.1.8' #path: '../../thl/engines/places_integration'
+gem 'places_engine',              '4.7.9',        github: 'thl/places_engine',               tag: 'v4.7.9' #path: '../../thl/engines/places_engine'
+gem 'proxy_engine',               '2.1.5',        github: 'thl/proxy_engine',                tag: 'v2.1.5' #path: '../../thl/engines/proxy_engine'
+gem 'resource_controller',        '0.9.1',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.1' #path: '../engines/resource_controller'
+gem 'shanti_integration',         '3.4.1',        github: 'shanti-uva/shanti_integration',   tag: 'v3.4.1' #path: '../engines/shanti_integration'
+gem 'subjects_integration',       '0.2.1',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.1' #path: '../engines/subjects_integration'
+gem 'universal_navigation',       '3.1.2',        github: 'thl/universal_navigation',        tag: 'v3.1.2' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
-gem 'protected_attributes'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', platform: :mri
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
