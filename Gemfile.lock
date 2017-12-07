@@ -369,7 +369,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.1)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.3.0)
       activemodel (>= 4.2)
@@ -425,6 +425,7 @@ DEPENDENCIES
   subjects_integration (= 0.2.1)!
   tinymce-rails
   tzinfo-data
+  uglifier (= 3.2.0)
   universal_navigation (= 3.1.2)!
   web-console (>= 3.3.0)
   will_paginate
