@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 5ab5a3f01881592d5fad159105937e9ec86353bf
-  tag: v4.1.6
+  revision: b7cd077197e4698c8986c0c7b2eee2ea282e9ecf
+  branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     kmaps_engine (4.1.6)
       annotate
@@ -132,8 +132,8 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 576b36495c95b7ef8cca9947e595efce18a15737
-  tag: v4.7.9
+  revision: f02171375d76a2764afacfcfdb37492c4577b99b
+  branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     places_engine (4.7.9)
       rails (>= 4.0)
@@ -369,7 +369,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.1)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.3.0)
       activemodel (>= 4.2)
