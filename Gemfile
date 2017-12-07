@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.1.4'
+gem 'uglifier', '3.2.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -52,7 +56,7 @@ gem 'complex_scripts',            '2.3.1',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.6',        github: 'thl/interface_utils',             tag: 'v2.3.6' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.1.8',        github: 'shanti-uva/flare',                tag: 'v1.1.8' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.5',        github: 'thl/mms_integration',             tag: 'v2.3.5' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '4.1.5',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.1.5' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '4.1.6',        github: 'shanti-uva/kmaps_engine',         tag: 'v4.1.6' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.8',        github: 'thl/places_integration',          tag: 'v2.1.8' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '4.7.9',        github: 'thl/places_engine',               tag: 'v4.7.9' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.5',        github: 'thl/proxy_engine',                tag: 'v2.1.5' #path: '../../thl/engines/proxy_engine'
