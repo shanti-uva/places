@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: b7cd077197e4698c8986c0c7b2eee2ea282e9ecf
+  revision: 999592298fd630fd48d6a84dd960330b40ec0804
   branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     kmaps_engine (4.1.6)
@@ -132,7 +132,7 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: f02171375d76a2764afacfcfdb37492c4577b99b
+  revision: f5cc419cd436048dc6867a42e8900acf692d0a8c
   branch: related-features-summary-solr/MANU-4331/drc2r
   specs:
     places_engine (4.7.9)
@@ -264,7 +264,7 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (1.8.6)
-    libv8 (3.16.14.19-x86_64-darwin-15)
+    libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
