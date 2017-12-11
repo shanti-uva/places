@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 999592298fd630fd48d6a84dd960330b40ec0804
-  branch: related-features-summary-solr/MANU-4331/drc2r
+  revision: e00a1d39873a3b39d37663a38a2160ef99e1442b
+  branch: staging-testing/MANU-4419/drc2r
   specs:
     kmaps_engine (4.1.6)
       annotate
@@ -48,10 +48,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/resource_controller.git
-  revision: 5d910b306f556cfac3dc3f0937360725ae3bd94f
-  tag: v0.9.1
+  revision: 54800be42767e071f075257ef2e3bb1bf465f216
+  tag: v0.9.2
   specs:
-    resource_controller (0.9.1)
+    resource_controller (0.9.2)
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
@@ -132,8 +132,8 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: f5cc419cd436048dc6867a42e8900acf692d0a8c
-  branch: related-features-summary-solr/MANU-4331/drc2r
+  revision: 30118ce1287bf68321c52f532c15f7c9f721f6f0
+  branch: staging-testing/MANU-4419/drc2r
   specs:
     places_engine (4.7.9)
       rails (>= 4.0)
@@ -418,7 +418,7 @@ DEPENDENCIES
   rack-openid
   rails (= 4.2.5)
   rails-observers
-  resource_controller (= 0.9.1)!
+  resource_controller (= 0.9.2)!
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
