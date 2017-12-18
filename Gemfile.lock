@@ -148,10 +148,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/proxy_engine.git
-  revision: 8b0811dc4f3685b9844a3d205776b5282550f17f
-  tag: v2.1.5
+  revision: 7b032964ef34b578162210d352b197da86fb53cc
+  tag: v2.1.6
   specs:
-    proxy_engine (2.1.5)
+    proxy_engine (2.1.6)
       rails (>= 4.0)
 
 GIT
@@ -409,7 +409,7 @@ DEPENDENCIES
   passiverecord (= 0.2)!
   places_engine (= 4.8.0)!
   places_integration (= 2.1.8)!
-  proxy_engine (= 2.1.5)!
+  proxy_engine (= 2.1.6)!
   rack-openid
   rails (= 4.2.5)
   rails-observers
