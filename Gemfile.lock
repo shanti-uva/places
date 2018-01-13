@@ -5,12 +5,6 @@ GIT
     passiverecord (0.2)
 
 GIT
-  remote: https://github.com/nexiahome/spawnling.git
-  revision: 422a0aadbc685c17962348468e22e69e18d94500
-  specs:
-    spawnling (2.1.6)
-
-GIT
   remote: https://github.com/raszi/restful-authentication.git
   revision: 0f7d50512bf47a63e53ea05cd5a7b2161732448f
   branch: rails4
@@ -19,20 +13,20 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/flare.git
-  revision: 229637f1b095716a84162332637b4899dd2fb5f1
-  tag: v1.1.8
+  revision: 919c96812c77b90ee0613f4f7865d1ecd18b4ff7
+  tag: v1.1.9
   specs:
-    flare (1.1.8)
+    flare (1.1.9)
       faraday (~> 0.11.0)
       rails (>= 4.0)
       rsolr (~> 2.0.0.pre3)
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: ee69286236c32d2ccb5ce6ac3fe82a33dd7b10ba
-  tag: v5.0.1
+  revision: 02a8b4a337d552499d3f0d32a48d9943cc6ca7ca
+  tag: v5.0.2
   specs:
-    kmaps_engine (5.0.1)
+    kmaps_engine (5.0.2)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -90,10 +84,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/authenticated_system.git
-  revision: dbc9af12ac5ffd0d26e854098046846d2d6c128c
-  tag: v2.3.7
+  revision: a2cf08808e67a71c8d53c6fc5ceca837936a620b
+  tag: v2.3.8
   specs:
-    authenticated_system (2.3.7)
+    authenticated_system (2.3.8)
       rails (>= 4.0)
 
 GIT
@@ -106,10 +100,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_scripts.git
-  revision: 30763989be4af90cb4568ae8b8d26a75f98c575e
-  tag: v3.0.0
+  revision: 12f02fc95888b4b445f693e9b34833d7d0260129
+  tag: v3.0.1
   specs:
-    complex_scripts (3.0.0)
+    complex_scripts (3.0.1)
       hpricot
       passiverecord (= 0.2)
       rails (>= 4.0)
@@ -132,10 +126,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 098dbbe7889b7ca0870fe0d532c899df8607e59f
-  tag: v4.8.1
+  revision: f23c6e43359bbceb7857e2d893e5b88f7badf7b2
+  tag: v4.8.2
   specs:
-    places_engine (4.8.1)
+    places_engine (4.8.2)
       rails (>= 4.0)
 
 GIT
@@ -356,6 +350,7 @@ GEM
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    spawnling (2.1.6)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -376,9 +371,9 @@ GEM
     tilt (2.0.8)
     tinymce-rails (4.7.4)
       railties (>= 3.1.1)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.3)
+    turbolinks (5.1.0)
+      turbolinks-source (~> 5.1)
+    turbolinks-source (5.1.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -402,28 +397,29 @@ DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
   active_resource_extensions (= 2.2.0)!
+  activemodel-serializers-xml
   activeresource
   acts_as_family_tree (= 1.1.9)!
-  authenticated_system (= 2.3.7)!
+  authenticated_system (= 2.3.8)!
   bootstrap-sass (~> 3.3.5)
   byebug
   capybara (~> 2.13)
   complex_dates (= 2.2.6)!
-  complex_scripts (= 3.0.0)!
+  complex_scripts (= 3.0.1)!
   dynamic_form
-  flare (= 1.1.8)!
+  flare (= 1.1.9)!
   hpricot
   interface_utils (= 2.3.6)!
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.0.1)!
+  kmaps_engine (= 5.0.2)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.5)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.8.1)!
+  places_engine (= 4.8.2)!
   places_integration (= 2.1.8)!
   proxy_engine (= 2.1.6)!
   rack-openid
@@ -435,7 +431,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selenium-webdriver
   shanti_integration (= 3.4.1)!
-  spawnling (= 2.1.6)!
+  spawnling
   spring
   spring-watcher-listen (~> 2.0.0)
   subjects_integration (= 0.2.1)!
