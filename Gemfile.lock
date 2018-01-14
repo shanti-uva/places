@@ -110,10 +110,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/interface_utils.git
-  revision: bde636a67ea0f6c9a2f0243cb34e486bc24311b7
-  tag: v2.3.6
+  revision: 06b4455010929390d642993d6829416150df7301
+  tag: v2.3.7
   specs:
-    interface_utils (2.3.6)
+    interface_utils (2.3.7)
       rails (>= 4.0)
 
 GIT
@@ -409,7 +409,7 @@ DEPENDENCIES
   dynamic_form
   flare (= 1.1.9)!
   hpricot
-  interface_utils (= 2.3.6)!
+  interface_utils (= 2.3.7)!
   jbuilder
   jquery-rails
   jquery-ui-rails
