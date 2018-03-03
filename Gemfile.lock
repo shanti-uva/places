@@ -1,18 +1,18 @@
 GIT
-  remote: https://github.com/ambethia/passiverecord.git
+  remote: git://github.com/ambethia/passiverecord.git
   revision: cdf0747243e9bbf067ab6fea8cc6cc8f860112b1
   specs:
     passiverecord (0.2)
 
 GIT
-  remote: https://github.com/raszi/restful-authentication.git
+  remote: git://github.com/raszi/restful-authentication.git
   revision: 0f7d50512bf47a63e53ea05cd5a7b2161732448f
   branch: rails4
   specs:
     restful-authentication (2.0.0.beta1)
 
 GIT
-  remote: https://github.com/shanti-uva/flare.git
+  remote: git://github.com/shanti-uva/flare.git
   revision: 8a8a0fe2b7ba7a66ff11643a0441353a85f08b3c
   tag: v1.2.0
   specs:
@@ -22,7 +22,7 @@ GIT
       rsolr (~> 2.0.0.pre3)
 
 GIT
-  remote: https://github.com/shanti-uva/kmaps_engine.git
+  remote: git://github.com/shanti-uva/kmaps_engine.git
   revision: b07f583980fc2d0897b2b2a4e4f36973be9999ee
   tag: v5.0.7
   specs:
@@ -41,14 +41,14 @@ GIT
       will_paginate
 
 GIT
-  remote: https://github.com/shanti-uva/resource_controller.git
+  remote: git://github.com/shanti-uva/resource_controller.git
   revision: 54800be42767e071f075257ef2e3bb1bf465f216
   tag: v0.9.2
   specs:
     resource_controller (0.9.2)
 
 GIT
-  remote: https://github.com/shanti-uva/shanti_integration.git
+  remote: git://github.com/shanti-uva/shanti_integration.git
   revision: 0773208faf7aa3d424548d8c5589052bde462a4c
   tag: v3.4.1
   specs:
@@ -56,7 +56,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/shanti-uva/subjects_integration.git
+  remote: git://github.com/shanti-uva/subjects_integration.git
   revision: 80ec506bc1ecb74f22b85f8f06f4fdc48a3a36e3
   tag: v0.2.2
   specs:
@@ -65,7 +65,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/active_resource_extensions.git
+  remote: git://github.com/thl/active_resource_extensions.git
   revision: ba098c7939d19c04bb8e4d5fe14610fe0bc76073
   tag: v2.2.0
   specs:
@@ -75,7 +75,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/acts_as_family_tree.git
+  remote: git://github.com/thl/acts_as_family_tree.git
   revision: 93231fd487fafe35936fe62f2109067fedd8605d
   tag: v1.1.9
   specs:
@@ -83,7 +83,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/authenticated_system.git
+  remote: git://github.com/thl/authenticated_system.git
   revision: a2cf08808e67a71c8d53c6fc5ceca837936a620b
   tag: v2.3.8
   specs:
@@ -91,7 +91,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/complex_dates.git
+  remote: git://github.com/thl/complex_dates.git
   revision: 8f7470089417776ea9820028ecde07dcb40b6c91
   tag: v2.2.6
   specs:
@@ -99,7 +99,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/complex_scripts.git
+  remote: git://github.com/thl/complex_scripts.git
   revision: 2c6ceed8418f986f54533adda1e582b47fba6696
   tag: v3.0.5
   specs:
@@ -109,7 +109,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/interface_utils.git
+  remote: git://github.com/thl/interface_utils.git
   revision: 06b4455010929390d642993d6829416150df7301
   tag: v2.3.7
   specs:
@@ -117,7 +117,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/mms_integration.git
+  remote: git://github.com/thl/mms_integration.git
   revision: dde4ddc0b7616fab1619a72ce1d99ae13a0dfcef
   tag: v2.3.5
   specs:
@@ -125,7 +125,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/places_engine.git
+  remote: git://github.com/thl/places_engine.git
   revision: 007eeb5ee726869a0fc4db8b10df5b3183b5064a
   tag: v4.8.4
   specs:
@@ -133,7 +133,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/places_integration.git
+  remote: git://github.com/thl/places_integration.git
   revision: e9305ee67301145dd5c08a033ffdd07458c8ec1c
   tag: v2.1.9
   specs:
@@ -141,7 +141,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/proxy_engine.git
+  remote: git://github.com/thl/proxy_engine.git
   revision: 7b032964ef34b578162210d352b197da86fb53cc
   tag: v2.1.6
   specs:
@@ -149,7 +149,7 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/universal_navigation.git
+  remote: git://github.com/thl/universal_navigation.git
   revision: b7e520825ffd677498e8f7def76184ea99c535c2
   tag: v3.1.2
   specs:
