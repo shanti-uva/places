@@ -414,6 +414,18 @@ ActiveRecord::Schema.define(version: 20180215131323) do
 # Could not dump table "landcover" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
+  create_table "layer", primary_key: ["topology_id", "layer_id"], force: :cascade do |t|
+    t.integer "topology_id", null: false
+    t.integer "layer_id", null: false
+    t.string "schema_name", null: false
+    t.string "table_name", null: false
+    t.string "feature_column", null: false
+    t.integer "feature_type", null: false
+    t.integer "level", default: 0, null: false
+    t.integer "child_id"
+    t.index ["schema_name", "table_name", "feature_column"], name: "layer_schema_name_table_name_feature_column_key", unique: true
+  end
+
 # Could not dump table "lhasa_temples" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
@@ -610,6 +622,14 @@ ActiveRecord::Schema.define(version: 20180215131323) do
 # Could not dump table "tlatlong" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
+  create_table "topology", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "srid", null: false
+    t.float "precision", null: false
+    t.boolean "hasz", default: false, null: false
+    t.index ["name"], name: "topology_name_key", unique: true
+  end
+
 # Could not dump table "traditional_chinese" because of following StandardError
 #   Unknown type 'geometry' for column 'geometry'
 
@@ -666,4 +686,5 @@ ActiveRecord::Schema.define(version: 20180215131323) do
 # Could not dump table "zhol" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
+  add_foreign_key "layer", "topology", name: "layer_topology_id_fkey"
 end
