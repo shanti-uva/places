@@ -5,12 +5,6 @@ GIT
     passiverecord (0.2)
 
 GIT
-  remote: git://github.com/nexiahome/spawnling.git
-  revision: 422a0aadbc685c17962348468e22e69e18d94500
-  specs:
-    spawnling (2.1.6)
-
-GIT
   remote: git://github.com/raszi/restful-authentication.git
   revision: 0f7d50512bf47a63e53ea05cd5a7b2161732448f
   branch: rails4
@@ -19,218 +13,235 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 3f9f215c13f5ef62974c415834a4ea79088de392
-  tag: v1.1.7
+  revision: 8a8a0fe2b7ba7a66ff11643a0441353a85f08b3c
+  tag: v1.2.0
   specs:
-    flare (1.1.7)
+    flare (1.2.0)
       faraday (~> 0.11.0)
-      rails (~> 4.2.5)
+      rails (>= 4.0)
       rsolr (~> 2.0.0.pre3)
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: de61b7fcd03b2149c189094c1c02011932acf50e
-  tag: v4.1.2
+  revision: b07f583980fc2d0897b2b2a4e4f36973be9999ee
+  tag: v5.0.7
   specs:
-    kmaps_engine (4.1.2)
+    kmaps_engine (5.0.7)
       annotate
-      coffee-rails (~> 4.1.0)
+      coffee-rails (~> 4.2)
       exception_notification
       hpricot
-      jbuilder (~> 2.0)
+      jbuilder (~> 2.5)
       memcache-client
-      pg (~> 0.15)
-      rails (= 4.2.5)
+      pg (~> 0.18)
+      puma (~> 3.7)
+      rails (>= 4.0)
+      turbolinks (~> 5)
       uglifier (>= 1.3.0)
       will_paginate
 
 GIT
   remote: git://github.com/shanti-uva/resource_controller.git
-  revision: 0d6c2e0a0739060a800d5740b386911b4d508eb1
-  tag: v0.9.0
+  revision: 54800be42767e071f075257ef2e3bb1bf465f216
+  tag: v0.9.2
   specs:
-    resource_controller (0.9.0)
+    resource_controller (0.9.2)
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 1591dc4e69b169f649a1a3b78c763a83072f9488
-  tag: v3.3.9
+  revision: 0773208faf7aa3d424548d8c5589052bde462a4c
+  tag: v3.4.1
   specs:
-    shanti_integration (3.3.9)
-      rails (~> 4.2.5)
+    shanti_integration (3.4.1)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: d7ad82c0aeca29c7514c68c6791ff81455bc59c1
-  tag: v0.2.0
+  revision: 80ec506bc1ecb74f22b85f8f06f4fdc48a3a36e3
+  tag: v0.2.2
   specs:
-    subjects_integration (0.2.0)
+    subjects_integration (0.2.2)
       pg (~> 0.15)
-      rails (~> 4.2.5)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
-  revision: 118b8467008fcd5158e9b245ea0cfd6ce93df493
-  tag: v2.1.9
+  revision: ba098c7939d19c04bb8e4d5fe14610fe0bc76073
+  tag: v2.2.0
   specs:
-    active_resource_extensions (2.1.9)
+    active_resource_extensions (2.2.0)
       activeresource
       hpricot
-      rails (~> 4.2.5)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/acts_as_family_tree.git
-  revision: 236594b14857963622b9d7659627e375e2959328
-  tag: v1.1.7
+  revision: 93231fd487fafe35936fe62f2109067fedd8605d
+  tag: v1.1.9
   specs:
-    acts_as_family_tree (1.1.7)
-      rails (~> 4.2.5)
+    acts_as_family_tree (1.1.9)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/authenticated_system.git
-  revision: ecb3fa78c5a1c04935a99af483e1effe9b36a98c
-  tag: v2.3.6
+  revision: a2cf08808e67a71c8d53c6fc5ceca837936a620b
+  tag: v2.3.8
   specs:
-    authenticated_system (2.3.6)
-      rails (~> 4.2.5)
+    authenticated_system (2.3.8)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/complex_dates.git
-  revision: 772d5bc143d694a1981fc4e004130589f940aa1e
-  tag: v2.2.5
+  revision: 8f7470089417776ea9820028ecde07dcb40b6c91
+  tag: v2.2.6
   specs:
-    complex_dates (2.2.5)
-      rails (~> 4.2.5)
+    complex_dates (2.2.6)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/complex_scripts.git
-  revision: d4cb2ff5fe7820491a03fb1c4eac4cf2aded8ddc
-  tag: v2.3.0
+  revision: 2c6ceed8418f986f54533adda1e582b47fba6696
+  tag: v3.0.5
   specs:
-    complex_scripts (2.3.0)
+    complex_scripts (3.0.5)
       hpricot
       passiverecord (= 0.2)
-      rails (~> 4.2.5)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/interface_utils.git
-  revision: faba09aaeee4f6ab066f9275b16dd09752601775
-  tag: v2.3.5
+  revision: 06b4455010929390d642993d6829416150df7301
+  tag: v2.3.7
   specs:
-    interface_utils (2.3.5)
-      rails (~> 4.2.5)
+    interface_utils (2.3.7)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 5b1f3410f6de778ca64e6fab1f62dfa9af4c0f3b
-  tag: v2.3.4
+  revision: dde4ddc0b7616fab1619a72ce1d99ae13a0dfcef
+  tag: v2.3.5
   specs:
-    mms_integration (2.3.4)
-      rails (~> 4.2.5)
+    mms_integration (2.3.5)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: cc897233fd445c5cae33618ef7f85a4806ac5951
-  tag: v4.7.8
+  revision: 007eeb5ee726869a0fc4db8b10df5b3183b5064a
+  tag: v4.8.4
   specs:
-    places_engine (4.7.8)
-      rails (~> 4.2.5)
+    places_engine (4.8.4)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/places_integration.git
-  revision: 6c54d991e05217a2c78b876f75f03e754562142c
-  tag: v2.1.7
+  revision: e9305ee67301145dd5c08a033ffdd07458c8ec1c
+  tag: v2.1.9
   specs:
-    places_integration (2.1.7)
-      rails (~> 4.2.5)
+    places_integration (2.1.9)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/proxy_engine.git
-  revision: 8cee1af8b50842ee82a224671ec9f939d0533f86
-  tag: v2.1.4
+  revision: 7b032964ef34b578162210d352b197da86fb53cc
+  tag: v2.1.6
   specs:
-    proxy_engine (2.1.4)
-      rails (~> 4.2.5)
+    proxy_engine (2.1.6)
+      rails (>= 4.0)
 
 GIT
   remote: git://github.com/thl/universal_navigation.git
-  revision: 64bfe3666dac30fd6952dc9ad7728c8248e695ab
-  tag: v3.1.1
+  revision: b7e520825ffd677498e8f7def76184ea99c535c2
+  tag: v3.1.2
   specs:
-    universal_navigation (3.1.1)
-      rails (~> 4.2.5)
+    universal_navigation (3.1.2)
+      rails (>= 4.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (4.2.5)
-      actionpack (= 4.2.5)
-      actionview (= 4.2.5)
-      activejob (= 4.2.5)
+    actioncable (5.1.4)
+      actionpack (= 5.1.4)
+      nio4r (~> 2.0)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.1.4)
+      actionpack (= 5.1.4)
+      actionview (= 5.1.4)
+      activejob (= 5.1.4)
       mail (~> 2.5, >= 2.5.4)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.5)
-      actionview (= 4.2.5)
-      activesupport (= 4.2.5)
-      rack (~> 1.6)
-      rack-test (~> 0.6.2)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-dom-testing (~> 2.0)
+    actionpack (5.1.4)
+      actionview (= 5.1.4)
+      activesupport (= 5.1.4)
+      rack (~> 2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     actionpack-action_caching (1.2.0)
       actionpack (>= 4.0.0, < 6)
     actionpack-page_caching (1.1.0)
       actionpack (>= 4.0.0, < 6)
-    actionview (4.2.5)
-      activesupport (= 4.2.5)
+    actionview (5.1.4)
+      activesupport (= 5.1.4)
       builder (~> 3.1)
-      erubis (~> 2.7.0)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    activejob (4.2.5)
-      activesupport (= 4.2.5)
-      globalid (>= 0.3.0)
-    activemodel (4.2.5)
-      activesupport (= 4.2.5)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activejob (5.1.4)
+      activesupport (= 5.1.4)
+      globalid (>= 0.3.6)
+    activemodel (5.1.4)
+      activesupport (= 5.1.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
       builder (~> 3.1)
-    activerecord (4.2.5)
-      activemodel (= 4.2.5)
-      activesupport (= 4.2.5)
-      arel (~> 6.0)
-    activeresource (4.1.0)
-      activemodel (~> 4.0)
-      activesupport (~> 4.0)
-      rails-observers (~> 0.1.2)
-    activesupport (4.2.5)
+    activerecord (5.1.4)
+      activemodel (= 5.1.4)
+      activesupport (= 5.1.4)
+      arel (~> 8.0)
+    activeresource (5.0.0)
+      activemodel (>= 5.0, < 6)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (>= 5.0, < 6)
+    activesupport (5.1.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
-    arel (6.0.4)
-    autoprefixer-rails (7.1.5)
+    arel (8.0.0)
+    autoprefixer-rails (7.2.1)
       execjs
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
+    bindex (0.5.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
-    coffee-rails (4.1.1)
+    capybara (2.16.1)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    childprocess (0.8.0)
+      ffi (~> 1.0, >= 1.0.11)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    debug_inspector (0.0.3)
     dynamic_form (1.1.4)
-    erubis (2.7.0)
+    erubi (1.7.0)
     exception_notification (4.2.2)
       actionmailer (>= 4.0, < 6)
       activesupport (>= 4.0, < 6)
@@ -254,55 +265,60 @@ GEM
       railties (>= 3.2.16)
     json (1.8.6)
     libv8 (3.16.14.19)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     memcache-client (1.8.5)
+    method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
     multipart-post (2.0.0)
-    newrelic_rpm (4.5.0.337)
+    newrelic_rpm (4.6.0.338)
+    nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     open_id_authentication (1.3.0)
       rack-openid (~> 1.3)
     pg (0.21.0)
-    protected_attributes (1.1.4)
-      activemodel (>= 4.0.1, < 5.0)
-    rack (1.6.8)
+    public_suffix (3.0.1)
+    puma (3.11.2)
+    rack (2.0.3)
     rack-openid (1.4.2)
       rack (>= 1.1.0)
       ruby-openid (>= 2.1.8)
-    rack-test (0.6.3)
-      rack (>= 1.0)
-    rails (4.2.5)
-      actionmailer (= 4.2.5)
-      actionpack (= 4.2.5)
-      actionview (= 4.2.5)
-      activejob (= 4.2.5)
-      activemodel (= 4.2.5)
-      activerecord (= 4.2.5)
-      activesupport (= 4.2.5)
-      bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.5)
-      sprockets-rails
-    rails-deprecated_sanitizer (1.0.3)
-      activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.8)
-      activesupport (>= 4.2.0.beta, < 5.0)
-      nokogiri (~> 1.6)
-      rails-deprecated_sanitizer (>= 1.0.1)
+    rack-test (0.8.2)
+      rack (>= 1.0, < 3)
+    rails (5.1.4)
+      actioncable (= 5.1.4)
+      actionmailer (= 5.1.4)
+      actionpack (= 5.1.4)
+      actionview (= 5.1.4)
+      activejob (= 5.1.4)
+      activemodel (= 5.1.4)
+      activerecord (= 5.1.4)
+      activesupport (= 5.1.4)
+      bundler (>= 1.3.0)
+      railties (= 5.1.4)
+      sprockets-rails (>= 2.0.0)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails-observers (0.1.5)
       activemodel (>= 4.0)
-    railties (4.2.5)
-      actionpack (= 4.2.5)
-      activesupport (= 4.2.5)
+    railties (5.1.4)
+      actionpack (= 5.1.4)
+      activesupport (= 5.1.4)
+      method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
@@ -315,12 +331,14 @@ GEM
       builder (>= 2.1.2)
       faraday
     ruby-openid (2.7.0)
-    sass (3.5.2)
+    ruby_dep (1.5.0)
+    rubyzip (1.2.1)
+    sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.6)
+    sass-rails (5.0.7)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -329,8 +347,15 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.8.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+    spawnling (2.1.6)
     spring (2.0.2)
       activesupport (>= 4.2)
+    spring-watcher-listen (2.0.1)
+      listen (>= 2.7, < 4.0)
+      spring (>= 1.2, < 3.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -344,18 +369,26 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tinymce-rails (4.6.7)
+    tinymce-rails (4.7.4)
       railties (>= 3.1.1)
+    turbolinks (5.1.0)
+      turbolinks-source (~> 5.1)
+    turbolinks-source (5.1.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (4.0.1)
       execjs (>= 0.3.0, < 3)
-    web-console (2.3.0)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    web-console (3.5.1)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
+      bindex (>= 0.4.0)
+      railties (>= 5.0)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.3)
     will_paginate (3.1.6)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -363,44 +396,51 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
-  active_resource_extensions (= 2.1.9)!
+  active_resource_extensions (= 2.2.0)!
+  activemodel-serializers-xml
   activeresource
-  acts_as_family_tree (= 1.1.7)!
-  authenticated_system (= 2.3.6)!
+  acts_as_family_tree (= 1.1.9)!
+  authenticated_system (= 2.3.8)!
   bootstrap-sass (~> 3.3.5)
   byebug
-  complex_dates (= 2.2.5)!
-  complex_scripts (= 2.3.0)!
+  capybara (~> 2.13)
+  complex_dates (= 2.2.6)!
+  complex_scripts (= 3.0.5)!
   dynamic_form
-  flare (= 1.1.7)!
+  flare (= 1.2.0)!
   hpricot
-  interface_utils (= 2.3.5)!
+  interface_utils (= 2.3.7)!
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 4.1.2)!
-  mms_integration (= 2.3.4)!
+  kmaps_engine (= 5.0.7)!
+  listen (>= 3.0.5, < 3.2)
+  mms_integration (= 2.3.5)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.7.8)!
-  places_integration (= 2.1.7)!
-  protected_attributes
-  proxy_engine (= 2.1.4)!
+  places_engine (= 4.8.4)!
+  places_integration (= 2.1.9)!
+  proxy_engine (= 2.1.6)!
   rack-openid
+  rails (~> 5.1.4)
   rails-observers
-  resource_controller (= 0.9.0)!
+  resource_controller (= 0.9.2)!
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shanti_integration (= 3.3.9)!
-  spawnling (= 2.1.6)!
+  selenium-webdriver
+  shanti_integration (= 3.4.1)!
+  spawnling
   spring
-  subjects_integration (= 0.2.0)!
+  spring-watcher-listen (~> 2.0.0)
+  subjects_integration (= 0.2.2)!
   therubyracer
   tinymce-rails
-  universal_navigation (= 3.1.1)!
-  web-console (~> 2.0)
+  tzinfo-data
+  uglifier (= 3.2.0)
+  universal_navigation (= 3.1.2)!
+  web-console (>= 3.3.0)
   will_paginate
 
 BUNDLED WITH
