@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: f2d3e77035a123b8ec7863e0a9767675ae1f285c
-  tag: v5.0.9
+  revision: 248aa1780cfa031f3e7f1972224c6fddc5e45a7b
+  tag: v5.1.0
   specs:
-    kmaps_engine (5.0.9)
+    kmaps_engine (5.1.0)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -118,10 +118,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: dde4ddc0b7616fab1619a72ce1d99ae13a0dfcef
-  tag: v2.3.5
+  revision: e3a01cc96d606f568e587dbab71d1a5f91323b55
+  tag: v2.3.6
   specs:
-    mms_integration (2.3.5)
+    mms_integration (2.3.6)
       rails (>= 4.0)
 
 GIT
@@ -413,9 +413,9 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.0.9)!
+  kmaps_engine (= 5.1.0)!
   listen (>= 3.0.5, < 3.2)
-  mms_integration (= 2.3.5)!
+  mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
