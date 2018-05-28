@@ -23,8 +23,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 0516dfa4dd491de0f1d6bcb71b5d0a4ac09cebdf
-  branch: mandala-rails-theme-sync/MANU-4933/drc2r
+  revision: 926af8477194b1ccd5875fbbb8a24bff7fd76034
+  branch: name-hierarchy-solr/MANU-4984/am2zb
   specs:
     kmaps_engine (5.1.4)
       annotate
