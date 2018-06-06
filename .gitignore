@@ -5,6 +5,7 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 .bundle
+/vendor/bundle
 .byebug_history
 db/*.sqlite3
 log/*.log
