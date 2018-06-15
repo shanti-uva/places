@@ -13,8 +13,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 6d6a7e117a176f8f5c743c65c15241b35547922e
-  tag: v1.2.1
+  revision: 0b21f6d98adff482e8ae535711549d89b773041c
+  branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     flare (1.2.1)
       faraday (~> 0.11.0)
