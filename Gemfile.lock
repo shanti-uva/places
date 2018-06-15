@@ -23,8 +23,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 926af8477194b1ccd5875fbbb8a24bff7fd76034
-  tag: v5.1.4
+  revision: 84fdd5e493fba7292c673d4e98bbdcd79b72c2a7
+  branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     kmaps_engine (5.1.4)
       annotate
@@ -49,8 +49,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: a09bd90b1b6db560e448b5a8df1e29f15d363cb6
-  tag: v3.4.2
+  revision: 1c04d572cbdd12170a79f23ac297e206f2681966
+  branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     shanti_integration (3.4.2)
       rails (>= 4.0)
@@ -210,7 +210,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    annotate (2.7.3)
+    annotate (2.7.4)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
@@ -444,4 +444,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
