@@ -13,8 +13,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 722ffe42cb1a0da60ca35c57608b6d9e0ef4e9b8
-  branch: citations-shanti-sources-bug/MANU-5001/drc2r
+  revision: 6d6a7e117a176f8f5c743c65c15241b35547922e
+  tag: v1.2.1
   specs:
     flare (1.2.1)
       faraday (~> 0.11.0)
@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 1b45fcefce831dbe45cbab8bcaf45eeea5a13e3c
+  revision: b5933af95076b2f5c933afaeecb763c488dbf57c
   branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     shanti_integration (3.4.2)
