@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 1c04d572cbdd12170a79f23ac297e206f2681966
+  revision: 1b45fcefce831dbe45cbab8bcaf45eeea5a13e3c
   branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     shanti_integration (3.4.2)
