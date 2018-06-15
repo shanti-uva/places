@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 84fdd5e493fba7292c673d4e98bbdcd79b72c2a7
+  revision: 4b1843ee705fa5db12b785b6af0dc10468c4f890
   branch: citations-shanti-sources-bug/MANU-5001/drc2r
   specs:
     kmaps_engine (5.1.4)
