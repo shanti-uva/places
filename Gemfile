@@ -6,7 +6,8 @@ source 'http://rubygems.org'
 #end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+#gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2'
 gem 'uglifier', '3.2.0'
 
 # Use SCSS for stylesheets
@@ -36,6 +37,7 @@ gem 'spawnling'
 gem 'dynamic_form'
 gem 'activeresource', require: 'active_resource'
 gem 'jbuilder'
+gem 'bootsnap', '>= 1.1.0', require: false
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
