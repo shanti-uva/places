@@ -23,8 +23,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 926af8477194b1ccd5875fbbb8a24bff7fd76034
-  tag: v5.1.4
+  revision: 0516dfa4dd491de0f1d6bcb71b5d0a4ac09cebdf
+  branch: mandala-rails-theme-sync/MANU-4933/drc2r
   specs:
     kmaps_engine (5.1.4)
       annotate
@@ -49,8 +49,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: a09bd90b1b6db560e448b5a8df1e29f15d363cb6
-  tag: v3.4.2
+  revision: 4408a42f2883501cca84f008c73336c2c152659e
+  branch: mandala-rails-theme-sync/MANU-4933/drc2r
   specs:
     shanti_integration (3.4.2)
       rails (>= 4.0)
