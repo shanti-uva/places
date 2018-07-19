@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 140b0dc9e49a6690d13f0fcd6ede4190b8ad9166
-  tag: v5.1.9
+  revision: f23fbe1de65f7ebe7d5ef6399a3eb10f8302c6e5
+  tag: v5.2.1
   specs:
-    kmaps_engine (5.1.9)
+    kmaps_engine (5.2.1)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -126,10 +126,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 72b20bd6bbf9b24916b326830d796af474e2f4f4
-  tag: v4.8.8
+  revision: eaa645ced195f58291236eb4b23c896f1c5593ac
+  tag: v4.8.9
   specs:
-    places_engine (4.8.8)
+    places_engine (4.8.9)
       rails (>= 4.0)
 
 GIT
@@ -308,7 +308,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (3.0.1)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-openid (1.4.2)
       rack (>= 1.1.0)
@@ -434,13 +434,13 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.1.9)!
+  kmaps_engine (= 5.2.1)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.8.8)!
+  places_engine (= 4.8.9)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   pry-byebug
