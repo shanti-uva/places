@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: f23fbe1de65f7ebe7d5ef6399a3eb10f8302c6e5
-  tag: v5.2.1
+  revision: b6abb8b0c6db6cd131296842514453bea87c4215
+  tag: v5.2.6
   specs:
-    kmaps_engine (5.2.1)
+    kmaps_engine (5.2.6)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -100,10 +100,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/complex_scripts.git
-  revision: 2c6ceed8418f986f54533adda1e582b47fba6696
-  tag: v3.0.5
+  revision: e5784f700a4686f6555ca666967ed631945b1c4e
+  tag: v3.0.7
   specs:
-    complex_scripts (3.0.5)
+    complex_scripts (3.0.7)
       hpricot
       passiverecord (= 0.2)
       rails (>= 4.0)
@@ -126,10 +126,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: eaa645ced195f58291236eb4b23c896f1c5593ac
-  tag: v4.8.9
+  revision: 45b6b35b10acc5deb76772a57f222dafc05e4107
+  tag: v4.9.0
   specs:
-    places_engine (4.8.9)
+    places_engine (4.9.0)
       rails (>= 4.0)
 
 GIT
@@ -426,7 +426,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   complex_dates (= 2.2.6)!
-  complex_scripts (= 3.0.5)!
+  complex_scripts (= 3.0.7)!
   dynamic_form
   flare (= 1.2.1)!
   hpricot
@@ -434,13 +434,13 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.2.1)!
+  kmaps_engine (= 5.2.6)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.8.9)!
+  places_engine (= 4.9.0)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   pry-byebug
