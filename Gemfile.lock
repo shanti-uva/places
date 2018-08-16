@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: b6abb8b0c6db6cd131296842514453bea87c4215
-  tag: v5.2.6
+  revision: 57581fad679c054c860040998b9136fc4914456f
+  branch: fix-places-display-for-subjects/MANU-5129/drc2r
   specs:
-    kmaps_engine (5.2.6)
+    kmaps_engine (5.2.7)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -126,8 +126,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 45b6b35b10acc5deb76772a57f222dafc05e4107
-  tag: v4.9.0
+  revision: d9f750ddd8a2f587bb6ecdb9c5fad5fd2db4e0ee
+  branch: fix-places-display-for-subjects/MANU-5129/drc2r
   specs:
     places_engine (4.9.0)
       rails (>= 4.0)
@@ -434,7 +434,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.2.6)!
+  kmaps_engine (= 5.2.7)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
