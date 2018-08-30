@@ -126,8 +126,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 21ed34889af429fe6a17b333e2a542b214fafcb3
-  tag: v4.9.1
+  revision: 70aef3bb96df7acf1c72de9576f3525331a3cd63
+  branch: fix-places-display-for-subjects/MANU-5129/drc2r
   specs:
     places_engine (4.9.1)
       rails (>= 4.0)
