@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: efa678842f340c5198e3cc9f0e856f1475baab58
-  tag: v5.3.0
+  revision: 502a348afeaf0a1e78b358272e392845b0f93013
+  tag: v5.3.1
   specs:
-    kmaps_engine (5.3.0)
+    kmaps_engine (5.3.1)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -49,10 +49,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 831d0b280c999971bc27603b104d1226bf92db39
-  tag: v3.4.4
+  revision: c2e30ea82d56efeb11a84fbef38d1b5567779d11
+  tag: v3.4.5
   specs:
-    shanti_integration (3.4.4)
+    shanti_integration (3.4.5)
       rails (>= 4.0)
 
 GIT
@@ -434,7 +434,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.3.0)!
+  kmaps_engine (= 5.3.1)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
@@ -453,7 +453,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
-  shanti_integration (= 3.4.4)!
+  shanti_integration (= 3.4.5)!
   spawnling
   spring
   spring-watcher-listen (~> 2.0.0)
