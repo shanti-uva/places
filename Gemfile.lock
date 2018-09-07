@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 502a348afeaf0a1e78b358272e392845b0f93013
-  tag: v5.3.1
+  revision: 175d5f5888faf4bac6ee54e64cf28f9237a353d9
+  tag: v5.3.3
   specs:
-    kmaps_engine (5.3.1)
+    kmaps_engine (5.3.3)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -126,10 +126,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 70aef3bb96df7acf1c72de9576f3525331a3cd63
-  branch: fix-places-display-for-subjects/MANU-5129/drc2r
+  revision: 751f0f3a29688a7dd1cdd4a55e9bacdda5a13a3c
+  tag: v4.9.2
   specs:
-    places_engine (4.9.1)
+    places_engine (4.9.2)
       rails (>= 4.0)
 
 GIT
@@ -199,6 +199,9 @@ GEM
       activemodel (= 5.2.0)
       activesupport (= 5.2.0)
       arel (>= 9.0)
+    activerecord-postgis-adapter (5.2.1)
+      activerecord (~> 5.1)
+      rgeo-activerecord (~> 6.0)
     activeresource (5.0.0)
       activemodel (>= 5.0, < 6)
       activemodel-serializers-xml (~> 1.0)
@@ -347,6 +350,10 @@ GEM
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
     ref (2.0.0)
+    rgeo (1.1.1)
+    rgeo-activerecord (6.0.0)
+      activerecord (~> 5.0)
+      rgeo (~> 1.0)
     rsolr (2.0.2)
       builder (>= 2.1.2)
       faraday
@@ -418,6 +425,7 @@ DEPENDENCIES
   actionpack-page_caching
   active_resource_extensions (= 2.2.0)!
   activemodel-serializers-xml
+  activerecord-postgis-adapter
   activeresource
   acts_as_family_tree (= 1.1.9)!
   authenticated_system (= 2.3.8)!
@@ -434,13 +442,13 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.3.1)!
+  kmaps_engine (= 5.3.3)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 4.9.1)!
+  places_engine (= 4.9.2)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   pry-byebug
