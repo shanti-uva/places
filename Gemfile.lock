@@ -13,20 +13,20 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 6d6a7e117a176f8f5c743c65c15241b35547922e
-  tag: v1.2.1
+  revision: 429c73d6058a9f0980945cdf5c14e454cc10ccb7
+  tag: v1.2.2
   specs:
-    flare (1.2.1)
+    flare (1.2.2)
       faraday (~> 0.11.0)
       rails (>= 4.0)
       rsolr (~> 2.0.0.pre3)
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 545c1d7b0aa7bc706f9bc24a58b1d1d696d223d3
-  tag: v5.3.8
+  revision: f43509968ff452272feb5fe02245ddd9add869c2
+  tag: v5.3.9
   specs:
-    kmaps_engine (5.3.8)
+    kmaps_engine (5.3.9)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -436,13 +436,13 @@ DEPENDENCIES
   complex_dates (= 2.2.6)!
   complex_scripts (= 3.0.7)!
   dynamic_form
-  flare (= 1.2.1)!
+  flare (= 1.2.2)!
   hpricot
   interface_utils (= 2.3.7)!
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.3.8)!
+  kmaps_engine (= 5.3.9)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
