@@ -127,8 +127,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 389d2112286bf3d487e7f9f93b3a7e72cba71602
-  tag: v4.9.4
+  revision: f714324c4f1e2cb98ed5091d13115d55db25598f
+  branch: flush-stdout/MANU-5393/drc2r
   specs:
     places_engine (4.9.4)
       rails (>= 4.0)
