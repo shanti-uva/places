@@ -1,4 +1,4 @@
 homepage.intro.blurb.code: 'homepage.intro.shanti'
-enable.localhost: 'yes'
+enable.localhost: 'no'
 default.perspective.code: 'pol.admin.hier'
 default.view.code: 'roman.popular'
