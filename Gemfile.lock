@@ -23,8 +23,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 4f62979b8a496600c382f3d8383e3a35e4f98558
-  tag: v5.4.9
+  revision: 7b3f5d6e27ecef1fce55bbd2c22fd5ea2365a20a
+  branch: refactor-flyout-search-result-popover/MANU-5491/drc2r
   specs:
     kmaps_engine (5.4.9)
       annotate
@@ -49,8 +49,8 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: c2e30ea82d56efeb11a84fbef38d1b5567779d11
-  tag: v3.4.5
+  revision: d6ce1619ca1ef5570e2ad8c6e55794a3815c7110
+  branch: modify-kmaps-header/MANU-5492/drc2r
   specs:
     shanti_integration (3.4.5)
       rails (>= 4.0)
@@ -127,8 +127,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: d005d59aeca2f2fac91ac2b663a97c233a31ce3b
-  tag: v5.0.3
+  revision: 5d41b18b92c51a485b83c86f8665d2433277047a
+  branch: refactor-flyout-search-result-popover/MANU-5491/drc2r
   specs:
     places_engine (5.0.3)
       rails (>= 4.0)
