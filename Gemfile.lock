@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 5e78e932a6f24d872b03d649a291a069725d433c
-  branch: refactor-flyout-search-result-popover/MANU-5491/drc2r
+  revision: c71e161bb07ccc68d6542cb0057104b5086d37ec
+  tag: v5.5.3
   specs:
-    kmaps_engine (5.5.0)
+    kmaps_engine (5.5.3)
       annotate
       coffee-rails (~> 4.2)
       exception_notification
@@ -49,18 +49,18 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: d6ce1619ca1ef5570e2ad8c6e55794a3815c7110
-  branch: modify-kmaps-header/MANU-5492/drc2r
+  revision: 3c1ec2ef91ac456cc139da508fd52f98416da727
+  tag: v3.4.6
   specs:
-    shanti_integration (3.4.5)
+    shanti_integration (3.4.6)
       rails (>= 4.0)
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: 80ec506bc1ecb74f22b85f8f06f4fdc48a3a36e3
-  tag: v0.2.2
+  revision: 05bba2e6647f1087cf5956fb315e48de241ebfb7
+  tag: v0.2.3
   specs:
-    subjects_integration (0.2.2)
+    subjects_integration (0.2.3)
       pg (~> 0.15)
       rails (>= 4.0)
 
@@ -127,10 +127,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: ce4da5a94fd0f99eb4171df8ec2e5aef35064ff9
-  branch: refactor-flyout-search-result-popover/MANU-5491/drc2r
+  revision: 172ec87a8cbf1c563d419dee1bca57028196f4d4
+  tag: v5.0.5
   specs:
-    places_engine (5.0.3)
+    places_engine (5.0.5)
       rails (>= 4.0)
 
 GIT
@@ -443,13 +443,13 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.5.0)!
+  kmaps_engine (= 5.5.3)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 5.0.3)!
+  places_engine (= 5.0.5)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   pry-byebug
@@ -462,11 +462,11 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
-  shanti_integration (= 3.4.5)!
+  shanti_integration (= 3.4.6)!
   spawnling
   spring
   spring-watcher-listen (~> 2.0.0)
-  subjects_integration (= 0.2.2)!
+  subjects_integration (= 0.2.3)!
   therubyracer
   tinymce-rails
   tzinfo-data
