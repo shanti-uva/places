@@ -1,0 +1,33 @@
+default:
+  solr:
+    uid_prefix: places
+    uid_code: 1
+    
+production:
+  solr:
+    hostname: localhost
+    port: 8983
+    #scheme: http
+    log_level: WARNING
+    path: /solr/kmterms_dev
+    asset_path: /solr/kmassets_dev
+    # read_timeout: 2
+    # open_timeout: 0.5
+
+development:
+  solr:
+    # LOCAL HOST
+    hostname: localhost
+    port: 8983
+    scheme: http
+    log_level: INFO
+    path: /solr/kmterms_dev
+    asset_path: /solr/kmassets_dev
+
+test:
+  solr:
+    hostname: localhost
+    port: 8080
+    log_level: WARNING
+    path: /solr/termindex-test
+    asset_path: /solr/kmindex-test
