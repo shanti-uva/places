@@ -8,7 +8,8 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'rails', '~> 5.1.4'
 gem 'rails', '~> 5.2'
-gem 'uglifier', '3.2.0'
+#gem 'uglifier', '3.2.0'
+gem 'uglifier', '~> 4.1', '>= 4.1.20'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
