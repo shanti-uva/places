@@ -17,8 +17,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
 gem 'hpricot'#, '>= 0.8.6'
 gem 'rack-openid', require: 'rack/openid'
 gem 'will_paginate' #, '~> 3.0'
@@ -31,7 +29,6 @@ gem 'activeresource', require: 'active_resource'
 
 gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecord'
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
-gem 'activerecord-postgis-adapter'
 
 gem 'active_resource_extensions', '2.2.0',        github: 'thl/active_resource_extensions',  tag: 'v2.2.0' #path: '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.1.9',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.9' #path: '../../thl/engines/acts_as_family_tree'
@@ -43,7 +40,7 @@ gem 'flare',                      '1.2.3',        github: 'shanti-uva/flare',   
 gem 'mms_integration',            '2.3.6',        github: 'thl/mms_integration',             tag: 'v2.3.6' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '5.5.4',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.5.4' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.9',        github: 'thl/places_integration',          tag: 'v2.1.9' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '5.0.5',        github: 'thl/places_engine',               tag: 'v5.0.5' #path: '../../thl/engines/places_engine'
+gem 'places_engine',              '5.0.6',        github: 'thl/places_engine',               tag: 'v5.0.6' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.6',        github: 'thl/proxy_engine',                tag: 'v2.1.6' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.2',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.2' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.4.6',        github: 'shanti-uva/shanti_integration',   tag: 'v3.4.6' #path: '../engines/shanti_integration'
