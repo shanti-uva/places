@@ -18,6 +18,7 @@ config/*.yml
 config/environments/quandu_*.rb
 config/environments/bleak_house.rb
 doc/plugins/*
+node_modules
 public/javascripts/tiny_mce
 public/features
 public/categories
@@ -25,3 +26,4 @@ public/places
 public/assets
 public/shanti
 path
+yarn.lock

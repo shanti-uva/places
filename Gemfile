@@ -8,23 +8,14 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'rails', '~> 5.1.4'
 gem 'rails', '~> 5.2'
-#gem 'uglifier', '3.2.0'
-gem 'uglifier', '~> 4.1', '>= 4.1.20'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
-
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
-#gem 'RedCloth'
-#gem 'redcarpet', '~> 2.1.1'
-#gem 'nokogiri'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -37,15 +28,6 @@ gem 'open_id_authentication'
 gem 'spawnling'
 gem 'dynamic_form'
 gem 'activeresource', require: 'active_resource'
-gem 'jbuilder'
-gem 'bootsnap', '>= 1.1.0', require: false
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecord'
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
@@ -59,7 +41,7 @@ gem 'complex_scripts',            '3.0.7',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.7',        github: 'thl/interface_utils',             tag: 'v2.3.7' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.2.3',        github: 'shanti-uva/flare',                tag: 'v1.2.3' #path: '../engines/flare'
 gem 'mms_integration',            '2.3.6',        github: 'thl/mms_integration',             tag: 'v2.3.6' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '5.5.3',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.5.3' #path: '../engines/kmaps_engine' #
+gem 'kmaps_engine',               '5.5.4',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.5.4' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.9',        github: 'thl/places_integration',          tag: 'v2.1.9' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.0.5',        github: 'thl/places_engine',               tag: 'v5.0.5' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.6',        github: 'thl/proxy_engine',                tag: 'v2.1.6' #path: '../../thl/engines/proxy_engine'
