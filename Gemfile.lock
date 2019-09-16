@@ -31,10 +31,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: a8aeb1ca96cd0f7abd7f3d3121ca021bff47032e
-  tag: v5.7.1
+  revision: 12381398f0c0fffafae8c7fe05ae9517756b419d
+  tag: v5.7.3
   specs:
-    kmaps_engine (5.7.1)
+    kmaps_engine (5.7.3)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -136,10 +136,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: c5d7d47c82e9ae334905e10ff732b65f93e4bb08
-  tag: v5.0.8
+  revision: b133b41a488785360225d90c32000e853971d9b3
+  tag: v5.0.9
   specs:
-    places_engine (5.0.8)
+    places_engine (5.0.9)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -235,7 +235,7 @@ GEM
     autoprefixer-rails (9.5.1.1)
       execjs
     bindex (0.5.0)
-    bootsnap (1.4.4)
+    bootsnap (1.4.5)
       msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -263,9 +263,9 @@ GEM
     crass (1.0.4)
     dynamic_form (1.1.4)
     erubi (1.8.0)
-    exception_notification (4.3.0)
-      actionmailer (>= 4.0, < 6)
-      activesupport (>= 4.0, < 6)
+    exception_notification (4.4.0)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
     execjs (2.7.0)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
@@ -357,9 +357,9 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     ref (2.0.0)
-    rgeo (2.0.0)
-    rgeo-activerecord (6.1.0)
-      activerecord (~> 5.0)
+    rgeo (2.1.1)
+    rgeo-activerecord (6.2.1)
+      activerecord (>= 5.0)
       rgeo (>= 1.0.0)
     rsolr (2.0.2)
       builder (>= 2.1.2)
@@ -444,13 +444,13 @@ DEPENDENCIES
   interface_utils (= 2.3.7)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.7.1)!
+  kmaps_engine (= 5.7.3)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 5.0.8)!
+  places_engine (= 5.0.9)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   pry-byebug
