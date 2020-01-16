@@ -31,10 +31,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 2bbdf221b99cf648d32e41cca2cea832cc67f3e9
-  tag: v5.7.8
+  revision: 864f3bbd6d372388f534304ff7a6ae5be731c37f
+  tag: v5.7.9
   specs:
-    kmaps_engine (5.7.8)
+    kmaps_engine (5.7.9)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -43,8 +43,8 @@ GIT
       jbuilder (~> 2.5)
       memcache-client
       pg (~> 0.18)
-      puma (~> 3.7)
-      rails (>= 5.2)
+      puma (~> 3.11)
+      rails (~> 5.2.3)
       turbolinks (~> 5)
       uglifier (~> 4.1, >= 4.1.20)
       will_paginate
@@ -136,10 +136,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: c7893e7bbe7daeccd1f31197a8ef085409c5c6f7
-  tag: v5.1.0
+  revision: 7ea96251e603629c37bcd4b884f6d3fedab93928
+  tag: v5.1.1
   specs:
-    places_engine (5.1.0)
+    places_engine (5.1.1)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -441,13 +441,13 @@ DEPENDENCIES
   interface_utils (= 2.3.7)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.7.8)!
+  kmaps_engine (= 5.7.9)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.3.6)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 5.1.0)!
+  places_engine (= 5.1.1)!
   places_integration (= 2.1.9)!
   proxy_engine (= 2.1.6)!
   rack-openid
