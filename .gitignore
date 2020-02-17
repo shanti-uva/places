@@ -15,6 +15,7 @@ tmp/
 *.csv
 *.txt
 config/*.yml
+config/master.key
 config/environments/quandu_*.rb
 config/environments/bleak_house.rb
 doc/plugins/*
@@ -27,3 +28,4 @@ public/assets
 public/shanti
 path
 yarn.lock
+# Ignore master key for decrypting credentials and more.
