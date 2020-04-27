@@ -93,8 +93,8 @@ GIT
 
 GIT
   remote: git://github.com/thl/authenticated_system.git
-  revision: a2cf08808e67a71c8d53c6fc5ceca837936a620b
-  tag: v2.3.8
+  revision: f3fbe8b4a09423cf94f3aa93cbf1dce40971ffac
+  branch: debug-shibboleth/drc2r
   specs:
     authenticated_system (2.3.8)
       rails (>= 4.0)
