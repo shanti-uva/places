@@ -12,7 +12,7 @@ gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '5.0.7'
 gem 'bootstrap-sass', '3.3.7'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -35,11 +35,11 @@ gem 'acts_as_family_tree',        '1.1.9',        github: 'thl/acts_as_family_tr
 gem 'authenticated_system',       '2.3.8',        github: 'thl/authenticated_system',        tag: 'v2.3.8' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.2.8',        github: 'thl/complex_dates',               tag: 'v2.2.8' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '3.1.0',        github: 'thl/complex_scripts',             tag: 'v3.1.0' #path: '../../thl/engines/complex_scripts'
-gem 'interface_utils',            '2.3.7',        github: 'thl/interface_utils',             tag: 'v2.3.7' #path: '../../thl/engines/interface_utils'
+gem 'interface_utils',            '2.3.8',        github: 'thl/interface_utils',             tag: 'v2.3.8' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.2.3',        github: 'shanti-uva/flare',                tag: 'v1.2.3' #path: '../engines/flare'
 gem 'ffi-icu',                    '0.2.0',        github: 'shanti-uva/ffi-icu',              tag: 'v0.2.0' #path: '../engines/ffi-icu'
 gem 'mms_integration',            '2.3.6',        github: 'thl/mms_integration',             tag: 'v2.3.6' #path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '5.8.0',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.8.0' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '5.8.3',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.8.3' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.1.9',        github: 'thl/places_integration',          tag: 'v2.1.9' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.1.1',        github: 'thl/places_engine',               tag: 'v5.1.1' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.6',        github: 'thl/proxy_engine',                tag: 'v2.1.6' #path: '../../thl/engines/proxy_engine'
