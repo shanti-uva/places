@@ -66,10 +66,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/subjects_integration.git
-  revision: 17244bf5b07bbc3abe77d58ce28644a94c732bbc
-  tag: v0.2.5
+  revision: 98f5c5143fa35b2154f5347721ec9f09f8b575f7
+  tag: v0.2.6
   specs:
-    subjects_integration (0.2.5)
+    subjects_integration (0.2.6)
       pg (~> 0.15)
       rails (>= 4.0)
 
@@ -128,10 +128,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: 79a0d9b251fa917d2219b8cd955e88d740fa34da
-  tag: v2.3.7
+  revision: 99b91a3f71e684ebb2f178caed374cf0ed93d766
+  tag: v2.3.8
   specs:
-    mms_integration (2.3.7)
+    mms_integration (2.3.8)
       rails (>= 4.0)
 
 GIT
@@ -145,10 +145,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_integration.git
-  revision: 9d800e21c6096e6bb54eff976db2f6f9f84436e1
-  tag: v2.2.0
+  revision: eec1acc44512bffc86d7d778f6393b4ef2d92650
+  tag: v2.2.1
   specs:
-    places_integration (2.2.0)
+    places_integration (2.2.1)
       rails (>= 4.0)
 
 GIT
@@ -438,12 +438,12 @@ DEPENDENCIES
   jquery-ui-rails
   kmaps_engine (= 5.8.3)!
   listen (>= 3.0.5, < 3.2)
-  mms_integration (= 2.3.7)!
+  mms_integration (= 2.3.8)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
   places_engine (= 5.1.1)!
-  places_integration (= 2.2.0)!
+  places_integration (= 2.2.1)!
   proxy_engine (= 2.1.6)!
   rack-openid
   rails (~> 5.2.3)
@@ -456,7 +456,7 @@ DEPENDENCIES
   spawnling
   spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
-  subjects_integration (= 0.2.5)!
+  subjects_integration (= 0.2.6)!
   tinymce-rails
   tzinfo-data
   universal_navigation (= 3.1.2)!

@@ -38,14 +38,14 @@ gem 'complex_scripts',            '3.1.0',        github: 'thl/complex_scripts',
 gem 'interface_utils',            '2.3.8',        github: 'thl/interface_utils',             tag: 'v2.3.8' #path: '../../thl/engines/interface_utils'
 gem 'flare',                      '1.2.3',        github: 'shanti-uva/flare',                tag: 'v1.2.3' #path: '../engines/flare'
 gem 'ffi-icu',                    '0.2.0',        github: 'shanti-uva/ffi-icu',              tag: 'v0.2.0' #path: '../engines/ffi-icu'
-gem 'mms_integration',            '2.3.7',        github: 'thl/mms_integration',             tag: 'v2.3.7' #path: '../../thl/engines/mms_integration'
+gem 'mms_integration',            '2.3.8',        github: 'thl/mms_integration',             tag: 'v2.3.8' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '5.8.3',        github: 'shanti-uva/kmaps_engine',         tag: 'v5.8.3' #path: '../engines/kmaps_engine'
-gem 'places_integration',         '2.2.0',        github: 'thl/places_integration',          tag: 'v2.2.0' #path: '../../thl/engines/places_integration'
+gem 'places_integration',         '2.2.1',        github: 'thl/places_integration',          tag: 'v2.2.1' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.1.1',        github: 'thl/places_engine',               tag: 'v5.1.1' #path: '../../thl/engines/places_engine'
 gem 'proxy_engine',               '2.1.6',        github: 'thl/proxy_engine',                tag: 'v2.1.6' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.2',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.2' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.4.6',        github: 'shanti-uva/shanti_integration',   tag: 'v3.4.6' #path: '../engines/shanti_integration'
-gem 'subjects_integration',       '0.2.5',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.5' #path: '../engines/subjects_integration'
+gem 'subjects_integration',       '0.2.6',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.6' #path: '../engines/subjects_integration'
 gem 'universal_navigation',       '3.1.2',        github: 'thl/universal_navigation',        tag: 'v3.1.2' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
