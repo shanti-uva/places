@@ -145,10 +145,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_integration.git
-  revision: e9305ee67301145dd5c08a033ffdd07458c8ec1c
-  tag: v2.1.9
+  revision: 9d800e21c6096e6bb54eff976db2f6f9f84436e1
+  tag: v2.2.0
   specs:
-    places_integration (2.1.9)
+    places_integration (2.2.0)
       rails (>= 4.0)
 
 GIT
@@ -443,7 +443,7 @@ DEPENDENCIES
   open_id_authentication
   passiverecord (= 0.2)!
   places_engine (= 5.1.1)!
-  places_integration (= 2.1.9)!
+  places_integration (= 2.2.0)!
   proxy_engine (= 2.1.6)!
   rack-openid
   rails (~> 5.2.3)
