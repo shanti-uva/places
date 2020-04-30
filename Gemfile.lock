@@ -128,10 +128,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/mms_integration.git
-  revision: e3a01cc96d606f568e587dbab71d1a5f91323b55
-  tag: v2.3.6
+  revision: 79a0d9b251fa917d2219b8cd955e88d740fa34da
+  tag: v2.3.7
   specs:
-    mms_integration (2.3.6)
+    mms_integration (2.3.7)
       rails (>= 4.0)
 
 GIT
@@ -438,7 +438,7 @@ DEPENDENCIES
   jquery-ui-rails
   kmaps_engine (= 5.8.3)!
   listen (>= 3.0.5, < 3.2)
-  mms_integration (= 2.3.6)!
+  mms_integration (= 2.3.7)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
