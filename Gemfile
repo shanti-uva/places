@@ -45,7 +45,7 @@ gem 'places_engine',              '5.1.1',        github: 'thl/places_engine',  
 gem 'proxy_engine',               '2.1.6',        github: 'thl/proxy_engine',                tag: 'v2.1.6' #path: '../../thl/engines/proxy_engine'
 gem 'resource_controller',        '0.9.2',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.2' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.4.6',        github: 'shanti-uva/shanti_integration',   tag: 'v3.4.6' #path: '../engines/shanti_integration'
-gem 'subjects_integration',       '0.2.3',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.3' #path: '../engines/subjects_integration'
+gem 'subjects_integration',       '0.2.5',        github: 'shanti-uva/subjects_integration', tag: 'v0.2.5' #path: '../engines/subjects_integration'
 gem 'universal_navigation',       '3.1.2',        github: 'thl/universal_navigation',        tag: 'v3.1.2' #path: '../../thl/engines/universal_navigation'
 
 # CHECK TO SEE IF I NEED TO DELETE LATER:
