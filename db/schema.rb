@@ -10,48 +10,112 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215131323) do
+ActiveRecord::Schema.define(version: 2020_05_20_173222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
   enable_extension "postgis_topology"
 
-# Could not dump table "Birth_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Birth_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "births_199"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Births_and_deaths" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Births_and_deaths", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "births_1990"
+    t.float "deaths_1990"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Death_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Death_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "death_1990"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Economical_activity" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Economical_activity", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "agriculture"
+    t.float "industry"
+    t.float "mining"
+    t.float "constructio"
+    t.float "government_"
+    t.integer "other"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Ethnic_distribution" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Ethnic_distribution", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "population_"
+    t.float "Han"
+    t.float "Tibetans"
+    t.float "Mongols"
+    t.float "Hui"
+    t.integer "other"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Han_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Han_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "pop_han"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Illiteracy_per_gender" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Illiteracy_per_gender", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "illit_male"
+    t.float "illit_fem"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Illiteracy_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Illiteracy_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "pop_illet"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Immigration_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Immigration_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.integer "pop_total"
+    t.float "immig"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Population_density" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Population_density", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "sq_km"
+    t.float "density"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Population_per_gender" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Population_per_gender", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "males_1990"
+    t.float "females_199"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "Tibetan_rate" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "Tibetan_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "pop_total"
+    t.float "pop_tib"
+    t.float "rate"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
   create_table "affiliations", id: :serial, force: :cascade do |t|
     t.integer "collection_id", null: false
@@ -84,11 +148,27 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.integer "author_id", null: false
   end
 
-# Could not dump table "barkor" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "barkor", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.string "name", limit: 50
+    t.string "name_src", limit: 50
+    t.string "shape_src", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_line_string"}
+    t.index ["the_geom"], name: "barkor_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "bellezza" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "bellezza", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "objectid"
+    t.decimal "sort_no"
+    t.string "type", limit: 254
+    t.string "site_no", limit: 254
+    t.string "name_wylie", limit: 254
+    t.string "name_eng", limit: 254
+    t.string "county", limit: 254
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_point"}
+    t.index ["the_geom"], name: "bellezza_geom", using: :gist
+  end
 
   create_table "blurbs", id: :serial, force: :cascade do |t|
     t.string "code", limit: 255
@@ -235,6 +315,23 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["category_id", "feature_id"], name: "by_category_feature", unique: true
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "reference_id"
+    t.string "reference_type"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "descriptions", id: :serial, force: :cascade do |t|
     t.integer "feature_id", null: false
     t.text "content", null: false
@@ -246,11 +343,22 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.integer "language_id", null: false
   end
 
-# Could not dump table "drepung_thl" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "drepung_thl", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "shape_src", limit: 254
+    t.string "name_src", limit: 254
+    t.string "name", limit: 254
+    t.decimal "type"
+    t.integer "stroies"
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "drepung_thl_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "electricity_use_10_million_watt_hours" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "electricity_use_10_million_watt_hours", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "elect_use"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
   create_table "external_pictures", id: :serial, force: :cascade do |t|
     t.string "url", limit: 255, null: false
@@ -347,22 +455,39 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["is_public"], name: "features_is_public_idx"
   end
 
-# Could not dump table "fixed_lhasa_temples" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "fixed_lhasa_temples", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.decimal "id", precision: 10
+    t.decimal "gis_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "fixed_lhasa_temples_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "fontdemo" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "fontdemo", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "font", limit: 50
+    t.string "text", limit: 100
+    t.float "x"
+    t.float "y"
+    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+  end
 
   create_table "gis_id_xref", id: false, force: :cascade do |t|
     t.integer "gis_id"
     t.integer "fid"
   end
 
-# Could not dump table "grain_output_tons" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "grain_output_tons", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 27
+    t.float "output_tons"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+  end
 
-# Could not dump table "illiteracy_per_gender" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "illiteracy_per_gender", id: false, force: :cascade do |t|
+    t.text "name"
+    t.float "pop_total"
+    t.float "illit_male"
+    t.float "illit_fem"
+    t.geometry "geometry", limit: {:srid=>4326, :type=>"geometry"}
+  end
 
   create_table "illustrations", id: :serial, force: :cascade do |t|
     t.integer "feature_id", null: false
@@ -405,38 +530,80 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["code"], name: "info_sources_code_key", unique: true
   end
 
-# Could not dump table "jokhang" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
-
-# Could not dump table "khrom_empire_garrisons" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
-
-# Could not dump table "landcover" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
-
-  create_table "layer", primary_key: ["topology_id", "layer_id"], force: :cascade do |t|
-    t.integer "topology_id", null: false
-    t.integer "layer_id", null: false
-    t.string "schema_name", null: false
-    t.string "table_name", null: false
-    t.string "feature_column", null: false
-    t.integer "feature_type", null: false
-    t.integer "level", default: 0, null: false
-    t.integer "child_id"
-    t.index ["schema_name", "table_name", "feature_column"], name: "layer_schema_name_table_name_feature_column_key", unique: true
+  create_table "jokhang", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "stories"
+    t.string "shape_src", limit: 254
+    t.string "name_src", limit: 254
+    t.string "name", limit: 254
+    t.decimal "type"
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "jokhang_the_geom_gist", using: :gist
   end
 
-# Could not dump table "lhasa_temples" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "khrom_empire_garrisons", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
+    t.float "AREA"
+    t.float "PERIMETER"
+    t.integer "VKHROM_"
+    t.integer "VKHROM_ID"
+    t.float "GIS_ID"
+    t.string "khrom__gar", limit: 254
+    t.string "Region_s_", limit: 254
+    t.string "Location_n", limit: 254
+    t.string "source", limit: 254
+    t.float "X_Deg"
+    t.float "X_Min"
+    t.float "Y_Deg"
+    t.float "Y_Min"
+    t.string "F10", limit: 254
+    t.float "X_dd"
+    t.float "Y_dd"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_point"}
+  end
 
-# Could not dump table "lingkor" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "landcover", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "type", limit: 40
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["the_geom"], name: "landcover_geom", using: :gist
+  end
 
-# Could not dump table "mountain_peaks" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "lhasa_temples", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.integer "gis_id"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"multi_polygon"}
+  end
 
-# Could not dump table "norbulingka" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "lingkor", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.string "name", limit: 50
+    t.string "name_src", limit: 50
+    t.string "shape_src", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_line_string"}
+    t.index ["the_geom"], name: "lingkor_the_geom_gist", using: :gist
+  end
+
+  create_table "mountain_peaks", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.decimal "pd_id"
+    t.string "name", limit: 50
+    t.decimal "elevation"
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"st_point"}
+    t.index ["the_geom"], name: "mountain_peaks_the_geom_gist", using: :gist
+  end
+
+  create_table "norbulingka", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "district", limit: 254
+    t.integer "id"
+    t.string "shape_src", limit: 254
+    t.string "name_src", limit: 254
+    t.string "name", limit: 254
+    t.decimal "type"
+    t.integer "stroies"
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "norbulingka_the_geom_gist", using: :gist
+  end
 
   create_table "note_titles", id: :serial, force: :cascade do |t|
     t.string "title", limit: 255
@@ -467,8 +634,18 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "parcel" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "parcel", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "district", limit: 10
+    t.integer "id", limit: 2
+    t.string "type", limit: 50
+    t.string "aufid_cs_2", limit: 254
+    t.decimal "pd_id"
+    t.string "shapefile_", limit: 50
+    t.string "name_src", limit: 50
+    t.string "fname", limit: 50
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "parcel_the_geom_gist", using: :gist
+  end
 
   create_table "people", id: :serial, force: :cascade do |t|
     t.string "fullname", limit: 255, null: false
@@ -498,14 +675,35 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["code"], name: "index_perspectives_on_code"
   end
 
-# Could not dump table "potala" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "potala", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "district", limit: 10
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "type", limit: 50
+    t.integer "stories"
+    t.string "name", limit: 50
+    t.string "url", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "potala_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "river" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "river", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.decimal "pd_id", precision: 10
+    t.string "shape_src", limit: 50
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "river_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "road" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "road", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.string "name", limit: 50
+    t.string "name_src", limit: 50
+    t.string "shape_src", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_line_string"}
+    t.index ["the_geom"], name: "road_the_geom_gist", using: :gist
+  end
 
   create_table "roles", id: :serial, force: :cascade do |t|
     t.string "title", limit: 20, null: false
@@ -519,32 +717,111 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id", unique: true
   end
 
-# Could not dump table "roman_popular" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "roman_popular", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["fid"], name: "roman_popular_fid"
+    t.index ["geometry"], name: "roman_popular_gist", using: :gist
+    t.index ["language"], name: "roman_popular_language"
+    t.index ["object_type"], name: "roman_popular_object_type"
+  end
 
-# Could not dump table "roman_scholarly" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "roman_scholarly", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["fid"], name: "roman_scholarly_fid"
+    t.index ["geometry"], name: "roman_scholarly_gist", using: :gist
+    t.index ["language"], name: "roman_scholarly_language"
+    t.index ["object_type"], name: "roman_scholarly_object_type"
+  end
 
-# Could not dump table "sera_hermitage" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "sera_hermitage", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.decimal "name"
+    t.string "type", limit: 50
+    t.integer "stories"
+    t.string "url", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "sera_hermitage_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "sera_hermitage_boundary" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "sera_hermitage_boundary", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "name", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.string "shape_src", limit: 50
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "sera_hermitage_boundary_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "sera_monastery_1966" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "sera_monastery_1966", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.decimal "pd_id"
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "type", limit: 50
+    t.integer "stories"
+    t.string "name", limit: 50
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "sera_monastery_1966_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "sera_monastery_2003" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "sera_monastery_2003", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.decimal "pd_id"
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "type", limit: 50
+    t.string "name", limit: 50
+    t.integer "stories"
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "sera_monastery_2003_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "sera_monastery_thl" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "sera_monastery_thl", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "name", limit: 50
+    t.integer "stories"
+    t.string "type", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "sera_monastery_thl_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "shapes" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "shapes", primary_key: "gid", id: :integer, default: -> { "nextval('features_gid_seq'::regclass)" }, force: :cascade do |t|
+    t.geometry "geometry", limit: {:srid=>4326, :type=>"geometry"}
+    t.integer "fid"
+    t.integer "position", default: 0, null: false
+    t.float "area"
+    t.integer "altitude"
+    t.boolean "is_public", default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index "geometrytype(geometry)", name: "shapes_geotype"
+    t.index ["fid"], name: "shapes_fid"
+    t.index ["geometry"], name: "features_geometry_gist", using: :gist
+  end
 
-# Could not dump table "simple_chinese" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "simple_chinese", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["fid"], name: "simple_chinese_fid"
+    t.index ["geometry"], name: "simple_chinese_gist", using: :gist
+    t.index ["language"], name: "simple_chinese_language"
+    t.index ["object_type"], name: "simple_chinese_object_type"
+  end
 
   create_table "simple_props", id: :serial, force: :cascade do |t|
     t.string "name", limit: 255
@@ -558,18 +835,31 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["type"], name: "simple_props_type_idx"
   end
 
-  create_table "spatial_ref_sys", primary_key: "srid", id: :integer, default: nil, force: :cascade do |t|
-    t.string "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string "srtext", limit: 2048
-    t.string "proj4text", limit: 2048
+  create_table "structure_city", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "district", limit: 10
+    t.integer "id"
+    t.string "aufid", limit: 254
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "name", limit: 254
+    t.integer "stories"
+    t.decimal "type"
+    t.string "url", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "structure_city_the_geom_gist", using: :gist
   end
 
-# Could not dump table "structure_city" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
-
-# Could not dump table "structures_valley" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "structures_valley", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "name", limit: 254
+    t.integer "stories"
+    t.decimal "type"
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "structures_valley_the_geom_gist", using: :gist
+  end
 
   create_table "summaries", id: :serial, force: :cascade do |t|
     t.integer "language_id", null: false
@@ -585,11 +875,30 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.string "symbol"
   end
 
-# Could not dump table "test2" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "test2", id: false, force: :cascade do |t|
+    t.serial "gid", null: false
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["fid"], name: "test2_fid"
+    t.index ["geometry"], name: "test2_gist", using: :gist
+    t.index ["language"], name: "test2_language"
+    t.index ["object_type"], name: "test2_object_type"
+  end
 
-# Could not dump table "tibetan_roman" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "tibetan_roman", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["language"], name: "tibetan_roman_language"
+    t.index ["object_type"], name: "tibetan_roman_object_type"
+  end
 
   create_table "time_units", id: :serial, force: :cascade do |t|
     t.integer "date_id"
@@ -619,39 +928,100 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["start_date"], name: "timespans_start_date_idx"
   end
 
-# Could not dump table "tlatlong" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
-
-  create_table "topology", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "srid", null: false
-    t.float "precision", null: false
-    t.boolean "hasz", default: false, null: false
-    t.index ["name"], name: "topology_name_key", unique: true
+  create_table "tlatlong", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.bigint "valueid"
+    t.bigint "polyid"
+    t.float "area"
+    t.float "perimeter"
+    t.integer "tlatlong#"
+    t.integer "tlatlong-i"
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_point"}
   end
 
-# Could not dump table "traditional_chinese" because of following StandardError
-#   Unknown type 'geometry' for column 'geometry'
+  create_table "traditional_chinese", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "fid"
+    t.integer "object_type"
+    t.string "language", limit: 255
+    t.string "name", limit: 255
+    t.text "geotype"
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.index ["fid"], name: "traditional_chinese_fid"
+    t.index ["geometry"], name: "traditional_chinese_gist", using: :gist
+    t.index ["language"], name: "traditional_chinese_language"
+    t.index ["object_type"], name: "traditional_chinese_object_type"
+  end
 
   create_table "trtibet", id: false, force: :cascade do |t|
     t.string "pc", limit: 1
     t.string "std", limit: 7
   end
 
-# Could not dump table "tsekor" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "tsekor", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.integer "id"
+    t.string "name", limit: 50
+    t.string "name_src", limit: 50
+    t.string "shape_src", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_line_string"}
+    t.index ["the_geom"], name: "tsekor_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "ulatlong" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "ulatlong", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.bigint "valueid"
+    t.bigint "polyid"
+    t.float "area"
+    t.float "perimeter"
+    t.integer "ulatlong#"
+    t.integer "ulatlong-i"
+    t.bigint "vugompa_"
+    t.bigint "vugompa_id"
+    t.decimal "h465utm_", precision: 20
+    t.decimal "h465utm_id", precision: 20
+    t.decimal "gis_id", precision: 20
+    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_point"}
+  end
 
-# Could not dump table "us_counties" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "us_counties", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "statefp", limit: 2
+    t.string "countyfp", limit: 3
+    t.string "countyns", limit: 8
+    t.string "affgeoid", limit: 14
+    t.string "geoid", limit: 5
+    t.string "name", limit: 100
+    t.string "lsad", limit: 2
+    t.float "aland"
+    t.float "awater"
+    t.geometry "the_geom", limit: {:srid=>4269, :type=>"multi_polygon", :has_z=>true}
+    t.integer "fid"
+    t.index ["the_geom"], name: "us_counties_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "us_districts" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "us_districts", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "statefp", limit: 2
+    t.string "cd113fp", limit: 2
+    t.string "affgeoid", limit: 13
+    t.string "geoid", limit: 4
+    t.string "lsad", limit: 2
+    t.string "cdsessn", limit: 3
+    t.float "aland"
+    t.float "awater"
+    t.geometry "the_geom", limit: {:srid=>4269, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "us_districts_the_geom_gist", using: :gist
+  end
 
-# Could not dump table "us_states" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "us_states", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "statefp", limit: 2
+    t.string "statens", limit: 8
+    t.string "affgeoid", limit: 11
+    t.string "geoid", limit: 2
+    t.string "stusps", limit: 2
+    t.string "name", limit: 100
+    t.string "lsad", limit: 2
+    t.float "aland"
+    t.float "awater"
+    t.geometry "the_geom", limit: {:srid=>4269, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "us_states_the_geom_gist", using: :gist
+  end
 
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "login", limit: 255, null: false
@@ -683,8 +1053,17 @@ ActiveRecord::Schema.define(version: 20180215131323) do
     t.index ["feature_id"], name: "xml_documents_feature_id_idx"
   end
 
-# Could not dump table "zhol" because of following StandardError
-#   Unknown type 'geometry' for column 'the_geom'
+  create_table "zhol", primary_key: "gid", id: :serial, force: :cascade do |t|
+    t.string "district", limit: 10
+    t.string "shape_src", limit: 50
+    t.string "name_src", limit: 50
+    t.string "type", limit: 50
+    t.integer "stories"
+    t.string "name", limit: 50
+    t.string "url", limit: 50
+    t.decimal "pd_id", precision: 10
+    t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
+    t.index ["the_geom"], name: "zhol_the_geom_gist", using: :gist
+  end
 
-  add_foreign_key "layer", "topology", name: "layer_topology_id_fkey"
 end
