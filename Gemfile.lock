@@ -21,10 +21,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/flare.git
-  revision: 1ed8d57aac31656b4ba2a4c9f662b3a7fa27f464
-  tag: v1.2.5
+  revision: fabf42b8fd1708400f33bf06bb606c49b8624cc6
+  tag: v1.2.6
   specs:
-    flare (1.2.5)
+    flare (1.2.6)
       activeresource
       daemons
       delayed_job_active_record
@@ -442,7 +442,7 @@ DEPENDENCIES
   delayed_job_active_record
   dynamic_form
   ffi-icu (= 0.2.0)!
-  flare (= 1.2.5)!
+  flare (= 1.2.6)!
   hpricot
   interface_utils (= 2.3.8)!
   jquery-rails
