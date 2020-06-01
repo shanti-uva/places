@@ -79,10 +79,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/active_resource_extensions.git
-  revision: a9e53946059c911bb304204ef3db4b46763c2270
-  tag: v2.2.1
+  revision: 87a6cb91e15e0060526d3e04ce36da3ffd43588e
+  tag: v2.2.2
   specs:
-    active_resource_extensions (2.2.1)
+    active_resource_extensions (2.2.2)
       activeresource
       hpricot
       rails (>= 4.0)
@@ -428,7 +428,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
-  active_resource_extensions (= 2.2.1)!
+  active_resource_extensions (= 2.2.2)!
   activemodel-serializers-xml
   activeresource
   acts_as_family_tree (= 1.1.9)!

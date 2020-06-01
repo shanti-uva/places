@@ -31,7 +31,7 @@ gem 'delayed_job_active_record'
 gem 'passiverecord',              '0.2',          github: 'ambethia/passiverecord'
 gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authentication', branch: 'rails4'
 
-gem 'active_resource_extensions', '2.2.1',        github: 'thl/active_resource_extensions',  tag: 'v2.2.1' #path: '../../thl/engines/active_resource_extensions'
+gem 'active_resource_extensions', '2.2.2',        github: 'thl/active_resource_extensions',  tag: 'v2.2.2' #path: '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.1.9',        github: 'thl/acts_as_family_tree',         tag: 'v1.1.9' #path: '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.3.9',        github: 'thl/authenticated_system',        tag: 'v2.3.9' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.2.9',        github: 'thl/complex_dates',               tag: 'v2.2.9' #path: '../../thl/engines/complex_dates'
