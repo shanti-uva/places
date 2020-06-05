@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_173222) do
+ActiveRecord::Schema.define(version: 2020_06_05_155920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -645,6 +645,14 @@ ActiveRecord::Schema.define(version: 2020_05_20_173222) do
     t.string "fname", limit: 50
     t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
     t.index ["the_geom"], name: "parcel_the_geom_gist", using: :gist
+  end
+
+  create_table "passages", force: :cascade do |t|
+    t.integer "context_id", null: false
+    t.string "context_type", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "people", id: :serial, force: :cascade do |t|
