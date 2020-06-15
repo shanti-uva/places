@@ -35,10 +35,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/kmaps_engine.git
-  revision: 53fbdb49902551f07bee06ee201d177f68d70d65
-  tag: v5.8.9
+  revision: e79f8d19ca7d5fc196bcd75654cce4319915c324
+  tag: v5.9.0
   specs:
-    kmaps_engine (5.8.9)
+    kmaps_engine (5.9.0)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -62,10 +62,10 @@ GIT
 
 GIT
   remote: git://github.com/shanti-uva/shanti_integration.git
-  revision: 9ad1ab9d11256f50dbc11890fe3f4af53125760a
-  tag: v3.4.9
+  revision: f52aab6e65ae1839da9e1aa9fa16679cbdbb7721
+  tag: v3.5.0
   specs:
-    shanti_integration (3.4.9)
+    shanti_integration (3.5.0)
       rails (>= 4.0)
 
 GIT
@@ -140,10 +140,10 @@ GIT
 
 GIT
   remote: git://github.com/thl/places_engine.git
-  revision: 4ce0d4ec7875da0254494fa6f1bebe9f54bad711
-  tag: v5.1.4
+  revision: c937c57848872cdc9e47a09ba51762b3dfabfeff
+  tag: v5.1.5
   specs:
-    places_engine (5.1.4)
+    places_engine (5.1.5)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -451,13 +451,13 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.8.9)!
+  kmaps_engine (= 5.9.0)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.2)!
   newrelic_rpm
   open_id_authentication
   passiverecord (= 0.2)!
-  places_engine (= 5.1.4)!
+  places_engine (= 5.1.5)!
   places_integration (= 2.2.4)!
   proxy_engine (= 2.1.7)!
   rack-openid
@@ -467,7 +467,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (= 5.0.7)
   selenium-webdriver
-  shanti_integration (= 3.4.9)!
+  shanti_integration (= 3.5.0)!
   spawnling
   spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
