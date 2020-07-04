@@ -35,10 +35,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: fc19321fc543abbc7baf9379fc506d417a6a1305
-  tag: v5.9.3
+  revision: 8ebf01289f6a311cf018f0b0c6a217649743323d
+  tag: v5.9.4
   specs:
-    kmaps_engine (5.9.3)
+    kmaps_engine (5.9.4)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -105,12 +105,12 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_dates.git
-  revision: cb53025deba72229a80ccffb5cbe5704de637fd8
-  tag: v2.3.0
+  revision: 048872c5062767d07503a3e39a6810c0c69bf2fd
+  tag: v2.3.1
   specs:
-    complex_dates (2.3.0)
+    complex_dates (2.3.1)
       pg
-      rails (>= 4.0)
+      rails (>= 5.0)
 
 GIT
   remote: https://github.com/thl/complex_scripts.git
@@ -277,7 +277,7 @@ GEM
       delayed_job (>= 3.0, < 5)
     dynamic_form (1.1.4)
     erubi (1.9.0)
-    exception_notification (4.4.1)
+    exception_notification (4.4.3)
       actionmailer (>= 4.0, < 7)
       activesupport (>= 4.0, < 7)
     execjs (2.7.0)
@@ -441,7 +441,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
-  complex_dates (= 2.3.0)!
+  complex_dates (= 2.3.1)!
   complex_scripts (= 3.1.1)!
   delayed_job_active_record
   dynamic_form
@@ -451,7 +451,7 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.9.3)!
+  kmaps_engine (= 5.9.4)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.2)!
   newrelic_rpm
