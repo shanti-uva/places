@@ -35,10 +35,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 47273cf12e17a8035282f68c7240280fc5df85a7
-  tag: v5.9.7
+  revision: 12b9e445c5561a231ec8036dad726bb11e072936
+  tag: v5.9.8
   specs:
-    kmaps_engine (5.9.7)
+    kmaps_engine (5.9.8)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -105,10 +105,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_dates.git
-  revision: 048872c5062767d07503a3e39a6810c0c69bf2fd
-  tag: v2.3.1
+  revision: 895faea00bd4c8996ca84d863f43c267afbef95d
+  tag: v2.3.2
   specs:
-    complex_dates (2.3.1)
+    complex_dates (2.3.2)
       pg
       rails (>= 5.0)
 
@@ -441,7 +441,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
-  complex_dates (= 2.3.1)!
+  complex_dates (= 2.3.2)!
   complex_scripts (= 3.1.1)!
   delayed_job_active_record
   dynamic_form
@@ -451,7 +451,7 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 5.9.7)!
+  kmaps_engine (= 5.9.8)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.2)!
   newrelic_rpm
