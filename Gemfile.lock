@@ -69,15 +69,6 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/shanti-uva/subjects_integration.git
-  revision: 24c2b360e805fc371c754e8fbc17e60146710569
-  tag: v0.2.8
-  specs:
-    subjects_integration (0.2.8)
-      pg
-      rails (>= 4.0)
-
-GIT
   remote: https://github.com/thl/active_resource_extensions.git
   revision: 7a9b16a07a309526bcb4928bad7cabf871347064
   tag: v2.2.3
@@ -139,15 +130,6 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/places_engine.git
-  revision: e754c8ecfaf407da2d6bcd9bfad08787ad57f21b
-  tag: v5.1.9
-  specs:
-    places_engine (5.1.9)
-      activerecord-postgis-adapter
-      rails (>= 4.0)
-
-GIT
   remote: https://github.com/thl/places_integration.git
   revision: 99806ca7e013172c14a940e5b0e7470d6bf9dd7d
   tag: v2.2.4
@@ -169,6 +151,20 @@ GIT
   tag: v3.1.3
   specs:
     universal_navigation (3.1.3)
+      rails (>= 4.0)
+
+PATH
+  remote: ../../thl/engines/places_engine
+  specs:
+    places_engine (5.1.9)
+      activerecord-postgis-adapter
+      rails (>= 4.0)
+
+PATH
+  remote: ../engines/subjects_integration
+  specs:
+    subjects_integration (0.2.8)
+      pg
       rails (>= 4.0)
 
 GEM

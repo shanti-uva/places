@@ -12,4 +12,3 @@
 //
 //= require kmaps_engine/application
 //= require shanti_integration/application
-//= require places_engine/application
