@@ -62,10 +62,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: f52aab6e65ae1839da9e1aa9fa16679cbdbb7721
-  tag: v3.5.0
+  revision: b0d0d5828255990bb4e2a952df2d85ea57e6fce8
+  tag: v3.5.1
   specs:
-    shanti_integration (3.5.0)
+    shanti_integration (3.5.1)
       rails (>= 4.0)
 
 GIT
@@ -467,7 +467,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (= 5.0.7)
   selenium-webdriver
-  shanti_integration (= 3.5.0)!
+  shanti_integration (= 3.5.1)!
   spawnling
   spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
