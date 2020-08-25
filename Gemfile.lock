@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 9d693c9b4cb1a1c7c00f9c3ec7961bf8294bb142
-  tag: v5.2.1
+  revision: ffe3a519d8d74c0fc56fd8c1178f2d24464dde9f
+  tag: v5.2.2
   specs:
-    places_engine (5.2.1)
+    places_engine (5.2.2)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -146,14 +146,6 @@ GIT
   tag: v2.2.4
   specs:
     places_integration (2.2.4)
-      rails (>= 4.0)
-
-GIT
-  remote: https://github.com/thl/proxy_engine.git
-  revision: ed23eecb4fb7a39f1d5485705c6175f30eca19f7
-  tag: v2.1.8
-  specs:
-    proxy_engine (2.1.8)
       rails (>= 4.0)
 
 GIT
@@ -449,9 +441,8 @@ DEPENDENCIES
   mms_integration (= 2.4.2)!
   newrelic_rpm
   open_id_authentication
-  places_engine (= 5.2.1)!
+  places_engine (= 5.2.2)!
   places_integration (= 2.2.4)!
-  proxy_engine (= 2.1.8)!
   rack-openid
   rails (~> 5.2.3)
   rails-observers
