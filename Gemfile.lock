@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 18aaf5b05e696bb188bb764f27f8d05c77682a49
-  tag: v6.0.5
+  revision: 26e4f265b4232bb20547bf9e40f4e0fdf80a113e
+  tag: v6.0.6
   specs:
-    kmaps_engine (6.0.5)
+    kmaps_engine (6.0.6)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -73,10 +73,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/active_resource_extensions.git
-  revision: 7a9b16a07a309526bcb4928bad7cabf871347064
-  tag: v2.2.3
+  revision: 9376fac04bfea16d2a635eac30dd4c3821c34d3e
+  tag: v2.2.4
   specs:
-    active_resource_extensions (2.2.3)
+    active_resource_extensions (2.2.4)
       activeresource
       hpricot
       rails (>= 4.0)
@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: ffe3a519d8d74c0fc56fd8c1178f2d24464dde9f
-  tag: v5.2.2
+  revision: d6ac2b39dc2a8f116e13b015d2f36de3f7525990
+  tag: v5.2.4
   specs:
-    places_engine (5.2.2)
+    places_engine (5.2.4)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -417,7 +417,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
-  active_resource_extensions (= 2.2.3)!
+  active_resource_extensions (= 2.2.4)!
   activemodel-serializers-xml
   activeresource
   acts_as_family_tree (= 1.2.0)!
@@ -436,12 +436,12 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 6.0.5)!
+  kmaps_engine (= 6.0.6)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.3)!
   newrelic_rpm
   open_id_authentication
-  places_engine (= 5.2.2)!
+  places_engine (= 5.2.4)!
   places_integration (= 2.2.4)!
   rack-openid
   rails (~> 5.2.3)
