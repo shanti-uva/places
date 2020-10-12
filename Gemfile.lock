@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 739ec7d943c16c226b08956bee698ebd051057a7
-  tag: v5.2.6
+  revision: a5d18033a3ae4cca8f737dd27b79515ac3bdd3b7
+  tag: v5.2.8
   specs:
-    places_engine (5.2.6)
+    places_engine (5.2.8)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -441,7 +441,7 @@ DEPENDENCIES
   mms_integration (= 2.4.3)!
   newrelic_rpm
   open_id_authentication
-  places_engine (= 5.2.6)!
+  places_engine (= 5.2.8)!
   places_integration (= 2.2.4)!
   rack-openid
   rails (~> 5.2.3)
