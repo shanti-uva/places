@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 0c73d0803ffa7768e025f777a0c2615e6525293c
-  tag: v6.3.0
+  revision: 1be43ce45efe4a4c7fb8d7316a8beabeb931b79a
+  tag: v6.3.2
   specs:
-    kmaps_engine (6.3.0)
+    kmaps_engine (6.3.2)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -56,10 +56,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: ccdc0727ee3456487510645994bcbc3d4d2c5606
-  tag: v3.5.2
+  revision: be2de35125709bee199e268818d604993a5beec6
+  tag: v3.5.3
   specs:
-    shanti_integration (3.5.2)
+    shanti_integration (3.5.3)
       rails (>= 4.0)
 
 GIT
@@ -226,7 +226,7 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     bindex (0.8.1)
-    bootsnap (1.7.7)
+    bootsnap (1.8.1)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -443,7 +443,7 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 6.3.0)!
+  kmaps_engine (= 6.3.2)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.4)!
   newrelic_rpm
@@ -457,7 +457,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (= 5.0.7)
   selenium-webdriver
-  shanti_integration (= 3.5.2)!
+  shanti_integration (= 3.5.3)!
   spawnling
   spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
