@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_185222) do
+ActiveRecord::Schema.define(version: 2021_10_26_064102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -634,13 +634,17 @@ ActiveRecord::Schema.define(version: 2020_06_15_185222) do
 
   create_table "pages", id: :serial, force: :cascade do |t|
     t.integer "citation_id", null: false
-    t.integer "volume"
+    t.string "volume"
     t.integer "start_page"
-    t.integer "start_line"
+    t.string "start_line"
     t.integer "end_page"
     t.integer "end_line"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "chapter"
+    t.string "tibetan_start_page"
+    t.integer "start_verse"
+    t.integer "end_verse"
   end
 
   create_table "parcel", primary_key: "gid", id: :serial, force: :cascade do |t|
@@ -654,14 +658,6 @@ ActiveRecord::Schema.define(version: 2020_06_15_185222) do
     t.string "fname", limit: 50
     t.geometry "the_geom", limit: {:srid=>32646, :type=>"multi_polygon"}
     t.index ["the_geom"], name: "parcel_the_geom_gist", using: :gist
-  end
-
-  create_table "passages", force: :cascade do |t|
-    t.integer "context_id", null: false
-    t.string "context_type", null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "people", id: :serial, force: :cascade do |t|
