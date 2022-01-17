@@ -26,6 +26,7 @@ public/categories
 public/places
 public/assets
 public/shanti
+public/solr
 path
 yarn.lock
 # Ignore master key for decrypting credentials and more.

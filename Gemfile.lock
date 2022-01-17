@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 3676a7ab142693a45327dea39e51b7d1bfd8dd3f
-  tag: v6.3.6
+  revision: 9f1215e99a583d81b4521fc7fc5fd5f9f8225b3a
+  tag: v6.3.7
   specs:
-    kmaps_engine (6.3.6)
+    kmaps_engine (6.3.7)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 2d980eb39897eebc3c343b384c1ecabab8c7d5bd
-  tag: v5.3.4
+  revision: 750898c14399960d2e3df9360f751321976ceffc
+  tag: v5.3.5
   specs:
-    places_engine (5.3.4)
+    places_engine (5.3.5)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -226,7 +226,7 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     bindex (0.8.1)
-    bootsnap (1.9.3)
+    bootsnap (1.9.4)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -350,7 +350,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.1)
-    rgeo (2.3.0)
+    rgeo (2.3.1)
     rgeo-activerecord (6.2.2)
       activerecord (>= 5.0)
       rgeo (>= 1.0.0)
@@ -438,12 +438,12 @@ DEPENDENCIES
   interface_utils (= 2.3.9)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 6.3.6)!
+  kmaps_engine (= 6.3.7)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.4)!
   newrelic_rpm
   open_id_authentication
-  places_engine (= 5.3.4)!
+  places_engine (= 5.3.5)!
   places_integration (= 2.2.4)!
   rack-openid
   rails (~> 5.2.3)
