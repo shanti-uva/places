@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 750898c14399960d2e3df9360f751321976ceffc
-  tag: v5.3.5
+  revision: cc4dffd988de26f65f84c00b37f6f4c010709e7e
+  tag: v5.3.6
   specs:
-    places_engine (5.3.5)
+    places_engine (5.3.6)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -350,7 +350,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.1)
-    rgeo (2.3.1)
+    rgeo (2.4.0)
     rgeo-activerecord (6.2.2)
       activerecord (>= 5.0)
       rgeo (>= 1.0.0)
@@ -443,7 +443,7 @@ DEPENDENCIES
   mms_integration (= 2.4.4)!
   newrelic_rpm
   open_id_authentication
-  places_engine (= 5.3.5)!
+  places_engine (= 5.3.6)!
   places_integration (= 2.2.4)!
   rack-openid
   rails (~> 5.2.3)
