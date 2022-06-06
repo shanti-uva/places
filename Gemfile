@@ -37,7 +37,7 @@ gem 'authenticated_system',       '2.4.0',        github: 'thl/authenticated_sys
 gem 'complex_dates',              '2.3.5',        github: 'thl/complex_dates',               tag: 'v2.3.5' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '3.1.2',        github: 'thl/complex_scripts',             tag: 'v3.1.2' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.3.9',        github: 'thl/interface_utils',             tag: 'v2.3.9' #path: '../../thl/engines/interface_utils'
-gem 'flare',                      '1.3.5',        github: 'shanti-uva/flare',                tag: 'v1.3.5' #path: '../engines/flare'
+gem 'flare',                      '1.3.6',        github: 'shanti-uva/flare',                tag: 'v1.3.6' #path: '../engines/flare'
 gem 'ffi-icu',                    '0.2.0',        github: 'shanti-uva/ffi-icu',              tag: 'v0.2.0' #path: '../engines/ffi-icu'
 gem 'mms_integration',            '2.4.4',        github: 'thl/mms_integration',             branch: 'without-local' #tag: 'v2.4.4' #path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '6.3.9',        github: 'shanti-uva/kmaps_engine',         tag: 'v6.3.9' #path: '../engines/kmaps_engine'

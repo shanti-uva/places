@@ -15,14 +15,14 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/flare.git
-  revision: ae9bbc1cc49da9dfacc586128d31014252399fd9
-  tag: v1.3.5
+  revision: 31e71c72f3c31efbe21d5f371ca7cf14d07f4063
+  tag: v1.3.6
   specs:
-    flare (1.3.5)
+    flare (1.3.6)
       activeresource
       daemons
       delayed_job_active_record
-      faraday (~> 0.11.0)
+      faraday
       pg
       rails (~> 5.2.4)
       rsolr (~> 2.0.0.pre3)
@@ -266,8 +266,10 @@ GEM
       actionmailer (>= 5.2, < 8)
       activesupport (>= 5.2, < 8)
     execjs (2.7.0)
-    faraday (0.11.0)
-      multipart-post (>= 1.2, < 3)
+    faraday (2.3.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.3)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -300,7 +302,6 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.5.2)
-    multipart-post (2.2.0)
     newrelic_rpm (6.11.0.365)
     nio4r (2.5.8)
     nokogiri (1.13.6)
@@ -358,6 +359,7 @@ GEM
       builder (>= 2.1.2)
       faraday
     ruby-openid (2.9.2)
+    ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -433,7 +435,7 @@ DEPENDENCIES
   delayed_job_active_record
   dynamic_form
   ffi-icu (= 0.2.0)!
-  flare (= 1.3.5)!
+  flare (= 1.3.6)!
   hpricot
   interface_utils (= 2.3.9)!
   jquery-rails
