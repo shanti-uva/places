@@ -99,10 +99,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_dates.git
-  revision: ded33097751aa7c9a8edf53dbacb61d37e32520e
-  tag: v2.3.5
+  revision: bffc064d050831fca155742148593d753e5d0a7a
+  tag: v2.3.6
   specs:
-    complex_dates (2.3.5)
+    complex_dates (2.3.6)
       pg
       rails (>= 5.0)
 
@@ -444,7 +444,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
-  complex_dates (= 2.3.5)!
+  complex_dates (= 2.3.6)!
   complex_scripts (= 3.1.3)!
   delayed_job_active_record
   dynamic_form
