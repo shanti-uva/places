@@ -29,10 +29,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: fed236c2ba668810e89459065341204d9bdff235
-  tag: v6.5.1
+  revision: 048756f6d6c88a1d99c18eaf5a681dca4746405c
+  tag: v6.5.2
   specs:
-    kmaps_engine (6.5.1)
+    kmaps_engine (6.5.2)
       annotate
       bootsnap (>= 1.1.0)
       coffee-rails (~> 4.2)
@@ -56,10 +56,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: ec3418efaa21ccba7462ae815955ec57c67b9aff
-  tag: v3.5.5
+  revision: f159cfa9405501b2b2ccb951ccc9cfae9eeb0d3d
+  tag: v3.5.7
   specs:
-    shanti_integration (3.5.5)
+    shanti_integration (3.5.7)
       rails (>= 4.0)
 
 GIT
@@ -91,10 +91,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/authenticated_system.git
-  revision: 00206c6cb528f1574234e6034cc1debc45ec58e7
-  tag: v2.4.0
+  revision: 4d70fbe582cb70f1feaff65698b610dbb634e10c
+  tag: v2.4.1
   specs:
-    authenticated_system (2.4.0)
+    authenticated_system (2.4.1)
       rails (>= 4.0)
 
 GIT
@@ -133,10 +133,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: fd00a4478663b97a7802269f673e38c7ecc3aa87
-  tag: v5.4.1
+  revision: 59dad284b94e1565621031861149645643f63c35
+  tag: v5.4.2
   specs:
-    places_engine (5.4.1)
+    places_engine (5.4.2)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -226,7 +226,7 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     bindex (0.8.1)
-    bootsnap (1.15.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -252,17 +252,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     crass (1.0.6)
     daemons (1.4.1)
-    date (3.3.1)
+    date (3.3.3)
     delayed_job (4.1.10)
       activesupport (>= 3.0, < 8.0)
     delayed_job_active_record (4.1.7)
       activerecord (>= 3.0, < 8.0)
       delayed_job (>= 3.0, < 5)
     dynamic_form (1.1.4)
-    erubi (1.11.0)
+    erubi (1.12.0)
     exception_notification (4.5.0)
       actionmailer (>= 5.2, < 8)
       activesupport (>= 5.2, < 8)
@@ -272,7 +272,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.3)
     ffi (1.15.4)
-    globalid (1.0.0)
+    globalid (1.1.0)
       activesupport (>= 5.0)
     hpricot (0.8.6)
     i18n (1.12.0)
@@ -281,7 +281,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jquery-rails (4.4.0)
+    jquery-rails (4.5.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -294,7 +294,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.8.0.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -303,10 +303,10 @@ GEM
     memcache-client (1.8.5)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
-    minitest (5.16.3)
+    mini_portile2 (2.8.1)
+    minitest (5.17.0)
     msgpack (1.6.0)
-    net-imap (0.3.2)
+    net-imap (0.3.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -317,17 +317,15 @@ GEM
       net-protocol
     newrelic_rpm (6.11.0.365)
     nio4r (2.5.8)
-    nokogiri (1.13.10)
+    nokogiri (1.14.0)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    open_id_authentication (1.3.0)
-      rack-openid (~> 1.3)
     pg (1.3.5)
     public_suffix (4.0.6)
-    puma (6.0.1)
+    puma (6.0.2)
       nio4r (~> 2.0)
-    racc (1.6.1)
-    rack (2.2.4)
+    racc (1.6.2)
+    rack (2.2.6.2)
     rack-openid (1.4.2)
       rack (>= 1.1.0)
       ruby-openid (>= 2.1.8)
@@ -349,7 +347,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.4)
+    rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
     rails-observers (0.1.5)
       activemodel (>= 4.0)
@@ -364,7 +362,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.1)
-    rgeo (2.4.0)
+    rgeo (3.0.0)
     rgeo-activerecord (6.2.2)
       activerecord (>= 5.0)
       rgeo (>= 1.0.0)
@@ -439,7 +437,7 @@ DEPENDENCIES
   activemodel-serializers-xml
   activeresource
   acts_as_family_tree (= 1.2.1)!
-  authenticated_system (= 2.4.0)!
+  authenticated_system (= 2.4.1)!
   bootstrap-sass (>= 3.4.1)
   byebug
   capybara (>= 2.15)
@@ -454,12 +452,11 @@ DEPENDENCIES
   interface_utils (= 2.4.0)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 6.5.1)!
+  kmaps_engine (= 6.5.2)!
   listen (>= 3.0.5, < 3.2)
   mms_integration (= 2.4.4)!
   newrelic_rpm
-  open_id_authentication
-  places_engine (= 5.4.1)!
+  places_engine (= 5.4.2)!
   places_integration (= 2.2.4)!
   rack-openid
   rails (~> 5.2.3)
@@ -468,7 +465,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails (= 5.0.7)
   selenium-webdriver
-  shanti_integration (= 3.5.5)!
+  shanti_integration (= 3.5.7)!
   spawnling
   spring (~> 2.0.2)
   spring-watcher-listen (~> 2.0.0)
