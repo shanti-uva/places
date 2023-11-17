@@ -144,7 +144,7 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 5863b029a6f0a24e4e5846ac41243a950eb844ae
+  revision: 0ccc7e081cc52d8dee3825f9eabdc1b048ba0b61
   tag: v5.4.5
   specs:
     places_engine (5.4.5)
