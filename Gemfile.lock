@@ -43,10 +43,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 9a96763ab6e6dbd4647f788b5cafbde32306ea29
-  tag: v6.5.8
+  revision: 34d9833880b1357841443e45acd8fd01ee56072a
+  tag: v6.5.9
   specs:
-    kmaps_engine (6.5.8)
+    kmaps_engine (6.5.9)
       annotate
       bootsnap
       exception_notification
@@ -119,10 +119,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_scripts.git
-  revision: fc79bce3b587f689131bdaeeae8247472ee94edc
-  tag: v3.1.6
+  revision: 460d24f47ccc588c3afeeacf04af15e6731e5cc3
+  tag: v3.1.7
   specs:
-    complex_scripts (3.1.6)
+    complex_scripts (3.1.7)
       hpricot
       rails (>= 4.0)
 
@@ -144,10 +144,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: fa7b905045219ea300bbe1ee43df4d22e105767e
-  tag: v5.4.6
+  revision: de336d8c19d5324cf08133901262651ff9ee465e
+  tag: v5.4.7
   specs:
-    places_engine (5.4.6)
+    places_engine (5.4.7)
       activerecord-postgis-adapter
       rails (>= 4.0)
 
@@ -500,7 +500,7 @@ DEPENDENCIES
   byebug
   capybara
   complex_dates (= 2.4.0)!
-  complex_scripts (= 3.1.6)!
+  complex_scripts (= 3.1.7)!
   debug
   delayed_job_active_record
   dynamic_form
@@ -510,10 +510,10 @@ DEPENDENCIES
   interface_utils (= 2.4.2)!
   jquery-rails
   jquery-ui-rails
-  kmaps_engine (= 6.5.8)!
+  kmaps_engine (= 6.5.9)!
   mms_integration (= 2.4.6)!
   newrelic_rpm
-  places_engine (= 5.4.6)!
+  places_engine (= 5.4.7)!
   places_integration (= 2.2.7)!
   rack-openid
   rails (~> 7.1.1)
