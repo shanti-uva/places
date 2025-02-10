@@ -51,10 +51,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 40d361e25ce0d4bf4c44a7264bf5693c15c2ac85
-  tag: v6.8.7
+  revision: 57e0ba0528f10f8d47d7d048319f0033cbcdaff8
+  tag: v6.8.8
   specs:
-    kmaps_engine (6.8.7)
+    kmaps_engine (6.8.8)
       annotate
       bootsnap
       delayed_job_active_record
@@ -63,8 +63,8 @@ GIT
       jbuilder
       memcache-client
       pg
-      puma (>= 5.0)
-      rails
+      puma
+      rails (~> 7.1.0)
       will_paginate
 
 GIT
@@ -84,12 +84,12 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/subjects_integration.git
-  revision: eec4b27dab7f3b7a6f3cea41482c667b37fdd1de
-  tag: v0.3.3
+  revision: c0904071513e02d4aab59eb9bf7b92346213609f
+  tag: v0.3.4
   specs:
-    subjects_integration (0.3.3)
+    subjects_integration (0.3.4)
       pg
-      rails (>= 4.0)
+      rails
 
 GIT
   remote: https://github.com/thl/active_resource_extensions.git
@@ -103,45 +103,45 @@ GIT
 
 GIT
   remote: https://github.com/thl/acts_as_family_tree.git
-  revision: 9047925aa03bf9219f5264eaa51c09ad0236cf95
-  tag: v1.2.4
+  revision: 6effdd82dc9b6ab4036398e530d7e92dd7d65eaa
+  tag: v1.2.6
   specs:
-    acts_as_family_tree (1.2.4)
-      rails (>= 4.0)
+    acts_as_family_tree (1.2.6)
+      rails
 
 GIT
   remote: https://github.com/thl/authenticated_system.git
-  revision: 7bf2c8f837b88cba5e007974fa1e2b0286cc6245
-  tag: v2.4.5
+  revision: 5bdc0a98ca26abe48d36ae9ad2dac95b10f8269f
+  tag: v2.4.6
   specs:
-    authenticated_system (2.4.5)
-      rails (~> 7.0)
+    authenticated_system (2.4.6)
+      rails
 
 GIT
   remote: https://github.com/thl/complex_dates.git
-  revision: 9edc8e2950f810f6e5097fbd7c84aad5dad6766a
-  tag: v2.4.2
+  revision: 4d04be6850a1a1ca8a7201f2e9d24a608a15c62b
+  tag: v2.4.3
   specs:
-    complex_dates (2.4.2)
+    complex_dates (2.4.3)
       pg
-      rails (>= 5.0)
+      rails
 
 GIT
   remote: https://github.com/thl/complex_scripts.git
-  revision: 79fa76769f73d7f0f0ac583368918eea76fafabf
-  tag: v3.2.0
+  revision: d0221c582d8181373a61525986d276beb27a16d5
+  tag: v3.2.1
   specs:
-    complex_scripts (3.2.0)
+    complex_scripts (3.2.1)
       hpricot
-      rails (>= 4.0)
+      rails (~> 7.1.0)
 
 GIT
   remote: https://github.com/thl/interface_utils.git
-  revision: 51851aea144c12fd9c36ef806e394b1c7431b038
-  tag: v2.4.2
+  revision: 9c5f14c346925121618afa838b944ad87a9555f7
+  tag: v2.4.3
   specs:
-    interface_utils (2.4.2)
-      rails (>= 4.0)
+    interface_utils (2.4.3)
+      rails
 
 GIT
   remote: https://github.com/thl/mms_integration.git
@@ -162,19 +162,19 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_integration.git
-  revision: 236d4ae19bb003a55749c7f0a0e0bf618eec8919
-  tag: v2.2.7
+  revision: 02d8a2f93ab6bbdf1ce1d1789a01d8456a146732
+  tag: v2.2.8
   specs:
-    places_integration (2.2.7)
-      rails (>= 4.0)
+    places_integration (2.2.8)
+      rails
 
 GIT
   remote: https://github.com/thl/universal_navigation.git
-  revision: 1583a87a74ca7f3d6b5d300228e27c949cdf008c
-  tag: v3.1.4
+  revision: f398044e0432dea7a42ad7df8f56d84fb2980893
+  tag: v3.1.5
   specs:
-    universal_navigation (3.1.4)
-      rails (>= 4.0)
+    universal_navigation (3.1.5)
+      rails
 
 GIT
   remote: https://github.com/ycorredius/hpricot.git
@@ -521,27 +521,27 @@ DEPENDENCIES
   actionpack-page_caching
   active_resource_extensions (= 2.2.7)!
   activeresource
-  acts_as_family_tree (= 1.2.4)!
-  authenticated_system (= 2.4.5)!
+  acts_as_family_tree (= 1.2.6)!
+  authenticated_system (= 2.4.6)!
   bootstrap-sass
   byebug
   capybara
-  complex_dates (= 2.4.2)!
-  complex_scripts (= 3.2.0)!
+  complex_dates (= 2.4.3)!
+  complex_scripts (= 3.2.1)!
   debug
   delayed_job_active_record
   dynamic_form
   ffi-icu (= 0.2.2)!
   flare (= 1.4.4)!
   hpricot!
-  interface_utils (= 2.4.2)!
+  interface_utils (= 2.4.3)!
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
-  kmaps_engine (= 6.8.7)!
+  kmaps_engine (= 6.8.8)!
   mms_integration (= 2.4.6)!
   newrelic_rpm
   places_engine (= 5.4.7)!
-  places_integration (= 2.2.7)!
+  places_integration (= 2.2.8)!
   rack-openid
   rails (~> 7.1.1)
   rails-observers!
@@ -551,10 +551,10 @@ DEPENDENCIES
   selenium-webdriver
   shanti_integration (= 3.6.6)!
   spawnling
-  subjects_integration (= 0.3.3)!
+  subjects_integration (= 0.3.4)!
   tinymce-rails
   tzinfo-data
-  universal_navigation (= 3.1.4)!
+  universal_navigation (= 3.1.5)!
   web-console
   webdrivers
   webpacker
