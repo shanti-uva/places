@@ -64,7 +64,7 @@ gem 'kmaps_engine',               '6.8.8',        github: 'shanti-uva/kmaps_engi
 gem 'places_integration',         '2.2.8',        github: 'thl/places_integration',          tag: 'v2.2.8' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.4.7',        github: 'thl/places_engine',               tag: 'v5.4.7' #path: '../../thl/engines/places_engine'
 gem 'resource_controller',        '0.9.5',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.5' #path: '../engines/resource_controller'
-gem 'shanti_integration',         '3.6.6',        github: 'shanti-uva/shanti_integration',   tag: 'v3.6.6' #path: '../engines/shanti_integration'
+gem 'shanti_integration',         '3.6.7',        github: 'shanti-uva/shanti_integration',   tag: 'v3.6.7' #path: '../engines/shanti_integration'
 gem 'subjects_integration',       '0.3.4',        github: 'shanti-uva/subjects_integration', tag: 'v0.3.4' #path: '../engines/subjects_integration'
 gem 'universal_navigation',       '3.1.5',        github: 'thl/universal_navigation',        tag: 'v3.1.5' #path: '../../thl/engines/universal_navigation'
 

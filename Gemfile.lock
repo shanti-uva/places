@@ -76,10 +76,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: 806d0a692aad54286e20234c8527b46668a95492
-  tag: v3.6.6
+  revision: d011978d8b48cd48a0ce80cf810d5187a01dec9f
+  tag: v3.6.7
   specs:
-    shanti_integration (3.6.6)
+    shanti_integration (3.6.7)
       rails
 
 GIT
@@ -550,7 +550,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails
   selenium-webdriver
-  shanti_integration (= 3.6.6)!
+  shanti_integration (= 3.6.7)!
   spawnling
   subjects_integration (= 0.3.4)!
   tinymce-rails
