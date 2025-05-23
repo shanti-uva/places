@@ -51,10 +51,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 67e87bab55a748c60cf93a38886af666f3d52d8b
-  tag: v6.8.9
+  revision: b8ead534e965c48efe72b0070a865e174123d12b
+  tag: v6.9.1
   specs:
-    kmaps_engine (6.8.9)
+    kmaps_engine (6.9.1)
       annotate
       bootsnap
       delayed_job_active_record
@@ -129,10 +129,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_scripts.git
-  revision: d0221c582d8181373a61525986d276beb27a16d5
-  tag: v3.2.1
+  revision: c0481bdb8e353b82b950753e616a5737bf40a227
+  tag: v3.2.2
   specs:
-    complex_scripts (3.2.1)
+    complex_scripts (3.2.2)
       hpricot
       rails (~> 7.1.0)
 
@@ -287,7 +287,7 @@ GEM
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    bootsnap (1.18.4)
+    bootsnap (1.18.6)
       msgpack (~> 1.2)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -321,9 +321,9 @@ GEM
       actionview (> 5.2.0)
       activemodel (> 5.2.0)
     erubi (1.13.1)
-    exception_notification (4.5.0)
-      actionmailer (>= 5.2, < 8)
-      activesupport (>= 5.2, < 8)
+    exception_notification (5.0.0)
+      actionmailer (>= 7.1, < 9)
+      activesupport (>= 7.1, < 9)
     execjs (2.9.1)
     faraday (2.12.2)
       faraday-net_http (>= 2.0, < 3.5)
@@ -471,7 +471,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    semantic_range (3.0.0)
+    semantic_range (3.1.0)
+    shakapacker (6.6.0)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     spawnling (2.1.6)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -498,11 +503,6 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (~> 4.0, < 4.11)
-    webpacker (5.4.4)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket (1.2.10)
     websocket-driver (0.7.7)
       base64
@@ -529,7 +529,7 @@ DEPENDENCIES
   byebug
   capybara
   complex_dates (= 2.4.3)!
-  complex_scripts (= 3.2.1)!
+  complex_scripts (= 3.2.2)!
   debug
   delayed_job_active_record
   dynamic_form
@@ -539,7 +539,7 @@ DEPENDENCIES
   interface_utils (= 2.4.3)!
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
-  kmaps_engine (= 6.8.9)!
+  kmaps_engine (= 6.9.1)!
   mms_integration (= 2.4.6)!
   newrelic_rpm
   places_engine (= 5.4.7)!
@@ -551,6 +551,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails
   selenium-webdriver
+  shakapacker (~> 6.5)
   shanti_integration (= 3.6.7)!
   spawnling
   subjects_integration (= 0.3.4)!
@@ -559,7 +560,6 @@ DEPENDENCIES
   universal_navigation (= 3.1.5)!
   web-console
   webdrivers
-  webpacker
   will_paginate
 
 RUBY VERSION

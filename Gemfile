@@ -14,7 +14,9 @@ gem 'rails', '~> 7.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker'
+#gem 'webpacker'
+gem 'shakapacker', '~> 6.5'   # or the latest 6.x you see on RubyGems
+
 gem 'bootstrap-sass'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -55,12 +57,12 @@ gem 'active_resource_extensions', '2.2.7',        github: 'thl/active_resource_e
 gem 'acts_as_family_tree',        '1.2.8',        github: 'thl/acts_as_family_tree',         tag: 'v1.2.8' #path: '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.4.6',        github: 'thl/authenticated_system',        tag: 'v2.4.6' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.4.3',        github: 'thl/complex_dates',               tag: 'v2.4.3' #path: '../../thl/engines/complex_dates'
-gem 'complex_scripts',            '3.2.1',        github: 'thl/complex_scripts',             tag: 'v3.2.1' #path: '../../thl/engines/complex_scripts'
+gem 'complex_scripts',            '3.2.2',        github: 'thl/complex_scripts',             tag: 'v3.2.2' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.4.3',        github: 'thl/interface_utils',             tag: 'v2.4.3' #path: '../../thl/engines/interface_utils'
 gem 'ffi-icu',                    '0.2.2',        github: 'shanti-uva/ffi-icu',              tag: 'v0.2.2' #path: '../engines/ffi-icu'
 gem 'flare',                      '1.4.5',        github: 'shanti-uva/flare',                tag: 'v1.4.5' #path: '../engines/flare'
 gem 'mms_integration',            '2.4.6',        github: 'thl/mms_integration',             tag: 'v2.4.6' #path: '../../thl/engines/mms_integration', branch: 'without-local'
-gem 'kmaps_engine',               '6.8.9',        github: 'shanti-uva/kmaps_engine',         tag: 'v6.8.9' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '6.9.1',        github: 'shanti-uva/kmaps_engine',         tag: 'v6.9.1' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.2.8',        github: 'thl/places_integration',          tag: 'v2.2.8' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.4.7',        github: 'thl/places_engine',               tag: 'v5.4.7' #path: '../../thl/engines/places_engine'
 gem 'resource_controller',        '0.9.5',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.5' #path: '../engines/resource_controller'
