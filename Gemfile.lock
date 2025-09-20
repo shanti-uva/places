@@ -381,9 +381,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
-    pg (1.6.2)
-    pg (1.6.2-aarch64-linux)
-    pg (1.6.2-x86_64-linux)
+    pg (1.5.9)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -542,6 +540,7 @@ DEPENDENCIES
   kmaps_engine (= 6.9.2)!
   mms_integration (= 2.4.6)!
   newrelic_rpm
+  pg (= 1.5.9)
   places_engine (= 5.4.8)!
   places_integration (= 2.2.8)!
   rack-openid
