@@ -29,18 +29,20 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/ffi-icu.git
-  revision: ad9b6bebbfde2819d2f8cddf19b696616a769503
-  tag: v0.2.2
+  revision: 7ed5cb0bf5877e13fa4d8de5caeb34aeb3bf5420
+  tag: v0.5.4
   specs:
-    ffi-icu (0.2.2)
+    ffi-icu (0.5.4)
+      bigdecimal (~> 3.1)
       ffi (~> 1.0, >= 1.0.9)
+      stringio (~> 3.0)
 
 GIT
   remote: https://github.com/shanti-uva/flare.git
-  revision: a14cf8f2109493e25ee5ac1fc203e7ad6997bc44
-  tag: v1.4.7
+  revision: 7d6094c37ed91db55b02d62a9d43aa5fcbe132ea
+  tag: v1.4.8
   specs:
-    flare (1.4.7)
+    flare (1.4.8)
       activeresource
       daemons
       delayed_job_active_record
@@ -51,10 +53,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: c420562a50ad73d104f2492b0f8a534567517a9a
-  tag: v6.9.3
+  revision: 25d318bc5fec729d0941505cbace1ba8535954ed
+  tag: v6.9.4
   specs:
-    kmaps_engine (6.9.3)
+    kmaps_engine (6.9.4)
       annotate
       bootsnap
       delayed_job_active_record
@@ -69,25 +71,25 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/resource_controller.git
-  revision: 9fb10dc63385fea154258f3072fbcc5bb273158f
-  tag: v0.9.5
+  revision: 02235ef086dd844ea0b32971bf515083d43fbe77
+  tag: v0.9.6
   specs:
-    resource_controller (0.9.5)
+    resource_controller (0.9.6)
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: d011978d8b48cd48a0ce80cf810d5187a01dec9f
-  tag: v3.6.7
+  revision: e59c76f59ecb957e12625fb477ba52ef44ab4194
+  tag: v3.6.8
   specs:
-    shanti_integration (3.6.7)
+    shanti_integration (3.6.8)
       rails
 
 GIT
   remote: https://github.com/shanti-uva/subjects_integration.git
-  revision: c0904071513e02d4aab59eb9bf7b92346213609f
-  tag: v0.3.4
+  revision: 7f8dc8ddd8ef918c97117797d31cce428a424c64
+  tag: v0.3.5
   specs:
-    subjects_integration (0.3.4)
+    subjects_integration (0.3.5)
       pg
       rails
 
@@ -102,19 +104,19 @@ GIT
 
 GIT
   remote: https://github.com/thl/acts_as_family_tree.git
-  revision: b56d19ae7c2076e84546888b9238594d4bc557dd
-  tag: v1.3.0
+  revision: c9f0fc3c4ead32bcceb9f99d541941e6d148511e
+  tag: v1.3.1
   specs:
-    acts_as_family_tree (1.3.0)
+    acts_as_family_tree (1.3.1)
       delayed_job_active_record
       rails
 
 GIT
   remote: https://github.com/thl/authenticated_system.git
-  revision: a93092cbb3bd4b54ae2fc85187d4aba5c23f6afd
-  tag: v2.4.7
+  revision: 1858ae60ed5c28a3be0dddd7aa324bb35adde6c6
+  tag: v2.4.8
   specs:
-    authenticated_system (2.4.7)
+    authenticated_system (2.4.8)
       rails
 
 GIT
@@ -137,42 +139,42 @@ GIT
 
 GIT
   remote: https://github.com/thl/interface_utils.git
-  revision: b24b1a2c6bceb0fb8bb116d3cf8a780155e9918d
-  tag: v2.4.5
+  revision: 9de1890fa6bdd933e731114069eb227bfcd51630
+  tag: v2.4.6
   specs:
-    interface_utils (2.4.5)
+    interface_utils (2.4.6)
       rails
 
 GIT
   remote: https://github.com/thl/mms_integration.git
-  revision: 74229da9982532e88762398155daeb17585d6116
-  tag: v2.4.6
+  revision: 13cbd7ba507065e65ced4f2a7e1ca8fa8eb69fa9
+  tag: v2.4.7
   specs:
-    mms_integration (2.4.6)
+    mms_integration (2.4.7)
       rails (>= 4.0)
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 731ce4012109e4513280006cc8da1f133d19cfc5
-  tag: v5.4.9
+  revision: 7fb9858b45448a223672868275fff645d9160a74
+  tag: v5.5.0
   specs:
-    places_engine (5.4.9)
+    places_engine (5.5.0)
       rails
 
 GIT
   remote: https://github.com/thl/places_integration.git
-  revision: 02d8a2f93ab6bbdf1ce1d1789a01d8456a146732
-  tag: v2.2.8
+  revision: 5658aa4b7e9339ef2277685399d30c7994a2b9db
+  tag: v2.2.9
   specs:
-    places_integration (2.2.8)
+    places_integration (2.2.9)
       rails
 
 GIT
   remote: https://github.com/thl/universal_navigation.git
-  revision: f398044e0432dea7a42ad7df8f56d84fb2980893
-  tag: v3.1.5
+  revision: 39bbd0e3f0e02c0f98731d01868bdedfca24d215
+  tag: v3.1.6
   specs:
-    universal_navigation (3.1.5)
+    universal_navigation (3.1.6)
       rails
 
 GIT
@@ -520,8 +522,8 @@ DEPENDENCIES
   active_resource_extensions (= 2.2.8)!
   activerecord-postgis-adapter
   activeresource
-  acts_as_family_tree (= 1.3.0)!
-  authenticated_system (= 2.4.7)!
+  acts_as_family_tree (= 1.3.1)!
+  authenticated_system (= 2.4.8)!
   bootstrap-sass
   byebug
   capybara
@@ -530,32 +532,32 @@ DEPENDENCIES
   debug
   delayed_job_active_record
   dynamic_form
-  ffi-icu (= 0.2.2)!
-  flare (= 1.4.7)!
+  ffi-icu (= 0.5.4)!
+  flare (= 1.4.8)!
   hpricot!
-  interface_utils (= 2.4.5)!
+  interface_utils (= 2.4.6)!
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
-  kmaps_engine (= 6.9.3)!
-  mms_integration (= 2.4.6)!
+  kmaps_engine (= 6.9.4)!
+  mms_integration (= 2.4.7)!
   newrelic_rpm
   pg (= 1.5.9)
-  places_engine (= 5.4.9)!
-  places_integration (= 2.2.8)!
+  places_engine (= 5.5.0)!
+  places_integration (= 2.2.9)!
   rack-openid
   rails (~> 8.0.2)
   rails-observers!
-  resource_controller (= 0.9.5)!
+  resource_controller (= 0.9.6)!
   restful-authentication (= 2.0.0.beta1)!
   sass-rails
   selenium-webdriver
   shakapacker (~> 6.5)
-  shanti_integration (= 3.6.7)!
+  shanti_integration (= 3.6.8)!
   spawnling
-  subjects_integration (= 0.3.4)!
+  subjects_integration (= 0.3.5)!
   tinymce-rails
   tzinfo-data
-  universal_navigation (= 3.1.5)!
+  universal_navigation (= 3.1.6)!
   web-console
   webdrivers
   will_paginate
