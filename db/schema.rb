@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
+ActiveRecord::Schema[8.0].define(version: 2023_11_14_203621) do
   create_schema "topology"
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
   enable_extension "postgis"
-  enable_extension "postgis_topology"
+  enable_extension "topology.postgis_topology"
 
   create_table "Birth_rate", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", limit: 27
     t.float "pop_total"
     t.float "births_199"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 27
     t.float "births_1990"
     t.float "deaths_1990"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "death_1990"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "constructio"
     t.float "government_"
     t.integer "other"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "Mongols"
     t.float "Hui"
     t.integer "other"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -83,7 +83,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "pop_han"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -94,7 +94,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "illit_male"
     t.float "illit_fem"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "pop_illet"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -116,7 +116,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.integer "pop_total"
     t.float "immig"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -127,7 +127,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "sq_km"
     t.float "density"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -137,7 +137,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 27
     t.float "males_1990"
     t.float "females_199"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -148,7 +148,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "pop_tib"
     t.float "rate"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -191,7 +191,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name_src", limit: 50
     t.string "shape_src", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "barkor_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTILINESTRING'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -206,7 +206,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name_wylie", limit: 254
     t.string "name_eng", limit: 254
     t.string "county", limit: 254
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "bellezza_geom", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'POINT'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -393,7 +393,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.decimal "type"
     t.integer "stroies"
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "drepung_thl_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -403,7 +403,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
   create_table "electricity_use_10_million_watt_hours", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", limit: 27
     t.float "elect_use"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -516,7 +516,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
   create_table "fixed_lhasa_temples", primary_key: "gid", id: :serial, force: :cascade do |t|
     t.decimal "id", precision: 10
     t.decimal "gis_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "fixed_lhasa_temples_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -528,7 +528,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "text", limit: 100
     t.float "x"
     t.float "y"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(geometry) = 'POINT'::text OR geometry IS NULL", name: "enforce_geotype_geometry"
     t.check_constraint "st_ndims(geometry) = 2", name: "enforce_dims_geometry"
     t.check_constraint "st_srid(geometry) = 4326", name: "enforce_srid_geometry"
@@ -542,7 +542,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
   create_table "grain_output_tons", primary_key: "gid", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", limit: 27
     t.float "output_tons"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -553,7 +553,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "pop_total"
     t.float "illit_male"
     t.float "illit_fem"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "st_ndims(geometry) = 2", name: "enforce_dims_geometry"
     t.check_constraint "st_srid(geometry) = 4326", name: "enforce_srid_geometry"
   end
@@ -596,7 +596,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 254
     t.decimal "type"
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "jokhang_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -620,7 +620,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "F10", limit: 254
     t.float "X_dd"
     t.float "Y_dd"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POINT'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -628,14 +628,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
 
   create_table "landcover", primary_key: "gid", id: :serial, force: :cascade do |t|
     t.string "type", limit: 40
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "landcover_geom", using: :gist
   end
 
   create_table "lhasa_temples", primary_key: "gid", id: :serial, force: :cascade do |t|
     t.integer "id"
     t.integer "gis_id"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -647,7 +647,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name_src", limit: 50
     t.string "shape_src", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "lingkor_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTILINESTRING'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -659,7 +659,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.decimal "pd_id"
     t.string "name", limit: 50
     t.decimal "elevation"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "mountain_peaks_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'POINT'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -675,7 +675,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.decimal "type"
     t.integer "stroies"
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "norbulingka_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -724,7 +724,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "shapefile_", limit: 50
     t.string "name_src", limit: 50
     t.string "fname", limit: 50
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "parcel_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -768,7 +768,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 50
     t.string "url", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "potala_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -778,7 +778,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
   create_table "river", primary_key: "gid", id: :serial, force: :cascade do |t|
     t.decimal "pd_id", precision: 10
     t.string "shape_src", limit: 50
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "river_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -791,7 +791,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name_src", limit: 50
     t.string "shape_src", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "road_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTILINESTRING'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -816,7 +816,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["fid"], name: "roman_popular_fid"
     t.index ["geometry"], name: "roman_popular_gist", using: :gist
     t.index ["language"], name: "roman_popular_language"
@@ -829,7 +829,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["fid"], name: "roman_scholarly_fid"
     t.index ["geometry"], name: "roman_scholarly_gist", using: :gist
     t.index ["language"], name: "roman_scholarly_language"
@@ -844,7 +844,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.integer "stories"
     t.string "url", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "sera_hermitage_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -855,7 +855,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 50
     t.decimal "pd_id", precision: 10
     t.string "shape_src", limit: 50
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "sera_hermitage_boundary_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -869,7 +869,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "type", limit: 50
     t.integer "stories"
     t.string "name", limit: 50
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "sera_monastery_1966_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -883,7 +883,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "type", limit: 50
     t.string "name", limit: 50
     t.integer "stories"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "sera_monastery_2003_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -897,7 +897,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.integer "stories"
     t.string "type", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "sera_monastery_thl_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -905,10 +905,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
   end
 
   create_table "shapes", primary_key: "gid", id: :integer, default: -> { "nextval('features_gid_seq'::regclass)" }, force: :cascade do |t|
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.integer "fid"
     t.integer "position", default: 0, null: false
-    t.float "area"
+    t.float "area", limit: 24
     t.integer "altitude"
     t.boolean "is_public", default: true, null: false
     t.datetime "created_at", precision: nil
@@ -926,7 +926,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["fid"], name: "simple_chinese_fid"
     t.index ["geometry"], name: "simple_chinese_gist", using: :gist
     t.index ["language"], name: "simple_chinese_language"
@@ -956,7 +956,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.decimal "type"
     t.string "url", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "structure_city_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -970,7 +970,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.integer "stories"
     t.decimal "type"
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "structures_valley_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -998,7 +998,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["fid"], name: "test2_fid"
     t.index ["geometry"], name: "test2_gist", using: :gist
     t.index ["language"], name: "test2_language"
@@ -1011,7 +1011,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["language"], name: "tibetan_roman_language"
     t.index ["object_type"], name: "tibetan_roman_object_type"
   end
@@ -1051,7 +1051,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.float "perimeter"
     t.integer "tlatlong#"
     t.integer "tlatlong-i"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POINT'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -1063,7 +1063,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "language", limit: 255
     t.string "name", limit: 255
     t.text "geotype"
-    t.geometry "geometry", limit: {:srid=>4326, :type=>"st_point"}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["fid"], name: "traditional_chinese_fid"
     t.index ["geometry"], name: "traditional_chinese_gist", using: :gist
     t.index ["language"], name: "traditional_chinese_language"
@@ -1081,7 +1081,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name_src", limit: 50
     t.string "shape_src", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "tsekor_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTILINESTRING'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -1100,7 +1100,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.decimal "h465utm_", precision: 20
     t.decimal "h465utm_id", precision: 20
     t.decimal "gis_id", precision: 20
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.check_constraint "geometrytype(the_geom) = 'POINT'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
     t.check_constraint "st_srid(the_geom) = 4326", name: "enforce_srid_the_geom"
@@ -1116,7 +1116,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "lsad", limit: 2
     t.float "aland"
     t.float "awater"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.integer "fid"
     t.index ["the_geom"], name: "us_counties_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
@@ -1133,7 +1133,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "cdsessn", limit: 3
     t.float "aland"
     t.float "awater"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "us_districts_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -1150,7 +1150,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "lsad", limit: 2
     t.float "aland"
     t.float "awater"
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "us_states_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
@@ -1196,7 +1196,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_203621) do
     t.string "name", limit: 50
     t.string "url", limit: 50
     t.decimal "pd_id", precision: 10
-    t.geometry "the_geom", limit: {:srid=>4326, :type=>"st_polygon"}
+    t.geometry "the_geom", limit: {:srid=>0, :type=>"geometry"}
     t.index ["the_geom"], name: "zhol_the_geom_gist", using: :gist
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_the_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_the_geom"
