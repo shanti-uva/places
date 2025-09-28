@@ -58,7 +58,7 @@ gem 'restful-authentication',     '2.0.0.beta1',  github: 'raszi/restful-authent
 
 gem 'active_resource_extensions', '2.2.9',        github: 'thl/active_resource_extensions',  tag: 'v2.2.9' #path: '../../thl/engines/active_resource_extensions'
 gem 'acts_as_family_tree',        '1.3.2',        github: 'thl/acts_as_family_tree',         tag: 'v1.3.2' #path: '../../thl/engines/acts_as_family_tree'
-gem 'authenticated_system',       '2.5.1',        github: 'thl/authenticated_system',        tag: 'v2.5.1' #path: '../../thl/engines/authenticated_system'
+gem 'authenticated_system',       '2.5.2',        github: 'thl/authenticated_system',        tag: 'v2.5.2' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.4.4',        github: 'thl/complex_dates',               tag: 'v2.4.4' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '3.2.6',        github: 'thl/complex_scripts',             tag: 'v3.2.6' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.4.7',        github: 'thl/interface_utils',             tag: 'v2.4.7' #path: '../../thl/engines/interface_utils'

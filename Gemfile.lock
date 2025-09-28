@@ -113,10 +113,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/authenticated_system.git
-  revision: a42af198f428d14fcccf678721c799986455cda5
-  tag: v2.5.1
+  revision: 4f08dfbeb7cc1ffdfa6f3ed145780fa99a9a56e3
+  tag: v2.5.2
   specs:
-    authenticated_system (2.5.1)
+    authenticated_system (2.5.2)
       bcrypt (~> 3.1)
       rails
 
@@ -532,7 +532,7 @@ DEPENDENCIES
   activeresource
   acts_as_family_tree (= 1.3.2)!
   annotate
-  authenticated_system (= 2.5.1)!
+  authenticated_system (= 2.5.2)!
   bootstrap-sass
   byebug
   capybara
