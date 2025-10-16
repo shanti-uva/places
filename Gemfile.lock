@@ -52,24 +52,6 @@ GIT
       rsolr (~> 2.0.0.pre3)
 
 GIT
-  remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: 5bec41f837835f7c939caa505977f4423c75988d
-  tag: v6.9.7
-  specs:
-    kmaps_engine (6.9.7)
-      annotate
-      bootsnap
-      delayed_job_active_record
-      exception_notification
-      hpricot
-      jbuilder
-      memcache-client
-      pg
-      puma
-      rails
-      will_paginate
-
-GIT
   remote: https://github.com/shanti-uva/resource_controller.git
   revision: 02235ef086dd844ea0b32971bf515083d43fbe77
   tag: v0.9.6
@@ -112,15 +94,6 @@ GIT
       rails
 
 GIT
-  remote: https://github.com/thl/authenticated_system.git
-  revision: 34de057dc7908b3e65b624a3172cd640504cb6e4
-  tag: v2.5.4
-  specs:
-    authenticated_system (2.5.4)
-      bcrypt (~> 3.1)
-      rails
-
-GIT
   remote: https://github.com/thl/complex_dates.git
   revision: accee993dddc88127b807298fbb63e3a9541d542
   tag: v2.4.4
@@ -155,14 +128,6 @@ GIT
       rails (>= 4.0)
 
 GIT
-  remote: https://github.com/thl/places_engine.git
-  revision: b278316122fb40991aaf24e08b8c97edf32d7afe
-  tag: v5.5.5
-  specs:
-    places_engine (5.5.5)
-      rails
-
-GIT
   remote: https://github.com/thl/places_integration.git
   revision: 6140765302bbd9bd4ea2592fa6e1856f08c56805
   tag: v2.3.0
@@ -183,6 +148,35 @@ GIT
   revision: 1eb086570a56514348a35402df0199d7652fd169
   specs:
     hpricot (0.8.7)
+
+PATH
+  remote: ../../thl/engines/authenticated_system
+  specs:
+    authenticated_system (2.5.4)
+      bcrypt (~> 3.1)
+      rails
+
+PATH
+  remote: ../../thl/engines/places_engine
+  specs:
+    places_engine (5.5.5)
+      rails
+
+PATH
+  remote: ../engines/kmaps_engine
+  specs:
+    kmaps_engine (6.9.7)
+      annotate
+      bootsnap
+      delayed_job_active_record
+      exception_notification
+      hpricot
+      jbuilder
+      memcache-client
+      pg
+      puma
+      rails
+      will_paginate
 
 GEM
   remote: https://rubygems.org/
