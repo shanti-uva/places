@@ -61,7 +61,7 @@ gem 'acts_as_family_tree',        '1.3.2',        github: 'thl/acts_as_family_tr
 gem 'authenticated_system',       '2.5.5',        github: 'thl/authenticated_system',        tag: 'v2.5.5' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.4.4',        github: 'thl/complex_dates',               tag: 'v2.4.4' #path: '../../thl/engines/complex_dates'
 gem 'complex_scripts',            '3.2.7',        github: 'thl/complex_scripts',             tag: 'v3.2.7' #path: '../../thl/engines/complex_scripts'
-gem 'interface_utils',            '2.4.7',        github: 'thl/interface_utils',             tag: 'v2.4.7' #path: '../../thl/engines/interface_utils'
+gem 'interface_utils',            '2.4.8',        github: 'thl/interface_utils',             tag: 'v2.4.8' #path: '../../thl/engines/interface_utils'
 gem 'ffi-icu',                    '0.5.4',        github: 'shanti-uva/ffi-icu',              tag: 'v0.5.4' #path: '../engines/ffi-icu'
 gem 'flare',                      '1.5.0',        github: 'shanti-uva/flare',                tag: 'v1.5.0' #path: '../engines/flare'
 gem 'mms_integration',            '2.4.8',        github: 'thl/mms_integration',             tag: 'v2.4.8' #branch: 'without-local', path: '../../thl/engines/mms_integration'

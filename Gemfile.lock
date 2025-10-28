@@ -140,10 +140,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/interface_utils.git
-  revision: dcb7f6d1093ae11733dfd9af346202ff35e48407
-  tag: v2.4.7
+  revision: a42303056fe2918e0d594721f205beb963adeae6
+  tag: v2.4.8
   specs:
-    interface_utils (2.4.7)
+    interface_utils (2.4.8)
       rails
 
 GIT
@@ -545,7 +545,7 @@ DEPENDENCIES
   ffi-icu (= 0.5.4)!
   flare (= 1.5.0)!
   hpricot!
-  interface_utils (= 2.4.7)!
+  interface_utils (= 2.4.8)!
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
   kmaps_engine (= 6.9.8)!
