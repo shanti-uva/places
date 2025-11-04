@@ -53,10 +53,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/kmaps_engine.git
-  revision: bdae97643584348dbcf8a3b03acf723d095209c0
-  tag: v6.9.8
+  revision: cb929a357e5d75c0a3dd6a03c9ef5c1bc4e0f231
+  tag: v6.9.9
   specs:
-    kmaps_engine (6.9.8)
+    kmaps_engine (6.9.9)
       annotate
       bootsnap
       delayed_job_active_record
@@ -122,10 +122,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/complex_dates.git
-  revision: accee993dddc88127b807298fbb63e3a9541d542
-  tag: v2.4.4
+  revision: 4aadcaee21f3aab9202518815e740915a221c2bb
+  tag: v2.4.5
   specs:
-    complex_dates (2.4.4)
+    complex_dates (2.4.5)
       pg
       rails
 
@@ -156,10 +156,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: a588d57f255be227086cf9cc59f23bebbfbcff7a
-  tag: v5.5.6
+  revision: 152fa22020a95153b8b7413ce191759e7c654ddb
+  tag: v5.5.7
   specs:
-    places_engine (5.5.6)
+    places_engine (5.5.7)
       rails
 
 GIT
@@ -395,7 +395,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.0.4)
+    puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.3)
@@ -537,7 +537,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  complex_dates (= 2.4.4)!
+  complex_dates (= 2.4.5)!
   complex_scripts (= 3.2.7)!
   debug
   delayed_job_active_record
@@ -548,11 +548,11 @@ DEPENDENCIES
   interface_utils (= 2.4.8)!
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
-  kmaps_engine (= 6.9.8)!
+  kmaps_engine (= 6.9.9)!
   mms_integration (= 2.4.8)!
   newrelic_rpm
   pg (= 1.5.9)
-  places_engine (= 5.5.6)!
+  places_engine (= 5.5.7)!
   places_integration (= 2.3.0)!
   rack-openid
   rails (~> 8.0.2)
