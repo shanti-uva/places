@@ -67,7 +67,7 @@ gem 'flare',                      '1.5.0',        github: 'shanti-uva/flare',   
 gem 'mms_integration',            '2.4.8',        github: 'thl/mms_integration',             tag: 'v2.4.8' #branch: 'without-local', path: '../../thl/engines/mms_integration'
 gem 'kmaps_engine',               '7.0.1',        github: 'shanti-uva/kmaps_engine',         tag: 'v7.0.1' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.3.0',        github: 'thl/places_integration',          tag: 'v2.3.0' #path: '../../thl/engines/places_integration'
-gem 'places_engine',              '5.5.7',        github: 'thl/places_engine',               tag: 'v5.5.7' #path: '../../thl/engines/places_engine'
+gem 'places_engine',              '5.5.8',        github: 'thl/places_engine',               tag: 'v5.5.8' #path: '../../thl/engines/places_engine'
 gem 'resource_controller',        '0.9.6',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.6' #path: '../engines/resource_controller'
 gem 'shanti_integration',         '3.6.9',        github: 'shanti-uva/shanti_integration',   tag: 'v3.6.9' #path: '../engines/shanti_integration'
 gem 'subjects_integration',       '0.3.6',        github: 'shanti-uva/subjects_integration', tag: 'v0.3.6' #path: '../engines/subjects_integration'

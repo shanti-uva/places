@@ -156,10 +156,10 @@ GIT
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 152fa22020a95153b8b7413ce191759e7c654ddb
-  tag: v5.5.7
+  revision: 673a7c4e35ed8b9395b73d23f64f352cb2981cd5
+  tag: v5.5.8
   specs:
-    places_engine (5.5.7)
+    places_engine (5.5.8)
       rails
 
 GIT
@@ -552,7 +552,7 @@ DEPENDENCIES
   mms_integration (= 2.4.8)!
   newrelic_rpm
   pg (= 1.5.9)
-  places_engine (= 5.5.7)!
+  places_engine (= 5.5.8)!
   places_integration (= 2.3.0)!
   rack-openid
   rails (~> 8.0.2)
