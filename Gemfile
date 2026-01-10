@@ -15,7 +15,7 @@ gem 'rails', '~> 8.0.2'
 gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker'
-gem 'shakapacker', '~> 6.5'   # or the latest 6.x you see on RubyGems
+gem 'shakapacker', '>= 9.5.0' #'~> 6.5'   # or the latest 6.x you see on RubyGems
 
 gem 'bootstrap-sass'
 
@@ -60,7 +60,7 @@ gem 'active_resource_extensions', '2.2.9',        github: 'thl/active_resource_e
 gem 'acts_as_family_tree',        '1.3.2',        github: 'thl/acts_as_family_tree',         tag: 'v1.3.2' #path: '../../thl/engines/acts_as_family_tree'
 gem 'authenticated_system',       '2.5.6',        github: 'thl/authenticated_system',        tag: 'v2.5.6' #path: '../../thl/engines/authenticated_system'
 gem 'complex_dates',              '2.4.5',        github: 'thl/complex_dates',               tag: 'v2.4.5' #path: '../../thl/engines/complex_dates'
-gem 'complex_scripts',            '3.2.7',        github: 'thl/complex_scripts',             tag: 'v3.2.7' #path: '../../thl/engines/complex_scripts'
+gem 'complex_scripts',            '3.2.8',        github: 'thl/complex_scripts',             tag: 'v3.2.8' #path: '../../thl/engines/complex_scripts'
 gem 'interface_utils',            '2.4.8',        github: 'thl/interface_utils',             tag: 'v2.4.8' #path: '../../thl/engines/interface_utils'
 gem 'ffi-icu',                    '0.5.4',        github: 'shanti-uva/ffi-icu',              tag: 'v0.5.4' #path: '../engines/ffi-icu'
 gem 'flare',                      '1.5.0',        github: 'shanti-uva/flare',                tag: 'v1.5.0' #path: '../engines/flare'
