@@ -1,4 +1,4 @@
-require 'active_support/core_ext/integer/time'
+require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -23,7 +23,8 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
-
+  config.active_storage.variant_processor = :disabled
+  
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   # config.assume_ssl = true
 
@@ -37,7 +38,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
   config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
 
-  # Change to "debug" to log everything (including potentially personally-identifiable information!)
+  # Change to "debug" to log everything (including potentially personally-identifiable information!).
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
   # Prevent health checks from clogging up the logs.
@@ -65,9 +66,12 @@ Rails.application.configure do
     authentication:  "plain",
     enable_starttls: true,
     open_timeout:    5,
-    read_timeout:    5 }
+    read_timeout:    5
+  }
 
   # Set host to be used by links generated in mailer templates.
+  config.action_mailer.default_url_options = { host: "example.com" }
+  
   config.after_initialize do
     uri = URI.parse(PlacesIntegration::PlacesResource.get_url)
     url_options = { host: uri.host, protocol: uri.scheme }
@@ -77,7 +81,7 @@ Rails.application.configure do
     Rails.application.routes.default_url_options = url_options
   end
 
-  # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
+  # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
   # config.action_mailer.smtp_settings = {
   #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
   #   password: Rails.application.credentials.dig(:smtp, :password),
