@@ -15,7 +15,7 @@ gem 'rails', '~> 8.1'
 gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker'
-gem 'shakapacker', '>= 9.5.0' #'~> 6.5'   # or the latest 6.x you see on RubyGems
+gem 'shakapacker', '9.6.1' #'~> 6.5'   # or the latest 6.x you see on RubyGems
 
 gem 'bootstrap-sass'
 

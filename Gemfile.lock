@@ -576,7 +576,7 @@ DEPENDENCIES
   restful-authentication (= 2.0.0.beta1)!
   sass-rails
   selenium-webdriver
-  shakapacker (>= 9.5.0)
+  shakapacker (= 9.6.1)
   shanti_integration (= 3.7.2)!
   spawnling
   subjects_integration (= 0.3.8)!
