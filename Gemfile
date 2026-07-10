@@ -65,7 +65,7 @@ gem 'interface_utils',            '2.4.9',        github: 'thl/interface_utils',
 gem 'ffi-icu',                    '0.5.4',        github: 'shanti-uva/ffi-icu',              tag: 'v0.5.4' #path: '../engines/ffi-icu'
 gem 'flare',                      '1.5.1',        github: 'shanti-uva/flare',                tag: 'v1.5.1' #path: '../engines/flare'
 gem 'mms_integration',            '2.5.0',        github: 'thl/mms_integration',             tag: 'v2.5.0' #branch: 'without-local', path: '../../thl/engines/mms_integration'
-gem 'kmaps_engine',               '7.0.9',        github: 'shanti-uva/kmaps_engine',         tag: 'v7.0.9' #path: '../engines/kmaps_engine'
+gem 'kmaps_engine',               '7.1.0',        github: 'shanti-uva/kmaps_engine',         tag: 'v7.1.0' #path: '../engines/kmaps_engine'
 gem 'places_integration',         '2.3.1',        github: 'thl/places_integration',          tag: 'v2.3.1' #path: '../../thl/engines/places_integration'
 gem 'places_engine',              '5.5.9',        github: 'thl/places_engine',               tag: 'v5.5.9' #path: '../../thl/engines/places_engine'
 gem 'resource_controller',        '0.9.6',        github: 'shanti-uva/resource_controller',  tag: 'v0.9.6' #path: '../engines/resource_controller'
