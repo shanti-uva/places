@@ -78,10 +78,10 @@ GIT
 
 GIT
   remote: https://github.com/shanti-uva/shanti_integration.git
-  revision: 6eb1fe9a8f3892fb2a9a8e35f9f400e5a1ac1d90
-  tag: v3.7.2
+  revision: e4f167f6e248704234d8dbdb096095edea389b46
+  tag: v3.7.3
   specs:
-    shanti_integration (3.7.2)
+    shanti_integration (3.7.3)
       rails
 
 GIT
@@ -148,18 +148,18 @@ GIT
 
 GIT
   remote: https://github.com/thl/mms_integration.git
-  revision: 6b6f2d7fbb6d40d83c8b3f381b3ded8d51646496
-  tag: v2.5.0
+  revision: 3510dbfd1369317e7df578cd53ced4b41e2773ef
+  tag: v2.5.1
   specs:
-    mms_integration (2.5.0)
-      rails (>= 4.0)
+    mms_integration (2.5.1)
+      rails
 
 GIT
   remote: https://github.com/thl/places_engine.git
-  revision: 61fbc5ca2ea33a4352c91507ba8ce162653772b4
-  tag: v5.5.9
+  revision: e7fff54ac88e831af0d94df3ecc071e37dd79829
+  tag: v5.6.0
   specs:
-    places_engine (5.5.9)
+    places_engine (5.6.0)
       rails
 
 GIT
@@ -564,10 +564,10 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails (= 7.0.0)!
   kmaps_engine (= 7.1.0)!
-  mms_integration (= 2.5.0)!
+  mms_integration (= 2.5.1)!
   newrelic_rpm
   pg (= 1.5.9)
-  places_engine (= 5.5.9)!
+  places_engine (= 5.6.0)!
   places_integration (= 2.3.1)!
   rack-openid
   rails (~> 8.1)
@@ -577,7 +577,7 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   shakapacker (= 9.6.1)
-  shanti_integration (= 3.7.2)!
+  shanti_integration (= 3.7.3)!
   spawnling
   subjects_integration (= 0.3.8)!
   tinymce-rails
